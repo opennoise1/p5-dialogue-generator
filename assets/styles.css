@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'Optima nova LT';
+  src: url('OptimaNovaLT-Black.eot');
+  src: url('OptimaNovaLT-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+      url('OptimaNovaLT-Black.woff2') format('woff2'), /* Super Modern Browsers */
+      url('OptimaNovaLT-Black.woff') format('woff'), /* Pretty Modern Browsers */
+      url('OptimaNovaLT-Black.ttf') format('truetype'), /* Safari, Android, iOS */
+      url('OptimaNovaLT-Black.svg#OptimaNovaLT-Black') format('svg'); /* Legacy iOS */
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'KoreanKRSM';
+  src: url('KoreanKRSM.eot');
+  src: url('KoreanKRSM.eot?#iefix') format('embedded-opentype'),
+      url('KoreanKRSM.woff2') format('woff2'),
+      url('KoreanKRSM.woff') format('woff'),
+      url('KoreanKRSM.ttf') format('truetype'),
+      url('KoreanKRSM.svg#KoreanKRSM') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  background-color: #FF0505;
+}
+
+#canvas {
+  background-color: white;
+}
+
+/* Text and Tools */
+#textField {
+  font-family: 'KoreanKRSM', sans-serif;
+}
+
+#imageTools {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#buttonDiv {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.fonts {
+  border: 10px solid black;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+textarea {
+  resize: none;
+}
+
+#charMenu {
+  margin: 5px;
+}
