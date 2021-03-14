@@ -54,6 +54,7 @@ const EmotionMenu = ({ char, setEmote }) => {
             <option value='shocked'>Shocked</option>
             <option value='hurt'>Hurt</option>
             <option value='sad'>Sad</option>
+            <option value='hidden'>Hidden</option>
           </>
         )
       default:

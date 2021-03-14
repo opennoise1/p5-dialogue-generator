@@ -5,14 +5,14 @@ import TextAndTools from './components/TextAndTools';
 const App = () => {
   // Initial values of all three menus, which will in turn determine our portrait
   // TODO: Randomize these initial values upon load!
-  const [char, setChar]: [string, any] = useState('ann');
-  const [emote, setEmote]: [string, any] = useState('netural');
-  const [costume, setCostume]: [string, any] = useState('uniform');
-  const [text, setText]: [string, any] = useState('Take your heart');
-  const [font, setFont]: [string, any] = useState(/* new FontFace(); */)
+  const [char, setChar] = useState<string>('ann');
+  const [emote, setEmote]= useState<string>('netural');
+  const [costume, setCostume] = useState<string>('uniform');
+  const [text, setText] = useState<string>('Take your heart');
+  // const [font, setFont]: [FontFace, any] = useState();
 
-  const [portrait, setPortrait]: [string, any] = 
-    useState(`../images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);
+  const [portrait, setPortrait] = 
+    useState<string>(`../images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);
   
   // by adding props to a separate object here, we can get around a TypeScript error
   // read more here: https://stackoverflow.com/questions/48240449/type-is-not-assignable-to-type-intrinsicattributes-intrinsicclassattribu

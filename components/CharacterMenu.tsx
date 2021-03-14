@@ -18,7 +18,7 @@ const CharacterMenu = ({ setChar }) => {
       <option value='ryuji'>Ryuji Sakamoto</option>
       <option value='saw'>Sae Niijima</option>
       <option value='sojiro'>Sojiro Sakura</option>
-      <option value='yusuke'>Yusuke Futagawa</option>
+      <option value='yusuke'>Yusuke Kitagawa</option>
     </select>
   )
 }

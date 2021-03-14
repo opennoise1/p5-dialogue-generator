@@ -13,6 +13,11 @@ const CostumeMenu = ({ emote, setCostume }) => {
             <option value='pea'>Pea Coat</option>
             <option value='shirt'>Shirt</option>
             <option value='uniform'>Uniform</option>
+            <option value='fox'>Fox</option>
+            <option value='swimsuit'>Swimsuit</option>
+            <option value='shirtless'>Shirtless</option>
+            <option value='yukata'>Yukata</option>
+            <option value='exercise'>Exercise</option>
           </>
         )
       case 'happy':
@@ -24,6 +29,11 @@ const CostumeMenu = ({ emote, setCostume }) => {
             <option value='pea'>Pea Coat</option>
             <option value='shirt'>Shirt</option>
             <option value='uniform'>Uniform</option>
+            <option value='fox'>Fox</option>
+            <option value='swimsuit'>Swimsuit</option>
+            <option value='shirtless'>Shirtless</option>
+            <option value='yukata'>Yukata</option>
+            <option value='exercise'>Exercise</option>
           </>
         )
       case 'angry':
@@ -35,6 +45,11 @@ const CostumeMenu = ({ emote, setCostume }) => {
             <option value='pea'>Pea Coat</option>
             <option value='shirt'>Shirt</option>
             <option value='uniform'>Uniform</option>
+            <option value='fox'>Fox</option>
+            <option value='swimsuit'>Swimsuit</option>
+            <option value='shirtless'>Shirtless</option>
+            <option value='yukata'>Yukata</option>
+            <option value='exercise'>Exercise</option>
           </>
         )
       case 'shocked':
@@ -46,6 +61,11 @@ const CostumeMenu = ({ emote, setCostume }) => {
             <option value='pea'>Pea Coat</option>
             <option value='shirt'>Shirt</option>
             <option value='uniform'>Uniform</option>
+            <option value='fox'>Fox</option>
+            <option value='swimsuit'>Swimsuit</option>
+            <option value='shirtless'>Shirtless</option>
+            <option value='yukata'>Yukata</option>
+            <option value='exercise'>Exercise</option>
           </>
         )
       case 'hurt':
@@ -57,6 +77,11 @@ const CostumeMenu = ({ emote, setCostume }) => {
             <option value='pea'>Pea Coat</option>
             <option value='shirt'>Shirt</option>
             <option value='uniform'>Uniform</option>
+            <option value='fox'>Fox</option>
+            <option value='swimsuit'>Swimsuit</option>
+            <option value='shirtless'>Shirtless</option>
+            <option value='yukata'>Yukata</option>
+            <option value='exercise'>Exercise</option>
           </>
         )
       case 'sad':
@@ -68,6 +93,11 @@ const CostumeMenu = ({ emote, setCostume }) => {
             <option value='pea'>Pea Coat</option>
             <option value='shirt'>Shirt</option>
             <option value='uniform'>Uniform</option>
+            <option value='fox'>Fox</option>
+            <option value='swimsuit'>Swimsuit</option>
+            <option value='shirtless'>Shirtless</option>
+            <option value='yukata'>Yukata</option>
+            <option value='exercise'>Exercise</option>
           </>
         )
       default:
@@ -79,6 +109,11 @@ const CostumeMenu = ({ emote, setCostume }) => {
             <option value='pea'>Pea Coat</option>
             <option value='shirt'>Shirt</option>
             <option value='uniform'>Uniform</option>
+            <option value='fox'>Fox</option>
+            <option value='swimsuit'>Swimsuit</option>
+            <option value='shirtless'>Shirtless</option>
+            <option value='yukata'>Yukata</option>
+            <option value='exercise'>Exercise</option>
           </>
         )
     }

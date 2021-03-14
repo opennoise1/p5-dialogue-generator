@@ -23,7 +23,14 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
 
   return (
     <>
-      <textarea id='textField' rows={3} cols={40} defaultValue={text} onChange={(e) => setText(e.target.value)} />  
+      <textarea 
+        id='textField' 
+        autoFocus={true}
+        rows={3}
+        cols={50}
+        defaultValue={text}
+        onChange={(e) => setText(e.target.value)} 
+      />  
       <div>
         <Menus {...toolProps} />
       </div>
