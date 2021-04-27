@@ -1,0 +1,28 @@
+{
+  "name": "p5-generator",
+  "version": "1.0.0",
+  "description": "P5 Dialogue Generator",
+  "main": "./assets/index.js",
+  "dependencies": {
+    "@types/css-font-loading-module": "0.0.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@snowpack/plugin-webpack": "^2.3.0",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.1",
+    "snowpack": "^3.0.13"
+  },
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build"
+  },
+  "keywords": [
+    "Persona 5",
+    "generator",
+    "dialogue"
+  ],
+  "author": "opennoise",
+  "license": "ISC"
+}
