@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const ImageCanvas = ({ portrait, text }) => {
+const ImageCanvas = ({ portrait, text, font }) => {
   const [isBoxLoaded, setBoxLoaded] = useState<boolean>(false);
   const canvas: React.MutableRefObject<any> = useRef(null);
   const character: React.MutableRefObject<any> = useRef(null);
@@ -18,9 +18,10 @@ const ImageCanvas = ({ portrait, text }) => {
   useEffect(() => ctx = canvas.current.getContext('2d'));
 
   useEffect(() => {
-    // ctx.fillStyle = '#000000';
-    // ctx.fillText(text, 320, 370);
+    ctx.fillStyle = '#000000';
+    ctx.fillText(text, 320, 370);
     ctx.fillStyle = '#FFFFFF';
+    ctx.font = font;
     return ctx.fillText(text, 320, 370);
   }, [text])
 

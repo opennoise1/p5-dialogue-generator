@@ -1,7 +1,7 @@
 import React from 'react';
 import Menus from './Menus';
 
-const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, setPortrait, text, setText }) => {
+const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, setPortrait, text, setText, setFont }) => {
 
   const toolProps: { 
     char: string, 
@@ -35,8 +35,8 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
         <Menus {...toolProps} />
       </div>
       <div id='buttonDiv'>
-        <div id='vanillaFont' className='fonts'>KoreanKRSM &#40;Persona 5&#41;</div>
-        <div id='royalFont' className='fonts'>Optima Nova Black &#40;Persona 5 Royal&#41;</div>
+        <div id='vanillaFont' className='fonts' onClick={() => setFont('20px KoreanKRSM')}>KoreanKRSM &#40;Persona 5&#41;</div>
+        <div id='royalFont' className='fonts' onClick={() => setFont('16px Optima nova LT')}>Optima Nova Black &#40;Persona 5 Royal&#41;</div>
       </div>
     </>
   )

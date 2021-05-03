@@ -9,7 +9,7 @@ const App = () => {
   const [emote, setEmote]= useState<string>('netural');
   const [costume, setCostume] = useState<string>('uniform');
   const [text, setText] = useState<string>('Take your heart');
-  // const [font, setFont]: [FontFace, any] = useState();
+  const [font, setFont] = useState<string>('20px KoreanKRSM');
 
   const [portrait, setPortrait] = 
     useState<string>(`../images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);
@@ -27,6 +27,8 @@ const App = () => {
     text: string,
     setText: any,
     setPortrait: any,
+    font: any,
+    setFont: any,
   } = {
     char,
     setChar,
@@ -37,6 +39,8 @@ const App = () => {
     text,
     setText,
     setPortrait,
+    font,
+    setFont,
   }
 
   return (
