@@ -1,5 +1,15 @@
 import React from 'react';
 
+const baseEmotions = 
+  <>
+    <option value='neutral'>Neutral</option>
+    <option value='happy'>Happy</option>
+    <option value='angry'>Angry</option>
+    <option value='shocked'>Shocked</option>
+    <option value='hurt'>Hurt</option>
+    <option value='sad'>Sad</option>
+  </>;
+
 const EmotionMenu = ({ char, setEmote }) => {
 
   const emoteMenuCreator = (currChar) => {
@@ -8,66 +18,19 @@ const EmotionMenu = ({ char, setEmote }) => {
     // then return all universal emotions no matter what and return only ones that are particular 
     // to the character in each case
 
-    // TODO 2: Possibly use a node glob module or the node fs module to grab all the current images in the selected
-    // character's folder. Then iterate through the files and grab the releveant emotion and costume information from
-    // the filenames so that way we can create these options dynamically
+    // TODO 2: Finish portraitNameParser later so we can create these menus dynamically by moving 
+    // through the file names, assuming that it isn't too expensive
     switch(currChar) {
       case 'ann':
-        return (
-          <>
-            <option value='neutral'>Neutral</option>
-            <option value='happy'>Happy</option>
-            <option value='angry'>Angry</option>
-            <option value='shocked'>Shocked</option>
-            <option value='hurt'>Hurt</option>
-            <option value='sad'>Sad</option>
-          </>
-        )
+        return baseEmotions;
       case 'futaba':
-        return (
-          <>
-            <option value='neutral'>Neutral</option>
-            <option value='happy'>Happy</option>
-            <option value='angry'>Angry</option>
-            <option value='shocked'>Shocked</option>
-            <option value='hurt'>Hurt</option>
-            <option value='sad'>Sad</option>
-          </>
-        )
+        return baseEmotions;
       case 'akechi':
-        return (
-          <>
-            <option value='neutral'>Neutral</option>
-            <option value='happy'>Happy</option>
-            <option value='angry'>Angry</option>
-            <option value='shocked'>Shocked</option>
-            <option value='hurt'>Hurt</option>
-            <option value='sad'>Sad</option>
-          </>
-        )
+        return baseEmotions;
       case 'yusuke':
-        return (
-          <>
-            <option value='neutral'>Neutral</option>
-            <option value='happy'>Happy</option>
-            <option value='angry'>Angry</option>
-            <option value='shocked'>Shocked</option>
-            <option value='hurt'>Hurt</option>
-            <option value='sad'>Sad</option>
-            <option value='hidden'>Hidden</option>
-          </>
-        )
+        return baseEmotions;
       default:
-        return (
-          <>
-            <option value='neutral'>Neutral</option>
-            <option value='happy'>Happy</option>
-            <option value='angry'>Angry</option>
-            <option value='shocked'>Shocked</option>
-            <option value='hurt'>Hurt</option>
-            <option value='sad'>Sad</option>
-          </>
-        )
+        return baseEmotions;
     }
   }
 
