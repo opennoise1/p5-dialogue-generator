@@ -1,9 +1,19 @@
-// import { readdirSync, lstatSync } from 'fs';
-// import path from 'path';
+const { readdirSync, lstatSync } = require('fs');
+const path = require('path');
 
-// const portraitNameParser = (source) => {
-//   readdirSync(source)
-//   .filter(file => lstatSync(path.join(__dirname, file)).isDirectory());
-// }
+const portraitNameParser = (req, res, next) => {
+  const items = readdirSync(path.join(__dirname, req.body.dir));
 
-// export default portraitNameParser;
+  items.forEach((el) => {
+    if (el.isDirectory()) {
+      portraitNameParser(req, res, next)
+    } else if (el.isFile()) {
+      
+    }
+  })
+
+  res.locals.folders = items;
+  next();
+}
+
+module.exports = portraitNameParser;
