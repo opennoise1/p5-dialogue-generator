@@ -65,3 +65,11 @@ textarea {
 #charMenu {
   margin: 5px;
 }
+
+#vanillaFont {
+  font-family: 'KoreanKRSM';
+}
+
+#royalFont {
+  font-family: 'Optima nova LT';
+}

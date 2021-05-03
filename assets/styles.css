@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Optima nova LT';
-  src: url('OptimaNovaLT-Black.eot');
-  src: url('OptimaNovaLT-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-      url('OptimaNovaLT-Black.woff2') format('woff2'), /* Super Modern Browsers */
-      url('OptimaNovaLT-Black.woff') format('woff'), /* Pretty Modern Browsers */
-      url('OptimaNovaLT-Black.ttf') format('truetype'), /* Safari, Android, iOS */
-      url('OptimaNovaLT-Black.svg#OptimaNovaLT-Black') format('svg'); /* Legacy iOS */
+  src: url('fonts/OptimaNovaLT-Black.eot');
+  src: url('fonts/OptimaNovaLT-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+      url('fonts/OptimaNovaLT-Black.woff2') format('woff2'), /* Super Modern Browsers */
+      url('fonts/OptimaNovaLT-Black.woff') format('woff'), /* Pretty Modern Browsers */
+      url('fonts/OptimaNovaLT-Black.ttf') format('truetype'), /* Safari, Android, iOS */
+      url('fonts/OptimaNovaLT-Black.svg#OptimaNovaLT-Black') format('svg'); /* Legacy iOS */
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -13,12 +13,12 @@
 
 @font-face {
   font-family: 'KoreanKRSM';
-  src: url('KoreanKRSM.eot');
-  src: url('KoreanKRSM.eot?#iefix') format('embedded-opentype'),
-      url('KoreanKRSM.woff2') format('woff2'),
-      url('KoreanKRSM.woff') format('woff'),
-      url('KoreanKRSM.ttf') format('truetype'),
-      url('KoreanKRSM.svg#KoreanKRSM') format('svg');
+  src: url('fonts/KoreanKRSM.eot');
+  src: url('fonts/KoreanKRSM.eot?#iefix') format('embedded-opentype'),
+      url('fonts/KoreanKRSM.woff2') format('woff2'),
+      url('fonts/KoreanKRSM.woff') format('woff'),
+      url('fonts/KoreanKRSM.ttf') format('truetype'),
+      url('fonts/KoreanKRSM.svg#KoreanKRSM') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -64,4 +64,12 @@ textarea {
 
 #charMenu {
   margin: 5px;
+}
+
+#vanillaFont {
+  font-family: 'KoreanKRSM';
+}
+
+#royalFont {
+  font-family: 'Optima nova LT';
 }

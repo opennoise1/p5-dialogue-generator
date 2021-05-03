@@ -5,5 +5,5 @@ module.exports = {
     [
       '@snowpack/plugin-webpack',
     ],
-  ],
+  ]
 };
