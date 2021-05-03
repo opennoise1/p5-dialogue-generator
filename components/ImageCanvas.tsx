@@ -8,7 +8,7 @@ const ImageCanvas = ({ portrait, text, font }) => {
   let ctx: CanvasRenderingContext2D;
 
   // Hacky way of preserving aspect ratios -- refactor this so it's more dynamic!
-  const boxHeight: number = 135;
+  const boxHeight: number = 250;
   const boxRatio: number = 800 / 226;
   const boxWidth: number = boxHeight * boxRatio;
 
@@ -18,17 +18,17 @@ const ImageCanvas = ({ portrait, text, font }) => {
   useEffect(() => ctx = canvas.current.getContext('2d'));
 
   useEffect(() => {
-    ctx.fillStyle = '#000000';
-    ctx.fillText(text, 320, 370);
+    // ctx.fillStyle = '#000000';
+    // ctx.fillText(text, 320, 370);
     ctx.fillStyle = '#FFFFFF';
     ctx.font = font;
-    return ctx.fillText(text, 320, 370);
+    return ctx.fillText(text, 450, 400);
   }, [text])
 
   const draw = (image, x, y, w, h) => {
     ctx.clearRect(x, y, w, h);
     ctx.drawImage(image, x, y, w, h);
-    return isBoxLoaded ? ctx.drawImage(box.current, 240, 295, boxWidth, boxHeight) : null;
+    return isBoxLoaded ? ctx.drawImage(box.current, 320, 250, boxWidth, boxHeight) : null;
   }
 
   return (
@@ -36,8 +36,8 @@ const ImageCanvas = ({ portrait, text, font }) => {
       <canvas 
         ref={canvas} 
         id='canvas'
-        width='800' 
-        height='450' 
+        width='1300' 
+        height='500' 
       >
         Sorry! This generator requires a browser that supports HTML5!
       </canvas>
@@ -46,7 +46,7 @@ const ImageCanvas = ({ portrait, text, font }) => {
       <img 
         ref={character} 
         id='portrait' 
-        onLoad={() => draw(character.current, 20, 130, 320, 320)} 
+        onLoad={() => draw(character.current, 0, 0, 500, 500)} 
         src={portrait} 
         className='hidden' 
       />

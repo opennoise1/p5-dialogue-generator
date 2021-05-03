@@ -28,8 +28,8 @@ body {
   background-color: #FF0505;
 }
 
-#canvas {
-  background-color: white;
+canvas {
+  /* background-color: white; */
 }
 
 /* Text and Tools */
@@ -44,16 +44,6 @@ body {
   align-items: center;
 }
 
-#buttonDiv {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.fonts {
-  border: 10px solid black;
-  text-align: center;
-}
-
 .hidden {
   display: none;
 }
@@ -66,10 +56,40 @@ textarea {
   margin: 5px;
 }
 
+/* Font Selection */
+
+#buttonDiv {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.fonts {
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+  border: 3px solid black;
+  border-radius: 30px;
+  background-color: blanchedalmond;
+  color: black;
+  text-align: center;
+}
+
+.fonts:active {
+  background: #e5e5e5;
+  -webkit-box-shadow: inset 0px 0px 5px;
+     -moz-box-shadow: inset 0px 0px 5px #5f5b5b;
+          box-shadow: inset 0px 0px 5px #5f5b5b;
+   outline: none;
+}
+
 #vanillaFont {
+  padding: 0.75em;
   font-family: 'KoreanKRSM';
+  font-size: 16pt;
 }
 
 #royalFont {
+  padding: 0.75em;
+  padding-top: 0.9em;
   font-family: 'Optima nova LT';
+  font-size: 12pt;
 }
