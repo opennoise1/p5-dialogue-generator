@@ -2,10 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const ImageCanvas = ({ portrait, text, font }) => {
   const [isBoxLoaded, setBoxLoaded] = useState<boolean>(false);
-  const canvas: React.MutableRefObject<any> = useRef(null);
+  const portraitCanvas: React.MutableRefObject<any> = useRef(null);
+  const textCanvas: React.MutableRefObject<any> = useRef(null);
   const character: React.MutableRefObject<any> = useRef(null);
   const box: React.MutableRefObject<any> = useRef(null);
-  let ctx: CanvasRenderingContext2D;
+  let pCtx: CanvasRenderingContext2D;
+  let tCtx: CanvasRenderingContext2D;
 
   // Hacky way of preserving aspect ratios -- refactor this so it's more dynamic!
   const boxHeight: number = 250;
@@ -15,27 +17,37 @@ const ImageCanvas = ({ portrait, text, font }) => {
   // preps the canvas upon each render by creating a 2D "drawing context" for it
   // TODO: Does a new context need to be drawn on EVERY render? 
   // Passing in a dependency makes it seem like it, considering the error message. Look into this...
-  useEffect(() => ctx = canvas.current.getContext('2d'));
+  useEffect(() => {
+    pCtx = portraitCanvas.current.getContext('2d');
+    return tCtx = textCanvas.current.getContext('2d');
+  });
 
   useEffect(() => {
-    // ctx.fillStyle = '#000000';
-    // ctx.fillText(text, 320, 370);
-    ctx.fillStyle = '#FFFFFF';
-    ctx.font = font;
-    return ctx.fillText(text, 450, 400);
+    tCtx.clearRect(0, 0, 2000, 2000);
+    tCtx.fillStyle = '#FFFFFF';
+    tCtx.font = font;
+    return tCtx.fillText(text, 450, 400);
   }, [text])
 
   const draw = (image, x, y, w, h) => {
-    ctx.clearRect(x, y, w, h);
-    ctx.drawImage(image, x, y, w, h);
-    return isBoxLoaded ? ctx.drawImage(box.current, 320, 250, boxWidth, boxHeight) : null;
+    pCtx.clearRect(x, y, w, h);
+    pCtx.drawImage(image, x, y, w, h);
+    return isBoxLoaded ? pCtx.drawImage(box.current, 320, 250, boxWidth, boxHeight) : null;
   }
 
   return (
-    <div>
+    <div id='canvasDiv'>
       <canvas 
-        ref={canvas} 
-        id='canvas'
+        ref={portraitCanvas} 
+        id='portraitCanvas'
+        width='1300' 
+        height='500' 
+      >
+        Sorry! This generator requires a browser that supports HTML5!
+      </canvas>
+      <canvas 
+        ref={textCanvas} 
+        id='textCanvas'
         width='1300' 
         height='500' 
       >

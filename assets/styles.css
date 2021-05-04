@@ -25,11 +25,27 @@
 }
 
 body {
+  font-family: 'Optima nova LT';
   background-color: #FF0505;
+  display: flex;
+  flex-direction: column;
 }
 
-canvas {
-  /* background-color: white; */
+/* Image and text canvases */
+
+#canvasDiv {
+  position: relative;
+}
+
+#portraitCanvas {
+  z-index: 0;
+}
+
+#textCanvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
 }
 
 /* Text and Tools */
@@ -79,6 +95,10 @@ textarea {
      -moz-box-shadow: inset 0px 0px 5px #5f5b5b;
           box-shadow: inset 0px 0px 5px #5f5b5b;
    outline: none;
+}
+
+.fonts:hover {
+  cursor: pointer;
 }
 
 #vanillaFont {
