@@ -27,13 +27,13 @@ const ImageCanvas = ({ portrait, text, font }) => {
     tCtx.clearRect(0, 0, 2000, 2000);
     tCtx.fillStyle = '#FFFFFF';
     return tCtx.fillText(text, 450, 400);
-  }, [text])
+  }, [text]);
 
   const draw = (image, x, y, w, h) => {
     pCtx.clearRect(x, y, w, h);
     pCtx.drawImage(image, x, y, w, h);
     return isBoxLoaded ? pCtx.drawImage(box.current, 320, 250, boxWidth, boxHeight) : null;
-  }
+  };
 
   return (
     <div id='canvasDiv'>
