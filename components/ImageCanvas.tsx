@@ -19,13 +19,13 @@ const ImageCanvas = ({ portrait, text, font }) => {
   // Passing in a dependency makes it seem like it, considering the error message. Look into this...
   useEffect(() => {
     pCtx = portraitCanvas.current.getContext('2d');
-    return tCtx = textCanvas.current.getContext('2d');
+    tCtx = textCanvas.current.getContext('2d');
+    return tCtx.font = font;
   });
 
   useEffect(() => {
     tCtx.clearRect(0, 0, 2000, 2000);
     tCtx.fillStyle = '#FFFFFF';
-    tCtx.font = font;
     return tCtx.fillText(text, 450, 400);
   }, [text])
 
