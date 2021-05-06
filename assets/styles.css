@@ -51,6 +51,7 @@ body {
 /* Text and Tools */
 #textField {
   font-family: 'sans-serif';
+  white-space: nowrap;
 }
 
 #imageTools {
