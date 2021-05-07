@@ -25,9 +25,10 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
     <>
       <textarea 
         id='textField' 
+        placeholder='Enter dialogue here...'
         autoFocus={true}
         rows={3}
-        cols={50}
+        cols={40}
         defaultValue={text}
         onChange={(e) => setText(e.target.value)} 
       />  

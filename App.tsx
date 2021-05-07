@@ -8,7 +8,7 @@ const App = () => {
   const [char, setChar] = useState<string>('ann');
   const [emote, setEmote]= useState<string>('netural');
   const [costume, setCostume] = useState<string>('uniform');
-  const [text, setText] = useState<string>('Take your heart');
+  const [text, setText] = useState<string>('');
   const [font, setFont] = useState<string>('32pt KoreanKRSM');
 
   const [portrait, setPortrait] = 
