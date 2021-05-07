@@ -51,6 +51,7 @@ body {
 /* Text and Tools */
 #textField {
   font-family: 'sans-serif';
+  resize: none;
   white-space: nowrap;
 }
 
@@ -63,10 +64,6 @@ body {
 
 .hidden {
   display: none;
-}
-
-textarea {
-  resize: none;
 }
 
 #charMenu {
