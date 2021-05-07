@@ -20,13 +20,18 @@ const ImageCanvas = ({ portrait, text, font }) => {
   useEffect(() => {
     pCtx = portraitCanvas.current.getContext('2d');
     tCtx = textCanvas.current.getContext('2d');
+    tCtx.fillStyle = '#FFFFFF';
     return tCtx.font = font;
   });
 
   useEffect(() => {
-    tCtx.clearRect(0, 0, 2000, 2000);
-    tCtx.fillStyle = '#FFFFFF';
-    return tCtx.fillText(text, 450, 400);
+    tCtx.clearRect(0, 0, 1300, 500);
+    const rows = text.split('\n');
+    if (!rows[1]) rows[1] = '';
+    if (!rows[2]) rows[2] = '';
+    tCtx.fillText(rows[0], 475, 375);
+    tCtx.fillText(rows[1], 475, 400);
+    return tCtx.fillText(rows[2], 475, 425);
   }, [text]);
 
   const draw = (image, x, y, w, h) => {
