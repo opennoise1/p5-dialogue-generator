@@ -5,9 +5,9 @@ import TextAndTools from './components/TextAndTools';
 const App = () => {
   // Initial values of all three menus, which will in turn determine our portrait
   // TODO: Randomize these initial values upon load!
-  const [char, setChar] = useState<string>('ann');
-  const [emote, setEmote]= useState<string>('netural');
-  const [costume, setCostume] = useState<string>('uniform');
+  const [char, setChar] = useState<string>('Ann');
+  const [emote, setEmote]= useState<string>('Netural');
+  const [costume, setCostume] = useState<string>('Uniform');
   const [text, setText] = useState<string>('');
   const [font, setFont] = useState<string>('32pt KoreanKRSM');
 
