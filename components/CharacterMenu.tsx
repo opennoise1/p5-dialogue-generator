@@ -12,12 +12,12 @@ const CharacterMenu = ({ setChar }) => {
       <option value='futaba'>Futaba Sakura</option>
       <option value='akechi'>Goro Akechi</option>
       <option value='haru'>Haru Okumura</option>
-      <option value='yoshizawa'>Kasumi Yoshizawa</option>
       <option value='makoto'>Makoto Niijima</option>
       <option value='morgana'>Morgana</option>
       <option value='ryuji'>Ryuji Sakamoto</option>
-      <option value='saw'>Sae Niijima</option>
+      <option value='sae'>Sae Niijima</option>
       <option value='sojiro'>Sojiro Sakura</option>
+      <option value='sumire'>Sumire Yoshizawa</option>
       <option value='yusuke'>Yusuke Kitagawa</option>
     </select>
   )
