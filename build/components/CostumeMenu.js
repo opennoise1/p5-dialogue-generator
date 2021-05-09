@@ -4,171 +4,171 @@ const CostumeMenu = ({emote, setCostume}) => {
     switch (emotion) {
       case "neutral":
         return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("option", {
-          value: "blazer"
+          value: "Blazer"
         }, "Blazer"), /* @__PURE__ */ React.createElement("option", {
-          value: "blue"
+          value: "Blue"
         }, "Blue"), /* @__PURE__ */ React.createElement("option", {
-          value: "coat"
+          value: "Coat"
         }, "Coat"), /* @__PURE__ */ React.createElement("option", {
-          value: "pea"
+          value: "Pea"
         }, "Pea Coat"), /* @__PURE__ */ React.createElement("option", {
-          value: "shirt"
+          value: "Shirt"
         }, "Shirt"), /* @__PURE__ */ React.createElement("option", {
-          value: "uniform"
+          value: "Uniform"
         }, "Uniform"), /* @__PURE__ */ React.createElement("option", {
-          value: "fox"
+          value: "Fox"
         }, "Fox"), /* @__PURE__ */ React.createElement("option", {
-          value: "swimsuit"
+          value: "Swimsuit"
         }, "Swimsuit"), /* @__PURE__ */ React.createElement("option", {
-          value: "shirtless"
+          value: "Shirtless"
         }, "Shirtless"), /* @__PURE__ */ React.createElement("option", {
-          value: "yukata"
+          value: "Yukata"
         }, "Yukata"), /* @__PURE__ */ React.createElement("option", {
-          value: "exercise"
+          value: "Exercise"
         }, "Exercise"));
       case "happy":
         return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("option", {
-          value: "blazer"
+          value: "Blazer"
         }, "Blazer"), /* @__PURE__ */ React.createElement("option", {
-          value: "blue"
+          value: "Blue"
         }, "Blue"), /* @__PURE__ */ React.createElement("option", {
-          value: "coat"
+          value: "Coat"
         }, "Coat"), /* @__PURE__ */ React.createElement("option", {
-          value: "pea"
+          value: "Pea"
         }, "Pea Coat"), /* @__PURE__ */ React.createElement("option", {
-          value: "shirt"
+          value: "Shirt"
         }, "Shirt"), /* @__PURE__ */ React.createElement("option", {
-          value: "uniform"
+          value: "Uniform"
         }, "Uniform"), /* @__PURE__ */ React.createElement("option", {
-          value: "fox"
+          value: "Fox"
         }, "Fox"), /* @__PURE__ */ React.createElement("option", {
-          value: "swimsuit"
+          value: "Swimsuit"
         }, "Swimsuit"), /* @__PURE__ */ React.createElement("option", {
-          value: "shirtless"
+          value: "Shirtless"
         }, "Shirtless"), /* @__PURE__ */ React.createElement("option", {
-          value: "yukata"
+          value: "Yukata"
         }, "Yukata"), /* @__PURE__ */ React.createElement("option", {
-          value: "exercise"
+          value: "Exercise"
         }, "Exercise"));
       case "angry":
         return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("option", {
-          value: "blazer"
+          value: "Blazer"
         }, "Blazer"), /* @__PURE__ */ React.createElement("option", {
-          value: "blue"
+          value: "Blue"
         }, "Blue"), /* @__PURE__ */ React.createElement("option", {
-          value: "coat"
+          value: "Coat"
         }, "Coat"), /* @__PURE__ */ React.createElement("option", {
-          value: "pea"
+          value: "Pea"
         }, "Pea Coat"), /* @__PURE__ */ React.createElement("option", {
-          value: "shirt"
+          value: "Shirt"
         }, "Shirt"), /* @__PURE__ */ React.createElement("option", {
-          value: "uniform"
+          value: "Uniform"
         }, "Uniform"), /* @__PURE__ */ React.createElement("option", {
-          value: "fox"
+          value: "Fox"
         }, "Fox"), /* @__PURE__ */ React.createElement("option", {
-          value: "swimsuit"
+          value: "Swimsuit"
         }, "Swimsuit"), /* @__PURE__ */ React.createElement("option", {
-          value: "shirtless"
+          value: "Shirtless"
         }, "Shirtless"), /* @__PURE__ */ React.createElement("option", {
-          value: "yukata"
+          value: "Yukata"
         }, "Yukata"), /* @__PURE__ */ React.createElement("option", {
-          value: "exercise"
+          value: "Exercise"
         }, "Exercise"));
       case "shocked":
         return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("option", {
-          value: "blazer"
+          value: "Blazer"
         }, "Blazer"), /* @__PURE__ */ React.createElement("option", {
-          value: "blue"
+          value: "Blue"
         }, "Blue"), /* @__PURE__ */ React.createElement("option", {
-          value: "coat"
+          value: "Coat"
         }, "Coat"), /* @__PURE__ */ React.createElement("option", {
-          value: "pea"
+          value: "Pea"
         }, "Pea Coat"), /* @__PURE__ */ React.createElement("option", {
-          value: "shirt"
+          value: "Shirt"
         }, "Shirt"), /* @__PURE__ */ React.createElement("option", {
-          value: "uniform"
+          value: "Uniform"
         }, "Uniform"), /* @__PURE__ */ React.createElement("option", {
-          value: "fox"
+          value: "Fox"
         }, "Fox"), /* @__PURE__ */ React.createElement("option", {
-          value: "swimsuit"
+          value: "Swimsuit"
         }, "Swimsuit"), /* @__PURE__ */ React.createElement("option", {
-          value: "shirtless"
+          value: "Shirtless"
         }, "Shirtless"), /* @__PURE__ */ React.createElement("option", {
-          value: "yukata"
+          value: "Yukata"
         }, "Yukata"), /* @__PURE__ */ React.createElement("option", {
-          value: "exercise"
+          value: "Exercise"
         }, "Exercise"));
       case "hurt":
         return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("option", {
-          value: "blazer"
+          value: "Blazer"
         }, "Blazer"), /* @__PURE__ */ React.createElement("option", {
-          value: "blue"
+          value: "Blue"
         }, "Blue"), /* @__PURE__ */ React.createElement("option", {
-          value: "coat"
+          value: "Coat"
         }, "Coat"), /* @__PURE__ */ React.createElement("option", {
-          value: "pea"
+          value: "Pea"
         }, "Pea Coat"), /* @__PURE__ */ React.createElement("option", {
-          value: "shirt"
+          value: "Shirt"
         }, "Shirt"), /* @__PURE__ */ React.createElement("option", {
-          value: "uniform"
+          value: "Uniform"
         }, "Uniform"), /* @__PURE__ */ React.createElement("option", {
-          value: "fox"
+          value: "Fox"
         }, "Fox"), /* @__PURE__ */ React.createElement("option", {
-          value: "swimsuit"
+          value: "Swimsuit"
         }, "Swimsuit"), /* @__PURE__ */ React.createElement("option", {
-          value: "shirtless"
+          value: "Shirtless"
         }, "Shirtless"), /* @__PURE__ */ React.createElement("option", {
-          value: "yukata"
+          value: "Yukata"
         }, "Yukata"), /* @__PURE__ */ React.createElement("option", {
-          value: "exercise"
+          value: "Exercise"
         }, "Exercise"));
       case "sad":
         return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("option", {
-          value: "blazer"
+          value: "Blazer"
         }, "Blazer"), /* @__PURE__ */ React.createElement("option", {
-          value: "blue"
+          value: "Blue"
         }, "Blue"), /* @__PURE__ */ React.createElement("option", {
-          value: "coat"
+          value: "Coat"
         }, "Coat"), /* @__PURE__ */ React.createElement("option", {
-          value: "pea"
+          value: "Pea"
         }, "Pea Coat"), /* @__PURE__ */ React.createElement("option", {
-          value: "shirt"
+          value: "Shirt"
         }, "Shirt"), /* @__PURE__ */ React.createElement("option", {
-          value: "uniform"
+          value: "Uniform"
         }, "Uniform"), /* @__PURE__ */ React.createElement("option", {
-          value: "fox"
+          value: "Fox"
         }, "Fox"), /* @__PURE__ */ React.createElement("option", {
-          value: "swimsuit"
+          value: "Swimsuit"
         }, "Swimsuit"), /* @__PURE__ */ React.createElement("option", {
-          value: "shirtless"
+          value: "Shirtless"
         }, "Shirtless"), /* @__PURE__ */ React.createElement("option", {
-          value: "yukata"
+          value: "Yukata"
         }, "Yukata"), /* @__PURE__ */ React.createElement("option", {
-          value: "exercise"
+          value: "Exercise"
         }, "Exercise"));
       default:
         return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("option", {
-          value: "blazer"
+          value: "Blazer"
         }, "Blazer"), /* @__PURE__ */ React.createElement("option", {
-          value: "blue"
+          value: "Blue"
         }, "Blue"), /* @__PURE__ */ React.createElement("option", {
-          value: "coat"
+          value: "Coat"
         }, "Coat"), /* @__PURE__ */ React.createElement("option", {
-          value: "pea"
+          value: "Pea"
         }, "Pea Coat"), /* @__PURE__ */ React.createElement("option", {
-          value: "shirt"
+          value: "Shirt"
         }, "Shirt"), /* @__PURE__ */ React.createElement("option", {
-          value: "uniform"
+          value: "Uniform"
         }, "Uniform"), /* @__PURE__ */ React.createElement("option", {
-          value: "fox"
+          value: "Fox"
         }, "Fox"), /* @__PURE__ */ React.createElement("option", {
-          value: "swimsuit"
+          value: "Swimsuit"
         }, "Swimsuit"), /* @__PURE__ */ React.createElement("option", {
-          value: "shirtless"
+          value: "Shirtless"
         }, "Shirtless"), /* @__PURE__ */ React.createElement("option", {
-          value: "yukata"
+          value: "Yukata"
         }, "Yukata"), /* @__PURE__ */ React.createElement("option", {
-          value: "exercise"
+          value: "Exercise"
         }, "Exercise"));
     }
   };

@@ -7,113 +7,113 @@ const CostumeMenu = ({ emote, setCostume }) => {
       case 'neutral':
         return (
           <>
-            <option value='blazer'>Blazer</option>
-            <option value='blue'>Blue</option>
-            <option value='coat'>Coat</option>
-            <option value='pea'>Pea Coat</option>
-            <option value='shirt'>Shirt</option>
-            <option value='uniform'>Uniform</option>
-            <option value='fox'>Fox</option>
-            <option value='swimsuit'>Swimsuit</option>
-            <option value='shirtless'>Shirtless</option>
-            <option value='yukata'>Yukata</option>
-            <option value='exercise'>Exercise</option>
+            <option value='Blazer'>Blazer</option>
+            <option value='Blue'>Blue</option>
+            <option value='Coat'>Coat</option>
+            <option value='Pea'>Pea Coat</option>
+            <option value='Shirt'>Shirt</option>
+            <option value='Uniform'>Uniform</option>
+            <option value='Fox'>Fox</option>
+            <option value='Swimsuit'>Swimsuit</option>
+            <option value='Shirtless'>Shirtless</option>
+            <option value='Yukata'>Yukata</option>
+            <option value='Exercise'>Exercise</option>
           </>
         )
       case 'happy':
         return (
           <>
-            <option value='blazer'>Blazer</option>
-            <option value='blue'>Blue</option>
-            <option value='coat'>Coat</option>
-            <option value='pea'>Pea Coat</option>
-            <option value='shirt'>Shirt</option>
-            <option value='uniform'>Uniform</option>
-            <option value='fox'>Fox</option>
-            <option value='swimsuit'>Swimsuit</option>
-            <option value='shirtless'>Shirtless</option>
-            <option value='yukata'>Yukata</option>
-            <option value='exercise'>Exercise</option>
+            <option value='Blazer'>Blazer</option>
+            <option value='Blue'>Blue</option>
+            <option value='Coat'>Coat</option>
+            <option value='Pea'>Pea Coat</option>
+            <option value='Shirt'>Shirt</option>
+            <option value='Uniform'>Uniform</option>
+            <option value='Fox'>Fox</option>
+            <option value='Swimsuit'>Swimsuit</option>
+            <option value='Shirtless'>Shirtless</option>
+            <option value='Yukata'>Yukata</option>
+            <option value='Exercise'>Exercise</option>
           </>
         )
       case 'angry':
         return (
           <>
-            <option value='blazer'>Blazer</option>
-            <option value='blue'>Blue</option>
-            <option value='coat'>Coat</option>
-            <option value='pea'>Pea Coat</option>
-            <option value='shirt'>Shirt</option>
-            <option value='uniform'>Uniform</option>
-            <option value='fox'>Fox</option>
-            <option value='swimsuit'>Swimsuit</option>
-            <option value='shirtless'>Shirtless</option>
-            <option value='yukata'>Yukata</option>
-            <option value='exercise'>Exercise</option>
+            <option value='Blazer'>Blazer</option>
+            <option value='Blue'>Blue</option>
+            <option value='Coat'>Coat</option>
+            <option value='Pea'>Pea Coat</option>
+            <option value='Shirt'>Shirt</option>
+            <option value='Uniform'>Uniform</option>
+            <option value='Fox'>Fox</option>
+            <option value='Swimsuit'>Swimsuit</option>
+            <option value='Shirtless'>Shirtless</option>
+            <option value='Yukata'>Yukata</option>
+            <option value='Exercise'>Exercise</option>
           </>
         )
       case 'shocked':
         return (
           <>
-            <option value='blazer'>Blazer</option>
-            <option value='blue'>Blue</option>
-            <option value='coat'>Coat</option>
-            <option value='pea'>Pea Coat</option>
-            <option value='shirt'>Shirt</option>
-            <option value='uniform'>Uniform</option>
-            <option value='fox'>Fox</option>
-            <option value='swimsuit'>Swimsuit</option>
-            <option value='shirtless'>Shirtless</option>
-            <option value='yukata'>Yukata</option>
-            <option value='exercise'>Exercise</option>
+            <option value='Blazer'>Blazer</option>
+            <option value='Blue'>Blue</option>
+            <option value='Coat'>Coat</option>
+            <option value='Pea'>Pea Coat</option>
+            <option value='Shirt'>Shirt</option>
+            <option value='Uniform'>Uniform</option>
+            <option value='Fox'>Fox</option>
+            <option value='Swimsuit'>Swimsuit</option>
+            <option value='Shirtless'>Shirtless</option>
+            <option value='Yukata'>Yukata</option>
+            <option value='Exercise'>Exercise</option>
           </>
         )
       case 'hurt':
         return (
           <>
-            <option value='blazer'>Blazer</option>
-            <option value='blue'>Blue</option>
-            <option value='coat'>Coat</option>
-            <option value='pea'>Pea Coat</option>
-            <option value='shirt'>Shirt</option>
-            <option value='uniform'>Uniform</option>
-            <option value='fox'>Fox</option>
-            <option value='swimsuit'>Swimsuit</option>
-            <option value='shirtless'>Shirtless</option>
-            <option value='yukata'>Yukata</option>
-            <option value='exercise'>Exercise</option>
+            <option value='Blazer'>Blazer</option>
+            <option value='Blue'>Blue</option>
+            <option value='Coat'>Coat</option>
+            <option value='Pea'>Pea Coat</option>
+            <option value='Shirt'>Shirt</option>
+            <option value='Uniform'>Uniform</option>
+            <option value='Fox'>Fox</option>
+            <option value='Swimsuit'>Swimsuit</option>
+            <option value='Shirtless'>Shirtless</option>
+            <option value='Yukata'>Yukata</option>
+            <option value='Exercise'>Exercise</option>
           </>
         )
       case 'sad':
         return (
           <>
-            <option value='blazer'>Blazer</option>
-            <option value='blue'>Blue</option>
-            <option value='coat'>Coat</option>
-            <option value='pea'>Pea Coat</option>
-            <option value='shirt'>Shirt</option>
-            <option value='uniform'>Uniform</option>
-            <option value='fox'>Fox</option>
-            <option value='swimsuit'>Swimsuit</option>
-            <option value='shirtless'>Shirtless</option>
-            <option value='yukata'>Yukata</option>
-            <option value='exercise'>Exercise</option>
+            <option value='Blazer'>Blazer</option>
+            <option value='Blue'>Blue</option>
+            <option value='Coat'>Coat</option>
+            <option value='Pea'>Pea Coat</option>
+            <option value='Shirt'>Shirt</option>
+            <option value='Uniform'>Uniform</option>
+            <option value='Fox'>Fox</option>
+            <option value='Swimsuit'>Swimsuit</option>
+            <option value='Shirtless'>Shirtless</option>
+            <option value='Yukata'>Yukata</option>
+            <option value='Exercise'>Exercise</option>
           </>
         )
       default:
         return (
           <>
-            <option value='blazer'>Blazer</option>
-            <option value='blue'>Blue</option>
-            <option value='coat'>Coat</option>
-            <option value='pea'>Pea Coat</option>
-            <option value='shirt'>Shirt</option>
-            <option value='uniform'>Uniform</option>
-            <option value='fox'>Fox</option>
-            <option value='swimsuit'>Swimsuit</option>
-            <option value='shirtless'>Shirtless</option>
-            <option value='yukata'>Yukata</option>
-            <option value='exercise'>Exercise</option>
+            <option value='Blazer'>Blazer</option>
+            <option value='Blue'>Blue</option>
+            <option value='Coat'>Coat</option>
+            <option value='Pea'>Pea Coat</option>
+            <option value='Shirt'>Shirt</option>
+            <option value='Uniform'>Uniform</option>
+            <option value='Fox'>Fox</option>
+            <option value='Swimsuit'>Swimsuit</option>
+            <option value='Shirtless'>Shirtless</option>
+            <option value='Yukata'>Yukata</option>
+            <option value='Exercise'>Exercise</option>
           </>
         )
     }

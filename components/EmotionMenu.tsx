@@ -2,12 +2,12 @@ import React from 'react';
 
 const baseEmotions = 
   <>
-    <option value='neutral'>Neutral</option>
-    <option value='happy'>Happy</option>
-    <option value='angry'>Angry</option>
-    <option value='shocked'>Shocked</option>
-    <option value='hurt'>Hurt</option>
-    <option value='sad'>Sad</option>
+    <option value='Neutral'>Neutral</option>
+    <option value='Happy'>Happy</option>
+    <option value='Angry'>Angry</option>
+    <option value='Shocked'>Shocked</option>
+    <option value='Hurt'>Hurt</option>
+    <option value='Sad'>Sad</option>
   </>;
 
 const EmotionMenu = ({ char, setEmote }) => {

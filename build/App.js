@@ -5,7 +5,8 @@ const App = () => {
   const [char, setChar] = useState("ann");
   const [emote, setEmote] = useState("netural");
   const [costume, setCostume] = useState("uniform");
-  const [text, setText] = useState("Take your heart");
+  const [text, setText] = useState("");
+  const [font, setFont] = useState("32pt KoreanKRSM");
   const [portrait, setPortrait] = useState(`../images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);
   const appProps = {
     char,
@@ -16,7 +17,9 @@ const App = () => {
     setCostume,
     text,
     setText,
-    setPortrait
+    setPortrait,
+    font,
+    setFont
   };
   return /* @__PURE__ */ React.createElement("div", {
     id: "imageTools"

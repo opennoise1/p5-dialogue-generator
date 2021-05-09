@@ -8,17 +8,17 @@ const CharacterMenu = ({ setChar }) => {
 
   return (
     <select id='charMenu' name='characters' onChange={switchChar} className='menus'>
-      <option value='ann'>Ann Takamaki</option>
-      <option value='futaba'>Futaba Sakura</option>
-      <option value='akechi'>Goro Akechi</option>
-      <option value='haru'>Haru Okumura</option>
-      <option value='makoto'>Makoto Niijima</option>
-      <option value='morgana'>Morgana</option>
-      <option value='ryuji'>Ryuji Sakamoto</option>
-      <option value='sae'>Sae Niijima</option>
-      <option value='sojiro'>Sojiro Sakura</option>
-      <option value='sumire'>Sumire Yoshizawa</option>
-      <option value='yusuke'>Yusuke Kitagawa</option>
+      <option value='Ann'>Ann Takamaki</option>
+      <option value='Futaba'>Futaba Sakura</option>
+      <option value='Akechi'>Goro Akechi</option>
+      <option value='Haru'>Haru Okumura</option>
+      <option value='Makoto'>Makoto Niijima</option>
+      <option value='Morgana'>Morgana</option>
+      <option value='Ryuji'>Ryuji Sakamoto</option>
+      <option value='Sae'>Sae Niijima</option>
+      <option value='Sojiro'>Sojiro Sakura</option>
+      <option value='Sumire'>Sumire Yoshizawa</option>
+      <option value='Yusuke'>Yusuke Kitagawa</option>
     </select>
   )
 }

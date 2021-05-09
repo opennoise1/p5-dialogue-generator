@@ -1,16 +1,16 @@
 import React from "../_snowpack/pkg/react.js";
 const baseEmotions = /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("option", {
-  value: "neutral"
+  value: "Neutral"
 }, "Neutral"), /* @__PURE__ */ React.createElement("option", {
-  value: "happy"
+  value: "Happy"
 }, "Happy"), /* @__PURE__ */ React.createElement("option", {
-  value: "angry"
+  value: "Angry"
 }, "Angry"), /* @__PURE__ */ React.createElement("option", {
-  value: "shocked"
+  value: "Shocked"
 }, "Shocked"), /* @__PURE__ */ React.createElement("option", {
-  value: "hurt"
+  value: "Hurt"
 }, "Hurt"), /* @__PURE__ */ React.createElement("option", {
-  value: "sad"
+  value: "Sad"
 }, "Sad"));
 const EmotionMenu = ({char, setEmote}) => {
   const emoteMenuCreator = (currChar) => {

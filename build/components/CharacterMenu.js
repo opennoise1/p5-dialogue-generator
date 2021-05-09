@@ -9,27 +9,27 @@ const CharacterMenu = ({setChar}) => {
     onChange: switchChar,
     className: "menus"
   }, /* @__PURE__ */ React.createElement("option", {
-    value: "ann"
+    value: "Ann"
   }, "Ann Takamaki"), /* @__PURE__ */ React.createElement("option", {
-    value: "futaba"
+    value: "Futaba"
   }, "Futaba Sakura"), /* @__PURE__ */ React.createElement("option", {
-    value: "akechi"
+    value: "Akechi"
   }, "Goro Akechi"), /* @__PURE__ */ React.createElement("option", {
-    value: "haru"
+    value: "Haru"
   }, "Haru Okumura"), /* @__PURE__ */ React.createElement("option", {
-    value: "yoshizawa"
-  }, "Kasumi Yoshizawa"), /* @__PURE__ */ React.createElement("option", {
-    value: "makoto"
+    value: "Makoto"
   }, "Makoto Niijima"), /* @__PURE__ */ React.createElement("option", {
-    value: "morgana"
+    value: "Morgana"
   }, "Morgana"), /* @__PURE__ */ React.createElement("option", {
-    value: "ryuji"
+    value: "Ryuji"
   }, "Ryuji Sakamoto"), /* @__PURE__ */ React.createElement("option", {
-    value: "saw"
+    value: "Sae"
   }, "Sae Niijima"), /* @__PURE__ */ React.createElement("option", {
-    value: "sojiro"
+    value: "Sojiro"
   }, "Sojiro Sakura"), /* @__PURE__ */ React.createElement("option", {
-    value: "yusuke"
+    value: "Sumire"
+  }, "Sumire Yoshizawa"), /* @__PURE__ */ React.createElement("option", {
+    value: "Yusuke"
   }, "Yusuke Kitagawa"));
 };
 export default CharacterMenu;
