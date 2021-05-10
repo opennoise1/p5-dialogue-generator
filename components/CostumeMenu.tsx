@@ -132,8 +132,6 @@ const CostumeMenu = ({ char, emote, setCostume, costumeMenus }) => {
     });
   }
 
-  console.log(costumeMenus);
-
   const switchCostume = (e: any) => {
     return setCostume(e.target.value);
   }

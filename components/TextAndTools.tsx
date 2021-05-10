@@ -21,6 +21,21 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
     setPortrait,
   }
 
+  const downloadImage = () => {
+    console.log('hi');
+    const portraitCanvas: HTMLCanvasElement = 
+      document.getElementById('portraitCanvas') as HTMLCanvasElement;
+    const textCanvas: HTMLCanvasElement = 
+      document.getElementById('textCanvas') as HTMLCanvasElement;
+    
+    const pCtx: CanvasRenderingContext2D = portraitCanvas.getContext('2d');
+    pCtx.drawImage(textCanvas, 0, 0, 1300, 500);
+    const link = document.createElement('a');
+    link.download = `${char}-dialogue.png`;
+    link.href = portraitCanvas.toDataURL("image/png");
+    link.click();
+  };
+
   return (
     <>
       <textarea 
@@ -39,6 +54,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
         <div id='vanillaFont' className='fonts' onClick={() => setFont('32pt KoreanKRSM')}>KoreanKRSM &#40;Persona 5&#41;</div>
         <div id='royalFont' className='fonts' onClick={() => setFont('20pt Optima nova LT')}>Optima Nova Black &#40;Persona 5 Royal&#41;</div>
       </div>
+      <div id='download' onClick={downloadImage}>Download Dialogue</div>
     </>
   )
 }
