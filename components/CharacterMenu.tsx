@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const CharacterMenu = ({ setChar }) => {
+const CharacterMenu = ({ char, setChar, setEmoteMenus }) => {
 
   const switchChar = (e: any) => {
-    return setChar(e.target.value);
-  }
+    setChar(e.target.value);
+  };
+
+  useEffect(() => {
+    fetch('http://localhost:3000/emotions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 'char': `../images/portraits/${char}/` })
+    })
+    .then(data => data.json())
+    .then(parsed => setEmoteMenus(parsed))
+    .catch(err => console.log(err));
+  }, [char]);
 
   return (
     <select id='charMenu' name='characters' onChange={switchChar} className='menus'>
@@ -20,7 +33,7 @@ const CharacterMenu = ({ setChar }) => {
       <option value='Sumire'>Sumire Yoshizawa</option>
       <option value='Yusuke'>Yusuke Kitagawa</option>
     </select>
-  )
+  );
 }
 
 export default CharacterMenu;
