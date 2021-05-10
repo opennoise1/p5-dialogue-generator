@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CostumeMenu = ({ emote, setCostume }) => {
+const CostumeMenu = ({ char, emote, setCostume, costumeMenus }) => {
 
   const costumeMenuCreator = (emotion) => {
     switch(emotion) {
@@ -119,13 +119,28 @@ const CostumeMenu = ({ emote, setCostume }) => {
     }
   }
 
+  let charCostumes = [];
+
+  if (costumeMenus.length) {
+    charCostumes = costumeMenus.map(costume => {
+      return (
+        <option 
+          key={`${char}: ${costume}`} 
+          value={costume}>{costume}
+        </option>
+      );
+    });
+  }
+
+  console.log(costumeMenus);
+
   const switchCostume = (e: any) => {
     return setCostume(e.target.value);
   }
 
   return (
     <select id='costumeMenu' name='costumes' onChange={switchCostume} className='menus'>
-      {costumeMenuCreator(emote)}
+      {charCostumes}
     </select>
   )
 }
