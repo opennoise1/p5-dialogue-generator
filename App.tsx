@@ -7,7 +7,7 @@ const App = () => {
   // TODO: Randomize these initial values upon load!
   const [char, setChar] = useState<string>('Ann');
   const [emote, setEmote]= useState<string>('Netural');
-  const [costume, setCostume] = useState<string>('Uniform');
+  const [costume, setCostume] = useState<string>('Winter Uniform');
   const [text, setText] = useState<string>('');
   const [font, setFont] = useState<string>('32pt KoreanKRSM');
 
