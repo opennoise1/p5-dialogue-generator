@@ -21,19 +21,24 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
     setPortrait,
   }
 
-  const downloadImage = () => {
-    console.log('hi');
+  function downloadImage(): void {
+    const downloadCanvas: HTMLCanvasElement = document.createElement('canvas');
+    downloadCanvas.width = 1300;
+    downloadCanvas.height = 500;
+
     const portraitCanvas: HTMLCanvasElement = 
       document.getElementById('portraitCanvas') as HTMLCanvasElement;
     const textCanvas: HTMLCanvasElement = 
       document.getElementById('textCanvas') as HTMLCanvasElement;
     
-    const pCtx: CanvasRenderingContext2D = portraitCanvas.getContext('2d');
-    pCtx.drawImage(textCanvas, 0, 0, 1300, 500);
+    const dCtx: CanvasRenderingContext2D = downloadCanvas.getContext('2d');
+    dCtx.drawImage(portraitCanvas, 0, 0, 1300, 500);
+    dCtx.drawImage(textCanvas, 0, 0, 1300, 500);
     const link = document.createElement('a');
-    link.download = `${char}-dialogue.png`;
-    link.href = portraitCanvas.toDataURL('image/png');
+    link.download = `${char}-${text}.png`;
+    link.href = downloadCanvas.toDataURL('image/png');
     link.click();
+    return;
   };
 
   return (
@@ -57,6 +62,6 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
       <div id='download' onClick={downloadImage}>Download Dialogue</div>
     </>
   )
-}
+};
 
 export default TextAndTools;
