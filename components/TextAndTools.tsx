@@ -32,7 +32,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
     pCtx.drawImage(textCanvas, 0, 0, 1300, 500);
     const link = document.createElement('a');
     link.download = `${char}-dialogue.png`;
-    link.href = portraitCanvas.toDataURL("image/png");
+    link.href = portraitCanvas.toDataURL('image/png');
     link.click();
   };
 
