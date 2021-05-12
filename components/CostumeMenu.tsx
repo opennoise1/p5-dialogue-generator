@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CostumeMenu = ({ char, emote, setCostume, costumeMenus }) => {
+const CostumeMenu = ({ char, setCostume, costumeMenus }) => {
   let charCostumes = [];
 
   if (costumeMenus.length) {
