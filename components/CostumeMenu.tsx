@@ -8,7 +8,9 @@ const CostumeMenu = ({ char, setCostume, costumeMenus }) => {
       return (
         <option 
           key={`${char}: ${costume}`} 
-          value={costume}>{costume}
+          value={costume}
+        >
+          {costume}
         </option>
       );
     });
