@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FormEvent, SyntheticEvent } from 'react';
 
 const CostumeMenu = ({ char, setCostume, costumeMenus }) => {
   let charCostumes = [];
@@ -6,18 +6,15 @@ const CostumeMenu = ({ char, setCostume, costumeMenus }) => {
   if (costumeMenus.length) {
     charCostumes = costumeMenus.map(costume => {
       return (
-        <option 
-          key={`${char}: ${costume}`} 
-          value={costume}
-        >
+        <option key={`${char}: ${costume}`} value={costume}>
           {costume}
         </option>
       );
     });
   }
 
-  const switchCostume = (e: any) => {
-    return setCostume(e.target.value);
+  const switchCostume = (e: FormEvent<HTMLSelectElement>) => {
+    return setCostume((e.target as HTMLSelectElement).value);
   }
 
   return (
