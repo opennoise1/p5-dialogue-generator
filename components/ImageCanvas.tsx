@@ -9,14 +9,7 @@ const ImageCanvas = ({ portrait, text, font }) => {
   let pCtx: CanvasRenderingContext2D;
   let tCtx: CanvasRenderingContext2D;
 
-  // Hacky way of preserving aspect ratios -- refactor this so it's more dynamic!
-  const boxHeight: number = 250;
-  const boxRatio: number = 800 / 226;
-  const boxWidth: number = boxHeight * boxRatio;
-
-  // preps the canvas upon each render by creating a 2D "drawing context" for it
-  // TODO: Does a new context need to be drawn on EVERY render? 
-  // Passing in a dependency makes it seem like it, considering the error message. Look into this...
+  // preps the canvases upon each render by creating a 2D "drawing context" for it
   useEffect(() => {
     pCtx = portraitCanvas.current.getContext('2d');
     tCtx = textCanvas.current.getContext('2d');
@@ -35,6 +28,10 @@ const ImageCanvas = ({ portrait, text, font }) => {
   }, [text]);
 
   const draw = (image, x, y, w, h) => {
+    // Hacky way of preserving aspect ratios -- refactor this so it's more dynamic!
+    const boxHeight: number = 250;
+    const boxRatio: number = 800 / 226;
+    const boxWidth: number = boxHeight * boxRatio;
     pCtx.clearRect(x, y, w, h);
     pCtx.drawImage(image, x, y, w, h);
     return isBoxLoaded ? pCtx.drawImage(box.current, 320, 250, boxWidth, boxHeight) : null;
