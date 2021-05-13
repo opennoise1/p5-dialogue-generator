@@ -13,7 +13,7 @@ const CostumeMenu = ({ char, setCostume, costumeMenus }) => {
     });
   }
 
-  const switchCostume = (e: FormEvent<HTMLSelectElement>) => {
+  const switchCostume = (e: SyntheticEvent<HTMLSelectElement>) => {
     return setCostume((e.target as HTMLSelectElement).value);
   }
 
