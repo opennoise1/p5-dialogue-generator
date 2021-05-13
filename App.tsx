@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { DetailedHTMLProps, HTMLAttributes, useEffect, useState } from 'react';
 import ImageCanvas from './components/ImageCanvas'
 import TextAndTools from './components/TextAndTools';
 

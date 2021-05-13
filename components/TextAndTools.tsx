@@ -52,7 +52,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
         defaultValue={text}
         onChange={(e) => setText(e.target.value)} 
       />  
-      <div>
+      <div id='menus'>
         <Menus {...toolProps} />
       </div>
       <div id='buttonDiv'>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { MutableRefObject, useEffect, useRef, useState } from 'react';
 
 const ImageCanvas = ({ portrait, text, font }) => {
   const [isBoxLoaded, setBoxLoaded] = useState<boolean>(false);
@@ -27,7 +27,7 @@ const ImageCanvas = ({ portrait, text, font }) => {
     return tCtx.fillText(rows[2], 475, 425);
   }, [text]);
 
-  const draw = (image, x, y, w, h) => {
+  const draw = (image: CanvasImageSource, x: number, y: number, w: number, h: number) => {
     // Hacky way of preserving aspect ratios -- refactor this so it's more dynamic!
     const boxHeight: number = 250;
     const boxRatio: number = 800 / 226;
