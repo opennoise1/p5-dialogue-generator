@@ -9,7 +9,7 @@ const App = () => {
   const [emote, setEmote]= useState<string>('Netural');
   const [costume, setCostume] = useState<string>('Winter Uniform');
   const [text, setText] = useState<string>('');
-  const [font, setFont] = useState<string>('32pt KoreanKRSM');
+  const [font, setFont] = useState<string>('28pt KoreanKRSM');
 
   const [portrait, setPortrait] = 
     useState<string>(`../images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);

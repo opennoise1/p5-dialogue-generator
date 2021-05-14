@@ -56,8 +56,8 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
         <Menus {...toolProps} />
       </div>
       <div id='buttonDiv'>
-        <div id='vanillaFont' className='fonts' onClick={() => setFont('32pt KoreanKRSM')}>KoreanKRSM &#40;Persona 5&#41;</div>
-        <div id='royalFont' className='fonts' onClick={() => setFont('20pt Optima nova LT')}>Optima Nova Black &#40;Persona 5 Royal&#41;</div>
+        <div id='vanillaFont' className='fonts' onClick={() => setFont('28pt KoreanKRSM')}>KoreanKRSM &#40;Persona 5&#41;</div>
+        <div id='royalFont' className='fonts' onClick={() => setFont('18pt Optima nova LT')}>Optima Nova Black &#40;Persona 5 Royal&#41;</div>
       </div>
       <div id='download' onClick={downloadImage}>Download Dialogue</div>
     </>
