@@ -66,7 +66,7 @@ const ImageCanvas = ({ portrait, text, font }) => {
       />
       <img ref={box} 
         id='box'
-        src={'../images/dialoguebox.png'} 
+        src={'../images/db@2x.png'} 
         // Ensure box is loaded so we know it can be drawn on top of portrait
         onLoad={(() => setBoxLoaded(true))}
         className='hidden' 
