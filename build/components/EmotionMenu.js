@@ -1,32 +1,20 @@
-import React from "../_snowpack/pkg/react.js";
-const baseEmotions = /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("option", {
-  value: "Neutral"
-}, "Neutral"), /* @__PURE__ */ React.createElement("option", {
-  value: "Happy"
-}, "Happy"), /* @__PURE__ */ React.createElement("option", {
-  value: "Angry"
-}, "Angry"), /* @__PURE__ */ React.createElement("option", {
-  value: "Shocked"
-}, "Shocked"), /* @__PURE__ */ React.createElement("option", {
-  value: "Hurt"
-}, "Hurt"), /* @__PURE__ */ React.createElement("option", {
-  value: "Sad"
-}, "Sad"));
-const EmotionMenu = ({char, setEmote}) => {
-  const emoteMenuCreator = (currChar) => {
-    switch (currChar) {
-      case "ann":
-        return baseEmotions;
-      case "futaba":
-        return baseEmotions;
-      case "akechi":
-        return baseEmotions;
-      case "yusuke":
-        return baseEmotions;
-      default:
-        return baseEmotions;
-    }
-  };
+import React, {useEffect} from "../_snowpack/pkg/react.js";
+const EmotionMenu = ({char, emote, setEmote, emoteMenus, setCostumeMenus}) => {
+  const charEmotes = emoteMenus.map((emotion) => {
+    return /* @__PURE__ */ React.createElement("option", {
+      key: `${char}: ${emotion}`,
+      value: emotion
+    }, emotion);
+  });
+  useEffect(() => {
+    fetch("http://localhost:3000/costumes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({emotion: `../images/portraits/${char}/${emote}/`})
+    }).then((data) => data.json()).then((parsed) => setCostumeMenus(parsed)).catch((err) => console.log(err));
+  }, [emote]);
   const switchEmote = (e) => {
     return setEmote(e.target.value);
   };
@@ -35,6 +23,6 @@ const EmotionMenu = ({char, setEmote}) => {
     name: "emotions",
     onChange: switchEmote,
     className: "menus"
-  }, emoteMenuCreator(char));
+  }, charEmotes);
 };
 export default EmotionMenu;

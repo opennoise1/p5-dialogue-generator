@@ -1,14 +1,20 @@
-import React, {useEffect} from "../_snowpack/pkg/react.js";
+import React, {useState, useEffect} from "../_snowpack/pkg/react.js";
 import CharacterMenu from "./CharacterMenu.js";
 import EmotionMenu from "./EmotionMenu.js";
 import CostumeMenu from "./CostumeMenu.js";
 const Menus = ({char, setChar, emote, setEmote, costume, setCostume, setPortrait}) => {
+  const [emoteMenus, setEmoteMenus] = useState([]);
+  const [costumeMenus, setCostumeMenus] = useState([]);
   const menuProps = {
     char,
     emote,
     setChar,
     setEmote,
-    setCostume
+    setCostume,
+    emoteMenus,
+    setEmoteMenus,
+    costumeMenus,
+    setCostumeMenus
   };
   useEffect(() => {
     setPortrait(`../images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);

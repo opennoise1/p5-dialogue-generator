@@ -12,13 +12,13 @@
 }
 
 @font-face {
-  font-family: 'KoreanKRSM';
-  src: url('fonts/KoreanKRSM.eot');
-  src: url('fonts/KoreanKRSM.eot?#iefix') format('embedded-opentype'),
-      url('fonts/KoreanKRSM.woff2') format('woff2'),
-      url('fonts/KoreanKRSM.woff') format('woff'),
-      url('fonts/KoreanKRSM.ttf') format('truetype'),
-      url('fonts/KoreanKRSM.svg#KoreanKRSM') format('svg');
+  font-family: 'KoreaKRSM';
+  src: url('fonts/KoreaKRSM.eot');
+  src: url('fonts/KoreaKRSM.eot?#iefix') format('embedded-opentype'),
+      url('fonts/KoreaKRSM.woff2') format('woff2'),
+      url('fonts/KoreaKRSM.woff') format('woff'),
+      url('fonts/KoreaKRSM.ttf') format('truetype'),
+      url('fonts/KoreaKRSM.svg#KoreaKRSM') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -102,8 +102,8 @@ body {
 
 #vanillaFont {
   padding: 0.75em;
-  font-family: 'KoreanKRSM';
-  font-size: 16pt;
+  font-family: 'KoreaKRSM';
+  font-size: 12pt;
 }
 
 #royalFont {

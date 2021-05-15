@@ -1,8 +1,17 @@
-import React from "../_snowpack/pkg/react.js";
-const CharacterMenu = ({setChar}) => {
+import React, {useEffect} from "../_snowpack/pkg/react.js";
+const CharacterMenu = ({char, setChar, setEmoteMenus}) => {
   const switchChar = (e) => {
-    return setChar(e.target.value);
+    setChar(e.target.value);
   };
+  useEffect(() => {
+    fetch("http://localhost:3000/emotions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({char: `../images/portraits/${char}/`})
+    }).then((data) => data.json()).then((parsed) => setEmoteMenus(parsed)).catch((err) => console.log(err));
+  }, [char]);
   return /* @__PURE__ */ React.createElement("select", {
     id: "charMenu",
     name: "characters",

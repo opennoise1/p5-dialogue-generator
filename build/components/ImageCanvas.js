@@ -7,9 +7,6 @@ const ImageCanvas = ({portrait, text, font}) => {
   const box = useRef(null);
   let pCtx;
   let tCtx;
-  const boxHeight = 250;
-  const boxRatio = 800 / 226;
-  const boxWidth = boxHeight * boxRatio;
   useEffect(() => {
     pCtx = portraitCanvas.current.getContext("2d");
     tCtx = textCanvas.current.getContext("2d");
@@ -28,6 +25,9 @@ const ImageCanvas = ({portrait, text, font}) => {
     return tCtx.fillText(rows[2], 475, 425);
   }, [text]);
   const draw = (image, x, y, w, h) => {
+    const boxHeight = 250;
+    const boxRatio = 800 / 226;
+    const boxWidth = boxHeight * boxRatio;
     pCtx.clearRect(x, y, w, h);
     pCtx.drawImage(image, x, y, w, h);
     return isBoxLoaded ? pCtx.drawImage(box.current, 320, 250, boxWidth, boxHeight) : null;
@@ -53,7 +53,7 @@ const ImageCanvas = ({portrait, text, font}) => {
   }), /* @__PURE__ */ React.createElement("img", {
     ref: box,
     id: "box",
-    src: "../images/dialoguebox.png",
+    src: "../images/db@2x.png",
     onLoad: () => setBoxLoaded(true),
     className: "hidden"
   }));

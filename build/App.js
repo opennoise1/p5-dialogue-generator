@@ -2,11 +2,11 @@ import React, {useState} from "./_snowpack/pkg/react.js";
 import ImageCanvas from "./components/ImageCanvas.js";
 import TextAndTools from "./components/TextAndTools.js";
 const App = () => {
-  const [char, setChar] = useState("ann");
-  const [emote, setEmote] = useState("netural");
-  const [costume, setCostume] = useState("uniform");
+  const [char, setChar] = useState("Ann");
+  const [emote, setEmote] = useState("Netural");
+  const [costume, setCostume] = useState("Winter Uniform");
   const [text, setText] = useState("");
-  const [font, setFont] = useState("32pt KoreanKRSM");
+  const [font, setFont] = useState("18pt KoreaKRSM");
   const [portrait, setPortrait] = useState(`../images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);
   const appProps = {
     char,
