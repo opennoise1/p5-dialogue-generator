@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const ImageCanvas = ({ portrait, text, font }) => {
   const [isBoxLoaded, setBoxLoaded] = useState<boolean>(false);
@@ -37,6 +37,8 @@ const ImageCanvas = ({ portrait, text, font }) => {
     return isBoxLoaded ? pCtx.drawImage(box.current, 320, 250, boxWidth, boxHeight) : null;
   };
 
+  console.log(portrait);
+
   return (
     <div id='canvasDiv'>
       <canvas 
@@ -57,18 +59,21 @@ const ImageCanvas = ({ portrait, text, font }) => {
       </canvas>
       {/* NOTE: We're rendering portrait and box img tags so they can be referenced for the canvas.
       They will be hidden via the stylesheet */}
-      <img 
+      <img
         ref={character} 
         id='portrait' 
         onLoad={() => draw(character.current, 0, 0, 500, 500)} 
+        onError={() => console.log('error loading portrait')}
         src={portrait} 
         className='hidden' 
       />
-      <img ref={box} 
+      <img 
+        ref={box} 
         id='box'
         src={'../images/db@2x.png'} 
         // Ensure box is loaded so we know it can be drawn on top of portrait
         onLoad={(() => setBoxLoaded(true))}
+        onError={() => console.log('error loading box')}
         className='hidden' 
       />
     </div>

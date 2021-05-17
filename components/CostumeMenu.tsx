@@ -1,4 +1,4 @@
-import React, { FormEvent, SyntheticEvent } from 'react';
+import React, { SyntheticEvent } from 'react';
 
 const CostumeMenu = ({ char, setCostume, costumeMenus }) => {
   let charCostumes = [];
@@ -13,12 +13,16 @@ const CostumeMenu = ({ char, setCostume, costumeMenus }) => {
     });
   }
 
+
   const switchCostume = (e: SyntheticEvent<HTMLSelectElement>) => {
     return setCostume((e.target as HTMLSelectElement).value);
   }
 
   return (
-    <select id='costumeMenu' name='costumes' onChange={switchCostume} className='menus'>
+    <select 
+    id='costumeMenu' 
+    name='costumes' onChange={switchCostume}
+    className='menus'>
       {charCostumes}
     </select>
   )

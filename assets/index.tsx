@@ -8,4 +8,4 @@ render(
     <App />
   </StrictMode>,
     document.getElementById('root')
-  );
+);

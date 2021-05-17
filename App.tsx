@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import ImageCanvas from './components/ImageCanvas'
+import ImageCanvas from './components/ImageCanvas';
 import TextAndTools from './components/TextAndTools';
 
 const App = () => {
   // Initial values of all three menus, which will in turn determine our portrait
   // TODO: Randomize these initial values upon load!
   const [char, setChar] = useState<string>('Ann');
-  const [emote, setEmote]= useState<string>('Netural');
-  const [costume, setCostume] = useState<string>('Winter Uniform');
+  const [emote, setEmote]= useState<string>('Angry');
+  const [costume, setCostume] = useState<string>('Casual');
   const [text, setText] = useState<string>('');
   const [font, setFont] = useState<string>('18pt KoreanKRSM');
 
