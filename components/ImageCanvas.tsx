@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const ImageCanvas = ({ portrait, text, font }) => {
-  const [isBoxLoaded, setBoxLoaded] = useState<boolean>(false);
   const portraitCanvas: React.MutableRefObject<any> = useRef(null);
   const textCanvas: React.MutableRefObject<any> = useRef(null);
   const character: React.MutableRefObject<any> = useRef(null);
@@ -27,17 +26,20 @@ const ImageCanvas = ({ portrait, text, font }) => {
     return tCtx.fillText(rows[2], 475, 425);
   }, [text]);
 
-  const draw = (image: CanvasImageSource, x: number, y: number, w: number, h: number) => {
+  const drawPortrait = (charImage: CanvasImageSource, x: number, y: number, w: number, h: number) => {
+    pCtx.clearRect(x, y, w, h);
+    pCtx.drawImage(charImage, x, y, w, h);
+    return drawBox(box.current); // Ensures box will always be painted over portrait
+  };
+
+  const drawBox = (boxImage: CanvasImageSource) => {
     // Hacky way of preserving aspect ratios -- refactor this so it's more dynamic!
     const boxHeight: number = 250;
     const boxRatio: number = 800 / 226;
     const boxWidth: number = boxHeight * boxRatio;
-    pCtx.clearRect(x, y, w, h);
-    pCtx.drawImage(image, x, y, w, h);
-    return isBoxLoaded ? pCtx.drawImage(box.current, 320, 250, boxWidth, boxHeight) : null;
-  };
+    pCtx.drawImage(boxImage, 320, 250, boxWidth, boxHeight)
+  }
 
-  console.log(portrait);
 
   return (
     <div id='canvasDiv'>
@@ -62,7 +64,7 @@ const ImageCanvas = ({ portrait, text, font }) => {
       <img
         ref={character} 
         id='portrait' 
-        onLoad={() => draw(character.current, 0, 0, 500, 500)} 
+        onLoad={() => drawPortrait(character.current, 0, 0, 500, 500)} 
         onError={() => console.log('error loading portrait')}
         src={portrait} 
         className='hidden' 
@@ -71,9 +73,7 @@ const ImageCanvas = ({ portrait, text, font }) => {
         ref={box} 
         id='box'
         src={'../images/db@2x.png'} 
-        // Ensure box is loaded so we know it can be drawn on top of portrait
-        onLoad={(() => setBoxLoaded(true))}
-        onError={() => console.log('error loading box')}
+        onLoad={() => drawBox(box.current)} // Ensure box is loaded so we know it can be drawn on top of portrait
         className='hidden' 
       />
     </div>
