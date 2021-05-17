@@ -1,4 +1,4 @@
-import React, { DetailedHTMLProps, HTMLAttributes, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import ImageCanvas from './components/ImageCanvas'
 import TextAndTools from './components/TextAndTools';
 
@@ -26,6 +26,7 @@ const App = () => {
     setCostume: any,
     text: string,
     setText: any,
+    portrait: any,
     setPortrait: any,
     font: any,
     setFont: any,
@@ -38,6 +39,7 @@ const App = () => {
     setCostume,
     text,
     setText,
+    portrait,
     setPortrait,
     font,
     setFont,
@@ -45,7 +47,7 @@ const App = () => {
 
   return (
     <div id='imageTools'>
-      <ImageCanvas {...appProps} portrait={portrait} />
+      <ImageCanvas {...appProps} />
       <TextAndTools {...appProps} />
     </div>
   );
