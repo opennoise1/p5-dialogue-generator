@@ -37,7 +37,7 @@ const ImageCanvas = ({ portrait, text, font }) => {
     const boxHeight: number = 250;
     const boxRatio: number = 800 / 226;
     const boxWidth: number = boxHeight * boxRatio;
-    pCtx.drawImage(boxImage, 320, 250, boxWidth, boxHeight)
+    return pCtx.drawImage(boxImage, 320, 250, boxWidth, boxHeight);
   }
 
 
