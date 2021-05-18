@@ -38,8 +38,7 @@ const ImageCanvas = ({ portrait, text, font }) => {
     const boxRatio: number = 800 / 226;
     const boxWidth: number = boxHeight * boxRatio;
     return pCtx.drawImage(boxImage, 320, 250, boxWidth, boxHeight);
-  }
-
+  };
 
   return (
     <div id='canvasDiv'>
@@ -64,8 +63,7 @@ const ImageCanvas = ({ portrait, text, font }) => {
       <img
         ref={character} 
         id='portrait' 
-        onLoad={() => drawPortrait(character.current, 0, 0, 500, 500)} 
-        onError={() => console.log('error loading portrait')}
+        onLoad={() => drawPortrait(character.current, 0, 0, 500, 500)}
         src={portrait} 
         className='hidden' 
       />
@@ -77,7 +75,7 @@ const ImageCanvas = ({ portrait, text, font }) => {
         className='hidden' 
       />
     </div>
-  )
-}
+  );
+};
 
 export default ImageCanvas;

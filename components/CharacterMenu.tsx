@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const CharacterMenu = ({ char, setChar, setEmoteMenus }) => {
+const CharacterMenu = ({ char, emote, setChar, setEmote, setEmoteMenus }) => {
 
   const switchChar = (e: any) => {
     setChar(e.target.value);
@@ -15,12 +15,19 @@ const CharacterMenu = ({ char, setChar, setEmoteMenus }) => {
       body: JSON.stringify({ 'char': `../images/portraits/${char}/` })
     })
     .then(data => data.json())
-    .then(parsed => setEmoteMenus(parsed))
+    .then(parsed => {
+      setEmoteMenus(parsed);
+      // If the newly selected character doesn't have the previously selected emotion...
+      if (!parsed.includes(emote)) {
+        // ...change the current emotion to the top-most emotion on the newly fetched menu
+        setEmote(parsed[0]);
+      }
+    })
     .catch(err => console.log(err));
   }, [char]);
 
   return (
-    <select id='charMenu' name='characters' onChange={switchChar} className='menus'>
+    <select id='charMenu' value={char} name='characters' onChange={switchChar} className='menus'>
       <option value='Ann'>Ann Takamaki</option>
       <option value='Futaba'>Futaba Sakura</option>
       <option value='Akechi'>Goro Akechi</option>

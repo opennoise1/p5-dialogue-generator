@@ -1,6 +1,6 @@
 import React, { SyntheticEvent } from 'react';
 
-const CostumeMenu = ({ char, setCostume, costumeMenus }) => {
+const CostumeMenu = ({ char, costume, setCostume, costumeMenus }) => {
   let charCostumes = [];
 
   if (costumeMenus.length) {
@@ -19,10 +19,7 @@ const CostumeMenu = ({ char, setCostume, costumeMenus }) => {
   }
 
   return (
-    <select 
-    id='costumeMenu' 
-    name='costumes' onChange={switchCostume}
-    className='menus'>
+    <select id='costumeMenu' className='menus' value={costume} name='costumes' onChange={switchCostume}>
       {charCostumes}
     </select>
   )
