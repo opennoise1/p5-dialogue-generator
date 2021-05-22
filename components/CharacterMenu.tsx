@@ -36,8 +36,10 @@ const CharacterMenu = ({ char, emote, setChar, setEmote, setEmoteMenus }) => {
       <option value='Haru'>Haru Okumura</option>
       <option value='Hifumi'>Hifumi Togo</option>
       <option value='Ohya'>Ichiko Ohya</option>
+      <option value='Madarame'>Ichiryusai Madarame</option>
       <option value='Igor'>Igor</option>
       <option value='Jose'>Jose</option>
+      <option value='Kaneshiro'>Junya Kaneshiro</option>
       <option value='Justine'>Justine</option>
       <option value='Lavenza'>Lavenza</option>
       <option value='Makoto'>Makoto Niijima</option>
