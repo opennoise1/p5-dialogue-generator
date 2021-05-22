@@ -46,10 +46,12 @@ const CharacterMenu = ({ char, emote, setChar, setEmote, setEmoteMenus }) => {
       <option value='Ryuji'>Ryuji Sakamoto</option>
       <option value='Kawakami'>Sadayo Kawakami</option>
       <option value='Sae'>Sae Niijima</option>
+      <option value='Shinya'>Shinya Oda</option>
       <option value='Sojiro'>Sojiro Sakura</option>
       <option value='Sumire'>Sumire Yoshizawa</option>
       <option value='Takemi'>Tae Takemi</option>
       <option value='Maruki'>Takuto Maruki</option>
+      <option value='Yoshida'>Toranosuke Yoshida</option>
       <option value='Yusuke'>Yusuke Kitagawa</option>
       <option value='Mishima'>Yuuki Mishima</option>
     </select>
