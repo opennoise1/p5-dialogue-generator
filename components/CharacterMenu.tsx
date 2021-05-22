@@ -50,6 +50,7 @@ const CharacterMenu = ({ char, emote, setChar, setEmote, setEmoteMenus }) => {
       <option value='Takemi'>Tae Takemi</option>
       <option value='Maruki'>Takuto Maruki</option>
       <option value='Yusuke'>Yusuke Kitagawa</option>
+      <option value='Mishima'>Yuuki Mishima</option>
     </select>
   );
 }
