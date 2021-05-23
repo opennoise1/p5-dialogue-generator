@@ -45,8 +45,11 @@ const CharacterMenu = ({ char, emote, setChar, setEmote, setEmoteMenus }) => {
       <option value='Lavenza'>Lavenza</option>
       <option value='Makoto'>Makoto Niijima</option>
       <option value='Shido'>Masayoshi Shido</option>
+      <option value='Mika'>Mika</option>
       <option value='Morgana'>Morgana</option>
       <option value='Iwai'>Munehisa Iwai</option>
+      <option value='Nakanohara'>Natsuhiko Nakanohara</option>
+      <option value='Principal'>Principal Kobayakawa</option>
       <option value='Ryuji'>Ryuji Sakamoto</option>
       <option value='Kawakami'>Sadayo Kawakami</option>
       <option value='Sae'>Sae Niijima</option>
@@ -56,6 +59,7 @@ const CharacterMenu = ({ char, emote, setChar, setEmote, setEmoteMenus }) => {
       <option value='Sumire'>Sumire Yoshizawa</option>
       <option value='Takemi'>Tae Takemi</option>
       <option value='Maruki'>Takuto Maruki</option>
+      <option value='Tanaka'>Tanaka</option>
       <option value='Yoshida'>Toranosuke Yoshida</option>
       <option value='Yusuke'>Yusuke Kitagawa</option>
       <option value='Mishima'>Yuuki Mishima</option>
