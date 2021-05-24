@@ -31,6 +31,7 @@ const CharacterMenu = ({ char, emote, setChar, setEmote, setEmoteMenus }) => {
       <option value='Ann'>Ann Takamaki</option>
       <option value='Caroline'>Caroline</option>
       <option value='Chihaya'>Chihaya Mifune</option>
+      <option value='Hiraguchi'>Coach Hiraguchi</option>
       <option value='Futaba'>Futaba Sakura</option>
       <option value='Akechi'>Goro Akechi</option>
       <option value='Haru'>Haru Okumura</option>
@@ -50,9 +51,12 @@ const CharacterMenu = ({ char, emote, setChar, setEmote, setEmoteMenus }) => {
       <option value='Iwai'>Munehisa Iwai</option>
       <option value='Nakanohara'>Natsuhiko Nakanohara</option>
       <option value='Principal'>Principal Kobayakawa</option>
+      <option value='Rumi'>Rumi</option>
       <option value='Ryuji'>Ryuji Sakamoto</option>
       <option value='Kawakami'>Sadayo Kawakami</option>
       <option value='Sae'>Sae Niijima</option>
+      <option value='Shibusawa'>Shibusawa</option>
+      <option value='Shinichi'>Shinichi Yoshizawa</option>
       <option value='Shinya'>Shinya Oda</option>
       <option value='Teachers'>Shujin Teachers</option>
       <option value='Director'>SIU Director</option>
