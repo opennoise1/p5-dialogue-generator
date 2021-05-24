@@ -55,7 +55,9 @@ const CharacterMenu = ({ char, emote, setChar, setEmote, setEmoteMenus }) => {
       <option value='Sae'>Sae Niijima</option>
       <option value='Shinya'>Shinya Oda</option>
       <option value='Teachers'>Shujin Teachers</option>
+      <option value='Director'>SIU Director</option>
       <option value='Sojiro'>Sojiro Sakura</option>
+      <option value='Sugimura'>Sugimura</option>
       <option value='Sumire'>Sumire Yoshizawa</option>
       <option value='Takemi'>Tae Takemi</option>
       <option value='Maruki'>Takuto Maruki</option>
