@@ -61,18 +61,18 @@ const ImageCanvas = ({ portrait, text, font }) => {
       {/* NOTE: We're rendering portrait and box img tags so they can be referenced for the canvas.
       They will be hidden via the stylesheet */}
       <img
-        ref={character} 
-        id='portrait' 
+        ref={character}
+        id='portrait'
         onLoad={() => drawPortrait(character.current, 0, 0, 500, 500)}
-        src={portrait} 
-        className='hidden' 
+        src={portrait}
+        className='hidden'
       />
       <img 
-        ref={box} 
+        ref={box}
         id='box'
-        src={'../images/db@2x.png'} 
+        src={'../images/db@2x.png'}
         onLoad={() => drawBox(box.current)} // Ensure box is loaded so we know it can be drawn on top of portrait
-        className='hidden' 
+        className='hidden'
       />
     </div>
   );
