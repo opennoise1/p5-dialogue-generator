@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const ImageCanvas = ({ portrait, text, font }) => {
   const portraitCanvas: React.MutableRefObject<any> = useRef(null);
@@ -24,7 +24,7 @@ const ImageCanvas = ({ portrait, text, font }) => {
     tCtx.fillText(rows[0], 475, 375);
     tCtx.fillText(rows[1], 475, 400);
     return tCtx.fillText(rows[2], 475, 425);
-  }, [text]);
+  }, [text, font]);
 
   const drawPortrait = (charImage: CanvasImageSource, x: number, y: number, w: number, h: number) => {
     pCtx.clearRect(x, y, w, h);
