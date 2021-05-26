@@ -3,10 +3,10 @@ import ImageCanvas from "./components/ImageCanvas.js";
 import TextAndTools from "./components/TextAndTools.js";
 const App = () => {
   const [char, setChar] = useState("Ann");
-  const [emote, setEmote] = useState("Netural");
-  const [costume, setCostume] = useState("Winter Uniform");
+  const [emote, setEmote] = useState("Angry");
+  const [costume, setCostume] = useState("Casual");
   const [text, setText] = useState("");
-  const [font, setFont] = useState("18pt KoreaKRSM");
+  const [font, setFont] = useState("18pt KoreanKRSM");
   const [portrait, setPortrait] = useState(`../images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);
   const appProps = {
     char,
@@ -17,6 +17,7 @@ const App = () => {
     setCostume,
     text,
     setText,
+    portrait,
     setPortrait,
     font,
     setFont
@@ -24,8 +25,7 @@ const App = () => {
   return /* @__PURE__ */ React.createElement("div", {
     id: "imageTools"
   }, /* @__PURE__ */ React.createElement(ImageCanvas, {
-    ...appProps,
-    portrait
+    ...appProps
   }), /* @__PURE__ */ React.createElement(TextAndTools, {
     ...appProps
   }));

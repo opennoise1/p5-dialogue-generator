@@ -8,6 +8,7 @@ const Menus = ({char, setChar, emote, setEmote, costume, setCostume, setPortrait
   const menuProps = {
     char,
     emote,
+    costume,
     setChar,
     setEmote,
     setCostume,

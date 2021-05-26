@@ -18,6 +18,10 @@ app.post('/costumes', portraitController.costumeParser, (req, res) => {
   return res.status(200).json(res.locals.costumes);
 });
 
+app.use('*', (req, res) => {
+  return res.sendStatus(404);
+});
+
 app.use((err, req, res, next) => {
   return res.status(500).json(err);
 });

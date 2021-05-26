@@ -1,6 +1,5 @@
-import React, {useEffect, useRef, useState} from "../_snowpack/pkg/react.js";
+import React, {useEffect, useRef} from "../_snowpack/pkg/react.js";
 const ImageCanvas = ({portrait, text, font}) => {
-  const [isBoxLoaded, setBoxLoaded] = useState(false);
   const portraitCanvas = useRef(null);
   const textCanvas = useRef(null);
   const character = useRef(null);
@@ -23,14 +22,17 @@ const ImageCanvas = ({portrait, text, font}) => {
     tCtx.fillText(rows[0], 475, 375);
     tCtx.fillText(rows[1], 475, 400);
     return tCtx.fillText(rows[2], 475, 425);
-  }, [text]);
-  const draw = (image, x, y, w, h) => {
+  }, [text, font]);
+  const drawPortrait = (charImage, x, y, w, h) => {
+    pCtx.clearRect(x, y, w, h);
+    pCtx.drawImage(charImage, x, y, w, h);
+    return drawBox(box.current);
+  };
+  const drawBox = (boxImage) => {
     const boxHeight = 250;
     const boxRatio = 800 / 226;
     const boxWidth = boxHeight * boxRatio;
-    pCtx.clearRect(x, y, w, h);
-    pCtx.drawImage(image, x, y, w, h);
-    return isBoxLoaded ? pCtx.drawImage(box.current, 320, 250, boxWidth, boxHeight) : null;
+    return pCtx.drawImage(boxImage, 320, 250, boxWidth, boxHeight);
   };
   return /* @__PURE__ */ React.createElement("div", {
     id: "canvasDiv"
@@ -47,14 +49,14 @@ const ImageCanvas = ({portrait, text, font}) => {
   }, "Sorry! This generator requires a browser that supports HTML5!"), /* @__PURE__ */ React.createElement("img", {
     ref: character,
     id: "portrait",
-    onLoad: () => draw(character.current, 0, 0, 500, 500),
+    onLoad: () => drawPortrait(character.current, 0, 0, 500, 500),
     src: portrait,
     className: "hidden"
   }), /* @__PURE__ */ React.createElement("img", {
     ref: box,
     id: "box",
     src: "../images/db@2x.png",
-    onLoad: () => setBoxLoaded(true),
+    onLoad: () => drawBox(box.current),
     className: "hidden"
   }));
 };

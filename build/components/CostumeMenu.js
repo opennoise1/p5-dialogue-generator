@@ -1,12 +1,12 @@
 import React from "../_snowpack/pkg/react.js";
-const CostumeMenu = ({char, setCostume, costumeMenus}) => {
+const CostumeMenu = ({char, costume, setCostume, costumeMenus}) => {
   let charCostumes = [];
   if (costumeMenus.length) {
-    charCostumes = costumeMenus.map((costume) => {
+    charCostumes = costumeMenus.map((costume2) => {
       return /* @__PURE__ */ React.createElement("option", {
-        key: `${char}: ${costume}`,
-        value: costume
-      }, costume);
+        key: `${char}: ${costume2}`,
+        value: costume2
+      }, costume2);
     });
   }
   const switchCostume = (e) => {
@@ -14,9 +14,10 @@ const CostumeMenu = ({char, setCostume, costumeMenus}) => {
   };
   return /* @__PURE__ */ React.createElement("select", {
     id: "costumeMenu",
+    className: "menus",
+    value: costume,
     name: "costumes",
-    onChange: switchCostume,
-    className: "menus"
+    onChange: switchCostume
   }, charCostumes);
 };
 export default CostumeMenu;

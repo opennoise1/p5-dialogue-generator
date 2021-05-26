@@ -43,7 +43,7 @@ const TextAndTools = ({char, setChar, emote, setEmote, costume, setCostume, setP
   }, /* @__PURE__ */ React.createElement("div", {
     id: "vanillaFont",
     className: "fonts",
-    onClick: () => setFont("18pt KoreaKRSM")
+    onClick: () => setFont("18pt KoreanKRSM")
   }, "KoreanKRSM (Persona 5)"), /* @__PURE__ */ React.createElement("div", {
     id: "royalFont",
     className: "fonts",
