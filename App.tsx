@@ -6,8 +6,8 @@ const App = () => {
   // Initial values of all three menus, which will in turn determine our portrait
   // TODO: Randomize these initial values upon load!
   const [char, setChar] = useState<string>('Ann');
-  const [emote, setEmote]= useState<string>('Angry');
-  const [costume, setCostume] = useState<string>('Casual');
+  const [emote, setEmote]= useState<string>('Happy');
+  const [costume, setCostume] = useState<string>('Gym Clothes');
   const [text, setText] = useState<string>('');
   const [font, setFont] = useState<string>('18pt KoreanKRSM');
 
