@@ -27,7 +27,7 @@ const ImageCanvas = ({ portrait, text, font }) => {
   }, [text, font]);
 
   const drawPortrait = (charImage: CanvasImageSource, x: number, y: number, w: number, h: number) => {
-    pCtx.clearRect(x, y, w, h);
+    pCtx.clearRect(0, 0, 1300, 500);
     pCtx.drawImage(charImage, x, y, w, h);
     return drawBox(box.current); // Ensures box will always be painted over portrait
   };
