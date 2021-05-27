@@ -24,8 +24,16 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'SlumpSTD';
+  src: url('fonts/FOT-SlumpStd-DB.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
-  font-family: 'Optima nova LT';
+  font-family: 'KoreanKRSM';
   background-color: #FF0505;
   display: flex;
   flex-direction: column;
@@ -86,6 +94,7 @@ body {
   background-color: blanchedalmond;
   color: black;
   text-align: center;
+  justify-content: center;
 }
 
 .fonts:active {
@@ -101,14 +110,21 @@ body {
 }
 
 #vanillaFont {
-  padding: 0.75em;
+  padding: 0.5em;
+  padding-top: 0.9em;
   font-family: 'KoreanKRSM';
   font-size: 12pt;
 }
 
 #royalFont {
-  padding: 0.75em;
+  padding: 0.5em;
   padding-top: 0.9em;
   font-family: 'Optima nova LT';
+  font-size: 12pt;
+}
+
+#japaneseFont {
+  padding: 0.5em;
+  font-family: 'SlumpSTD';
   font-size: 12pt;
 }
