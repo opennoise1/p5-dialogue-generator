@@ -24,7 +24,7 @@ const ImageCanvas = ({portrait, text, font}) => {
     return tCtx.fillText(rows[2], 475, 425);
   }, [text, font]);
   const drawPortrait = (charImage, x, y, w, h) => {
-    pCtx.clearRect(x, y, w, h);
+    pCtx.clearRect(0, 0, 1300, 500);
     pCtx.drawImage(charImage, x, y, w, h);
     return drawBox(box.current);
   };

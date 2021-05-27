@@ -10,6 +10,10 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
+// app.get('/characters', portraitController.getCharacters, (req, res) => {
+//   return res.status(200).json(res.locals.initial);
+// });
+
 app.post('/emotions', portraitController.emotionParser, (req, res) => {
   return res.status(200).json(res.locals.emotions);
 });

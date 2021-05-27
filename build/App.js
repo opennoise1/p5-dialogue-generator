@@ -3,8 +3,8 @@ import ImageCanvas from "./components/ImageCanvas.js";
 import TextAndTools from "./components/TextAndTools.js";
 const App = () => {
   const [char, setChar] = useState("Ann");
-  const [emote, setEmote] = useState("Angry");
-  const [costume, setCostume] = useState("Casual");
+  const [emote, setEmote] = useState("Happy");
+  const [costume, setCostume] = useState("Gym Clothes");
   const [text, setText] = useState("");
   const [font, setFont] = useState("18pt KoreanKRSM");
   const [portrait, setPortrait] = useState(`../images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);

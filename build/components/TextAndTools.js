@@ -48,7 +48,11 @@ const TextAndTools = ({char, setChar, emote, setEmote, costume, setCostume, setP
     id: "royalFont",
     className: "fonts",
     onClick: () => setFont("18pt Optima nova LT")
-  }, "Optima Nova Black (Persona 5 Royal)")), /* @__PURE__ */ React.createElement("div", {
+  }, "Optima Nova Black (Persona 5 Royal)"), /* @__PURE__ */ React.createElement("div", {
+    id: "japaneseFont",
+    className: "fonts",
+    onClick: () => setFont("18pt SlumpSTD")
+  }, "Slump DB (Persona 5 - Japanese)")), /* @__PURE__ */ React.createElement("div", {
     id: "download",
     onClick: downloadImage
   }, "Download Dialogue"));
