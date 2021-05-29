@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { portraitPositions, findPosition } from '../utils/portraitPositions';
+import { simplePositions, findSpecialPosition } from '../utils/portraitPositions';
 
 const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
   const portraitCanvas: React.MutableRefObject<any> = useRef(null);
@@ -31,8 +31,8 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
     pCtx.clearRect(0, 0, 1300, 500);
     let x;
     let y;
-    if (!portraitPositions[char]) {
-      const specialPosition = findPosition(char, emote, costume);
+    if (!simplePositions[char]) {
+      const specialPosition = findSpecialPosition(char, emote, costume);
       x = specialPosition[0];
       y = specialPosition[1];
     } else {
@@ -74,7 +74,7 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
       <img
         ref={character}
         id='portrait'
-        onLoad={() => drawPortrait(character.current, portraitPositions[char], 500, 500)}
+        onLoad={() => drawPortrait(character.current, simplePositions[char], 500, 500)}
         src={portrait}
         className='hidden'
       />

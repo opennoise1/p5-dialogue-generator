@@ -1,4 +1,4 @@
-const portraitPositions = {
+const simplePositions = {
   Caroline: [-35, 0],
   Chihaya: [0, 0],
   Director: [85, 10],
@@ -33,9 +33,10 @@ const portraitPositions = {
   Yusuke: [0, 0],
 };
 
-const findPosition = (char, emote, costume) => {
+const findSpecialPosition = (char, emote, costume) => {
   switch (char) {
     case 'Akechi': {
+      if (costume.includes('Black')) return [30, 10];
       if (emote === 'Furious' || emote === 'Smirking' || 
         emote === 'Staring' || emote === 'Upset') return [85, 0];
       if (costume.includes('Cognitive')) return [85, 0];
@@ -96,4 +97,4 @@ const findPosition = (char, emote, costume) => {
   }
 }
 
-export { portraitPositions, findPosition };
+export { simplePositions, findSpecialPosition };
