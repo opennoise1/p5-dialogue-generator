@@ -4,8 +4,10 @@ const path = require('path');
 const portraitController = {};
 
 portraitController.emotionParser = (req, res, next) => {
-  const emotions = readdirSync(path.join(__dirname, req.body.char));
-
+  let emotions = readdirSync(path.join(__dirname, req.body.char));
+  if (emotions[0] === '.DS_Store') {
+    emotions = emotions.slice(1);
+  }
   res.locals.emotions = emotions;
   return next();
 };
