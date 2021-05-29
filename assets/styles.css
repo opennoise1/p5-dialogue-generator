@@ -58,6 +58,7 @@ body {
 }
 
 /* Text and Tools */
+
 #textField {
   font-family: 'sans-serif';
   resize: none;
@@ -73,6 +74,14 @@ body {
 
 .hidden {
   display: none;
+}
+
+.menus {
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 30px;
+  font-family: 'KoreanKRSM';
+  background-color: blanchedalmond;
 }
 
 #charMenu {

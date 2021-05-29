@@ -46,10 +46,15 @@ const App = () => {
   }
 
   return (
-    <div id='imageTools'>
-      <ImageCanvas {...appProps} />
-      <TextAndTools {...appProps} />
-    </div>
+    <>
+      Persona 5 Dialogue Box Generator<br></br>
+      Code by <a href='https://twitter.com/opennoise' target='_blank'>opennoise</a>, 
+      all artwork/content by <a href='https://twitter.com/Atlus_West' target='_blank'>Atlus</a>
+      <div id='imageTools'>
+        <ImageCanvas {...appProps} />
+        <TextAndTools {...appProps} />
+      </div>
+    </>
   );
 }
 
