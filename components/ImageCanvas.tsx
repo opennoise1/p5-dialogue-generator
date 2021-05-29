@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
+import { portraitPositions, findPosition } from '../utils/portraitPositions';
 
-const ImageCanvas = ({ portrait, text, font }) => {
+const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
   const portraitCanvas: React.MutableRefObject<any> = useRef(null);
   const textCanvas: React.MutableRefObject<any> = useRef(null);
   const character: React.MutableRefObject<any> = useRef(null);
@@ -26,11 +27,23 @@ const ImageCanvas = ({ portrait, text, font }) => {
     return tCtx.fillText(rows[2], 475, 425);
   }, [text, font]);
 
-  const drawPortrait = (charImage: CanvasImageSource, x: number, y: number, w: number, h: number) => {
+  const drawPortrait = (charImage: CanvasImageSource, portraitXY: [number, number], w: number, h: number) => {
     pCtx.clearRect(0, 0, 1300, 500);
+    let x;
+    let y;
+    if (!portraitPositions[char]) {
+      const specialPosition = findPosition(char, emote, costume);
+      x = specialPosition[0];
+      y = specialPosition[1];
+    } else {
+      x = portraitXY[0];
+      y = portraitXY[1];
+    }
     pCtx.drawImage(charImage, x, y, w, h);
     return drawBox(box.current); // Ensures box will always be painted over portrait
   };
+
+
 
   const drawBox = (boxImage: CanvasImageSource) => {
     // Hacky way of preserving aspect ratios -- refactor this so it's more dynamic!
@@ -63,7 +76,7 @@ const ImageCanvas = ({ portrait, text, font }) => {
       <img
         ref={character}
         id='portrait'
-        onLoad={() => drawPortrait(character.current, 0, 0, 500, 500)}
+        onLoad={() => drawPortrait(character.current, portraitPositions[char], 500, 500)}
         src={portrait}
         className='hidden'
       />
