@@ -43,8 +43,6 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
     return drawBox(box.current); // Ensures box will always be painted over portrait
   };
 
-
-
   const drawBox = (boxImage: CanvasImageSource) => {
     // Hacky way of preserving aspect ratios -- refactor this so it's more dynamic!
     const boxHeight: number = 250;
