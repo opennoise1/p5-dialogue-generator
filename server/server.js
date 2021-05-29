@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 
-const portraitController = require('../utils/portraitController.js');
+const portraitController = require('./portraitController.js');
 
 const app = express();
 const PORT = 3000;

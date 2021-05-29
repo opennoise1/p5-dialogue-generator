@@ -82,7 +82,7 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
         ref={box}
         id='box'
         src={'../images/db@2x.png'}
-        onLoad={() => drawBox(box.current)} // Ensure box is loaded so we know it can be drawn on top of portrait
+        onLoad={() => drawBox(box.current)}
         className='hidden'
       />
     </div>
