@@ -56,7 +56,7 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
       <canvas 
         ref={portraitCanvas} 
         id='portraitCanvas'
-        width='1300' 
+        width='1225' 
         height='500' 
       >
         Sorry! This generator requires a browser that supports HTML5!
@@ -64,7 +64,7 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
       <canvas 
         ref={textCanvas} 
         id='textCanvas'
-        width='1300' 
+        width='1225' 
         height='500' 
       >
         Sorry! This generator requires a browser that supports HTML5!
@@ -82,7 +82,6 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
         ref={box}
         id='box'
         src={'../images/db@2x.png'}
-        onLoad={() => drawBox(box.current)}
         className='hidden'
       />
     </div>
