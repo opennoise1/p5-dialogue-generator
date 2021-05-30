@@ -56,15 +56,18 @@ const App = () => {
             <div id='titleSlump' className='slumpDivs'>対話ジェネレータ</div>
           </div>
         </div>
-        <p id='credits'>
-          Code by <a href='https://twitter.com/opennoise' target='_blank'>opennoise</a>, 
-          all artwork/content by <a href='https://twitter.com/Atlus_West' target='_blank'>Atlus</a>
-        </p>
       </div>
       <div id='imageTools'>
         <ImageCanvas {...appProps} />
         <TextAndTools {...appProps} />
       </div>
+      <p id='subhead'>
+        <p>HOLD IT! Portraits contain spoilers!</p>
+        <p id='credits'>
+          <a href='https://github.com/opennoise1/p5-dialogue-generator' target='_blank'>Code</a> by <a href='https://twitter.com/opennoise' target='_blank'>@opennoise</a>, 
+          all artwork/content by <a href='https://twitter.com/Atlus_West' target='_blank'>Atlus</a>
+        </p>
+      </p>
     </>
   );
 }

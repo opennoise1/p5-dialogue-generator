@@ -86,11 +86,24 @@ body {
   font-family: 'SlumpSTD';
 }
 
-#credits {
+#subhead {
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+}
+
+#subhead p {
+  margin: 5px;
+  padding: 5px;
+
   background-color: white;
   border: 2px solid black;
   box-shadow: 3px 3px black;
   text-align: center;
+}
+
+#subhead a {
+  text-decoration: none;
 }
 
 /* Image and text canvases */
