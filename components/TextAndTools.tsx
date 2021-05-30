@@ -78,7 +78,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
           Slump DB &#40;ペルソナ5 - 日本語&#41;
         </div>
       </div>
-      <div id='download' onClick={downloadImage}>Download Dialogue</div>
+      <div id='download' className='fonts' onClick={downloadImage}>Download Dialogue</div>
     </>
   )
 };
