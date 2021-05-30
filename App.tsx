@@ -47,9 +47,16 @@ const App = () => {
 
   return (
     <>
-      Persona 5 Dialogue Box Generator<br></br>
-      Code by <a href='https://twitter.com/opennoise' target='_blank'>opennoise</a>, 
-      all artwork/content by <a href='https://twitter.com/Atlus_West' target='_blank'>Atlus</a>
+      <div id='header'>
+        <div id='title'>
+          <img id='p5logo' src='./images/personalogo.png' width={250} height={151} />
+          <h1 id='generatorTitle'>DIALOGUE GENERATOR</h1>
+        </div>
+        <p id='credits'>
+          Code by <a href='https://twitter.com/opennoise' target='_blank'>opennoise</a>, 
+          all artwork/content by <a href='https://twitter.com/Atlus_West' target='_blank'>Atlus</a>
+        </p>
+      </div>
       <div id='imageTools'>
         <ImageCanvas {...appProps} />
         <TextAndTools {...appProps} />

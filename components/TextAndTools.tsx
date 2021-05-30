@@ -34,7 +34,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
     const dCtx: CanvasRenderingContext2D = downloadCanvas.getContext('2d');
     dCtx.drawImage(portraitCanvas, 0, 0, 1300, 500);
     dCtx.drawImage(textCanvas, 0, 0, 1300, 500);
-    const link = document.createElement('a');
+    const link: HTMLAnchorElement = document.createElement('a');
     link.download = `${char}-${text}.png`;
     link.href = downloadCanvas.toDataURL('image/png');
     link.click();

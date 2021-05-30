@@ -39,10 +39,54 @@ body {
   flex-direction: column;
 }
 
+/* Titles */
+
+@keyframes titleTransition {
+  0%   {opacity: 1; font-family: 'KoreanKRSM'; }
+  10%  {opacity: 0;}
+  33%  {opacity: 1; font-family: 'Optima nova LT'; }
+  40%  {opacity: 0;}
+  75%  {opacity: 1; font-family: 'SlumpSTD'; }
+  100% {opacity: 0; }
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#generatorTitle {
+  width: 600px;
+  font-size: 40px;
+
+  animation-name: titleTransition;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+}
+
+#credits {
+  background-color: white;
+  border: 2px solid black;
+  box-shadow: 3px 3px black;
+  text-align: center;
+}
+
 /* Image and text canvases */
 
 #canvasDiv {
   position: relative;
+  background-color: white;
+  border: 2px solid black;
+  line-height: 0; /* Eliminates small bit of padding at the bottom of canvas-containing div */
+  box-shadow: 4px 4px black;
 }
 
 #portraitCanvas {
@@ -60,6 +104,7 @@ body {
 /* Text and Tools */
 
 #textField {
+  margin: 10px;
   font-family: 'sans-serif';
   resize: none;
   white-space: nowrap;
