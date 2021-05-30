@@ -47,14 +47,12 @@ const App = () => {
 
   return (
     <>
-      <div id='header'>
-        <div id='title'>
-          <img id='p5logo' src='./images/personalogo.png' width={250} height={151} />
-          <div className='generatorTitles'>
-            <div id='titleKRSM' className='KRSMDivs'>DIALOGUE GENERATOR</div>
-            <div id='titleOptima' className='optimaDivs'>DIALOGUE GENERATOR</div>
-            <div id='titleSlump' className='slumpDivs'>対話ジェネレータ</div>
-          </div>
+      <div id='title'>
+        <img id='p5logo' src='./images/personalogo.png' width={250} height={151} />
+        <div className='generatorTitles'>
+          <div id='titleKRSM' className='KRSMDivs'>DIALOGUE GENERATOR</div>
+          <div id='titleOptima' className='optimaDivs'>DIALOGUE GENERATOR</div>
+          <div id='titleSlump' className='slumpDivs'>対話ジェネレータ</div>
         </div>
       </div>
       <div id='imageTools'>

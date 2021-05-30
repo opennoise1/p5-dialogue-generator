@@ -41,14 +41,9 @@ body {
 
 /* Titles */
 
-#header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 #title {
+  margin-bottom: 10px;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,10 +97,6 @@ body {
   text-align: center;
 }
 
-#subhead a {
-  text-decoration: none;
-}
-
 /* Image and text canvases */
 
 #canvasDiv {
@@ -137,7 +128,7 @@ body {
   white-space: nowrap;
 
   border: 2px solid black;
-  background-color: blanchedalmond;
+  background-color: white;
   box-shadow: 4px 4px black;
 }
 
@@ -152,16 +143,17 @@ body {
   display: none;
 }
 
-.menus {
-  padding: 5px;
-  border: 2px solid black;
-  border-radius: 30px;
-  font-family: 'KoreanKRSM';
-  background-color: blanchedalmond;
+.menuDiv {
+  display: flex;
+  justify-content: space-between;
 }
 
-#charMenu {
-  margin: 5px;
+.menuOptions {
+  padding: 3px;
+  border: 2px solid black;
+  box-shadow: 3px 3px black;
+  font-family: 'KoreanKRSM';
+  background-color: white;
 }
 
 /* Font Selection */
@@ -174,9 +166,9 @@ body {
 .fonts {
   margin-right: 0.5em;
   margin-left: 0.5em;
-  border: 3px solid black;
-  border-radius: 30px;
-  background-color: blanchedalmond;
+  border: 2px solid black;
+  box-shadow: 3px 3px black;
+  background-color: white;
   color: black;
   text-align: center;
   justify-content: center;
@@ -197,7 +189,6 @@ body {
 #vanillaFont {
   padding: 0.5em;
   padding-top: 0.9em;
-  font-family: 'KoreanKRSM';
   font-size: 12pt;
 }
 

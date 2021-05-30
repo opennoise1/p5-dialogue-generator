@@ -40,7 +40,7 @@ if (emoteMenus.length) {
   }
 
   return (
-    <select id='emoteMenu' className='menus' value={emote} name='emotions' onChange={switchEmote}>
+    <select id='emoteMenu' className='menuOptions' value={emote} name='emotions' onChange={switchEmote}>
       {charEmotes}
     </select>
   )

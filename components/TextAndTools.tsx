@@ -1,7 +1,7 @@
 import React from 'react';
 import Menus from './Menus';
 
-const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, setPortrait, text, setText, setFont }) => {
+const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, setPortrait, text, setText, font, setFont }) => {
 
   const toolProps: { 
     char: string, 

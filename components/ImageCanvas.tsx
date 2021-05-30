@@ -18,7 +18,7 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
   });
 
   useEffect(() => {
-    tCtx.clearRect(0, 0, 1300, 500);
+    tCtx.clearRect(0, 0, 1225, 500);
     const rows = text.split('\n');
     if (!rows[1]) rows[1] = '';
     if (!rows[2]) rows[2] = '';
@@ -28,7 +28,7 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
   }, [text, font]);
 
   const drawPortrait = (charImage: CanvasImageSource, portraitXY: [number, number], w: number, h: number) => {
-    pCtx.clearRect(0, 0, 1300, 500);
+    pCtx.clearRect(0, 0, 1225, 500);
     let x;
     let y;
     if (!simplePositions[char]) {
