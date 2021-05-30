@@ -2,7 +2,6 @@ const simplePositions = {
   Caroline: [-35, 0],
   Chihaya: [0, 0],
   Director: [85, 10],
-  Futaba: [-35, 0],
   Hifumi: [35, 10],
   Hiraguchi: [35, 10],
   Igor: [35, 15],
@@ -46,6 +45,10 @@ const findSpecialPosition = (char, emote, costume) => {
       if (emote === 'Excited (Royal)' || emote === 'Shocked (Royal)') return [0, 35];
       if (emote.includes('Royal')) return [50, 35];
       return [50, 45];
+    }
+    case 'Futaba': {
+      if (costume.includes('Mask')) return [0, 0];
+      return [-35, 0];
     }
     case 'Haru': {
       if (costume.includes('Noir')) return [0, 0];
