@@ -58,24 +58,24 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
       <div id='buttonDiv'>
         <div 
           id='vanillaFont' 
-          className='fonts' 
+          className='fonts KRSMDivs' 
           onClick={() => setFont('18pt KoreanKRSM')}
         >
           KoreanKRSM &#40;Persona 5&#41;
         </div>
         <div 
           id='royalFont' 
-          className='fonts' 
+          className='fonts optimaDivs' 
           onClick={() => setFont('18pt Optima nova LT')}
         >
           Optima Nova Black &#40;Persona 5 Royal&#41;
         </div>
         <div 
           id='japaneseFont' 
-          className='fonts' 
+          className='fonts slumpDivs' 
           onClick={() => setFont('18pt SlumpSTD')}
         >
-          Slump DB &#40;Persona 5 - Japanese&#41;
+          Slump DB &#40;ペルソナ5 - 日本語&#41;
         </div>
       </div>
       <div id='download' onClick={downloadImage}>Download Dialogue</div>

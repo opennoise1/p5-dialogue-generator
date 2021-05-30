@@ -41,15 +41,6 @@ body {
 
 /* Titles */
 
-@keyframes titleTransition {
-  0%   {opacity: 1; font-family: 'KoreanKRSM'; }
-  10%  {opacity: 0;}
-  33%  {opacity: 1; font-family: 'Optima nova LT'; }
-  40%  {opacity: 0;}
-  75%  {opacity: 1; font-family: 'SlumpSTD'; }
-  100% {opacity: 0; }
-}
-
 #header {
   display: flex;
   flex-direction: column;
@@ -63,13 +54,36 @@ body {
   align-items: center;
 }
 
-#generatorTitle {
-  width: 600px;
-  font-size: 40px;
+.generatorTitles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 
-  animation-name: titleTransition;
-  animation-duration: 15s;
-  animation-iteration-count: infinite;
+  color: white;
+  font-size: 42px;
+  line-height: 46.5px;
+  text-shadow: 3px 3px black;
+  -webkit-text-stroke-width: 1.25px;
+  -webkit-text-stroke-color: black;
+}
+
+#titleKRSM {
+  padding-bottom: 2.25px;
+}
+
+#titleSlump {
+  padding-bottom: 2.25px;
+}
+
+.KRSMDivs {
+  font-family: 'KoreanKRSM';
+}
+.optimaDivs {
+  font-family: 'Optima nova LT';
+}
+.slumpDivs {
+  font-family: 'SlumpSTD';
 }
 
 #credits {
@@ -108,6 +122,10 @@ body {
   font-family: 'sans-serif';
   resize: none;
   white-space: nowrap;
+
+  border: 2px solid black;
+  background-color: blanchedalmond;
+  box-shadow: 4px 4px black;
 }
 
 #imageTools {
