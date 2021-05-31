@@ -1,8 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { simplePositions, findSpecialPosition } from '../utils/portraitPositions';
 
-let isInitiallyLoaded = false;
-
 const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
   const portraitCanvas: React.MutableRefObject<any> = useRef(null);
   const textCanvas: React.MutableRefObject<any> = useRef(null);
@@ -21,7 +19,7 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
   });
 
   useEffect(() => {
-    tCtx.clearRect(0, 0, 1225, 500);
+    tCtx.clearRect(0, 0, 1275, 500);
     const rows = text.split('\n');
     if (!rows[1]) rows[1] = '';
     if (!rows[2]) rows[2] = '';
@@ -30,8 +28,15 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
     return tCtx.fillText(rows[2], 475, 425);
   }, [text, font]);
 
+  useEffect(() => {
+    const box = document.getElementById('box');
+    box.addEventListener('load', () => {
+      drawPortrait(character.current, simplePositions[char], 500, 500);
+    });
+  }, [font]);
+
   const drawPortrait = (charImage: CanvasImageSource, portraitXY: [number, number], w: number, h: number) => {
-    pCtx.clearRect(0, 0, 1225, 500);
+    pCtx.clearRect(0, 0, 1275, 500);
     let x;
     let y;
     if (!simplePositions[char]) {
@@ -47,11 +52,7 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
   };
 
   const drawBox = (boxImage: CanvasImageSource) => {
-    // Hacky way of preserving aspect ratios -- refactor this so it's more dynamic!
-    const boxHeight: number = 250;
-    const boxRatio: number = 800 / 226;
-    const boxWidth: number = boxHeight * boxRatio;
-    return pCtx.drawImage(boxImage, 320, 250, boxWidth, boxHeight);
+    return pCtx.drawImage(boxImage, 320, 250, 950, 250);
   };
 
   return (
@@ -59,7 +60,7 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
       <canvas 
         ref={portraitCanvas} 
         id='portraitCanvas'
-        width='1225' 
+        width='1275' 
         height='500' 
       >
         Sorry! This generator requires a browser that supports HTML5!
@@ -67,7 +68,7 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
       <canvas 
         ref={textCanvas} 
         id='textCanvas'
-        width='1225' 
+        width='1275' 
         height='500' 
       >
         Sorry! This generator requires a browser that supports HTML5!
