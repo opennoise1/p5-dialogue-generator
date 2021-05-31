@@ -23,7 +23,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
 
   const downloadImage = (): void => {
     const downloadCanvas: HTMLCanvasElement = document.createElement('canvas');
-    downloadCanvas.width = 1300;
+    downloadCanvas.width = 1225;
     downloadCanvas.height = 500;
 
     const portraitCanvas: HTMLCanvasElement = 
@@ -32,8 +32,8 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
       document.getElementById('textCanvas') as HTMLCanvasElement;
     
     const dCtx: CanvasRenderingContext2D = downloadCanvas.getContext('2d');
-    dCtx.drawImage(portraitCanvas, 0, 0, 1300, 500);
-    dCtx.drawImage(textCanvas, 0, 0, 1300, 500);
+    dCtx.drawImage(portraitCanvas, 0, 0, 1225, 500);
+    dCtx.drawImage(textCanvas, 0, 0, 1225, 500);
     const link: HTMLAnchorElement = document.createElement('a');
     link.download = `${char}-${text}.png`;
     link.href = downloadCanvas.toDataURL('image/png');
@@ -59,21 +59,21 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
         <div 
           id='vanillaFont' 
           className='fonts KRSMDivs' 
-          onClick={() => setFont('18pt KoreanKRSM')}
+          onClick={() => setFont('KoreanKRSM')}
         >
           KoreanKRSM &#40;Persona 5&#41;
         </div>
         <div 
           id='royalFont' 
           className='fonts optimaDivs' 
-          onClick={() => setFont('18pt Optima nova LT')}
+          onClick={() => setFont('Optima nova LT')}
         >
           Optima Nova Black &#40;Persona 5 Royal&#41;
         </div>
         <div 
           id='japaneseFont' 
           className='fonts slumpDivs' 
-          onClick={() => setFont('18pt SlumpSTD')}
+          onClick={() => setFont('SlumpSTD')}
         >
           Slump DB &#40;ペルソナ5 - 日本語&#41;
         </div>

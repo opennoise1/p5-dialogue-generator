@@ -9,8 +9,8 @@ const App = () => {
   const [emote, setEmote]= useState<string>('Happy');
   const [costume, setCostume] = useState<string>('Gym Clothes');
   const [text, setText] = useState<string>('');
-  const [font, setFont] = useState<string>('18pt KoreanKRSM');
-
+  const [font, setFont] = useState<string>('KoreanKRSM');
+  
   const [portrait, setPortrait] = 
     useState<string>(`../images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);
   

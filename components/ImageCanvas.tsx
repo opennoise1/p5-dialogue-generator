@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { simplePositions, findSpecialPosition } from '../utils/portraitPositions';
 
+let isInitiallyLoaded = false;
+
 const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
   const portraitCanvas: React.MutableRefObject<any> = useRef(null);
   const textCanvas: React.MutableRefObject<any> = useRef(null);
@@ -14,7 +16,8 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
     pCtx = portraitCanvas.current.getContext('2d');
     tCtx = textCanvas.current.getContext('2d');
     tCtx.fillStyle = '#FFFFFF';
-    return tCtx.font = font;
+    tCtx.font = `18pt ${font}`;
+    return;
   });
 
   useEffect(() => {
@@ -81,7 +84,7 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
       <img 
         ref={box}
         id='box'
-        src={'../images/db@2x.png'}
+        src={`../images/boxes/db-${char}-${font}.png`}
         className='hidden'
       />
     </div>
