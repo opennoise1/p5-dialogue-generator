@@ -23,7 +23,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
 
   const downloadImage = (): void => {
     const downloadCanvas: HTMLCanvasElement = document.createElement('canvas');
-    downloadCanvas.width = 1225;
+    downloadCanvas.width = 1275;
     downloadCanvas.height = 500;
 
     const portraitCanvas: HTMLCanvasElement = 

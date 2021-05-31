@@ -21,11 +21,18 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
   useEffect(() => {
     tCtx.clearRect(0, 0, 1275, 500);
     const rows = text.split('\n');
-    if (!rows[1]) rows[1] = '';
-    if (!rows[2]) rows[2] = '';
-    tCtx.fillText(rows[0], 475, 375);
-    tCtx.fillText(rows[1], 475, 400);
-    return tCtx.fillText(rows[2], 475, 425);
+    if (rows[1] === undefined) rows[1] = '';
+    if (rows[2] === undefined) rows[2] = '';
+    if (rows[0] && rows[1] && !rows[2]) {
+      // Centers text in two-line dialogue boxes
+      tCtx.fillText(rows[0], 500, 387);
+      tCtx.fillText(rows[1], 500, 417);
+      return;
+    }
+    tCtx.fillText(rows[0], 500, 373);
+    tCtx.fillText(rows[1], 500, 403);
+    tCtx.fillText(rows[2], 500, 433);
+    return;
   }, [text, font]);
 
   useEffect(() => {
