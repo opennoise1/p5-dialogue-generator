@@ -38,12 +38,9 @@ const Menus = ({ char, setChar, emote, setEmote, costume, setCostume, setPortrai
   return (
     <>
       <div className='menus'>
-        Character:
-          <CharacterMenu {...menuProps} />
-        Emotion:
-          <EmotionMenu {...menuProps} />
-        Costume:
-          <CostumeMenu {...menuProps} />
+        <CharacterMenu {...menuProps} />
+        <EmotionMenu {...menuProps} />
+        <CostumeMenu {...menuProps} />
       </div>
     </>
   )

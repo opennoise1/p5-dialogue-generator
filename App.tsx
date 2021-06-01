@@ -65,10 +65,8 @@ const App = () => {
             </p>
           </div>
         </div>
-        <div id='imageTools'>
-          <ImageCanvas {...appProps} />
-          <TextAndTools {...appProps} />
-        </div>
+        <ImageCanvas {...appProps} />
+        <TextAndTools {...appProps} />
       </div>
     </>
   );

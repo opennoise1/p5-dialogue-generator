@@ -58,31 +58,32 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
           onChange={(e) => setText(e.target.value)} 
         />
         <div 
-          id='download' 
-          className='fonts' 
+          id='download'
+          className='knife'
           onClick={downloadImage}
         >
+          <img src='../images/down-arrow.svg' />
           Download Dialogue      
         </div>
       </div>
       <div id='fontDiv'>
         <div 
           id='vanillaFont' 
-          className='fonts KRSMDivs' 
+          className='fonts KRSMDivs knife' 
           onClick={() => setFont('KoreanKRSM')}
         >
           KoreanKRSM &#40;Persona 5&#41;
         </div>
         <div 
           id='royalFont' 
-          className='fonts optimaDivs' 
+          className='fonts optimaDivs knife' 
           onClick={() => setFont('Optima nova LT')}
         >
           Optima Nova Black &#40;Persona 5 Royal&#41;
         </div>
         <div 
           id='japaneseFont' 
-          className='fonts slumpDivs' 
+          className='fonts slumpDivs knife' 
           onClick={() => setFont('SlumpSTD')}
         >
           Slump DB &#40;ペルソナ5 - 日本語&#41;

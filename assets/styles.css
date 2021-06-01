@@ -42,6 +42,7 @@ body {
 #allDivs {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 /* Titles */
@@ -141,33 +142,38 @@ body {
   letter-spacing: 0.5px;
 }
 
+.hidden {
+  display: none;
+}
+
 /* Text and Tools */
 
 #textAndTools {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
-#textField {
-  margin: 10px;
-  font-family: 'sans-serif';
-  resize: none;
-  white-space: nowrap;
-
-  border: 2px solid black;
-  background-color: white;
-  box-shadow: 4px 4px black;
+.knife:hover {
+  cursor: url('../images/knife.png') 0 44, pointer;
 }
 
-#imageTools {
+#textAndDownload {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.hidden {
-  display: none;
+#textField {
+  margin: 20px;
+  font-family: 'sans-serif';
+  font-size: 14pt;
+  resize: none;
+  white-space: nowrap;
+
+  border: 2px solid black;
+  background-color: white;
+  box-shadow: 4px 4px black;
 }
 
 .menus {
@@ -187,22 +193,38 @@ body {
   background-color: white;
 }
 
+#download {
+  padding: 5px;
+
+  border: 2px solid black;
+  box-shadow: 3px 3px black;
+  background-color: white;
+
+  color: black;
+  text-align: center;
+}
+
 /* Font Selection */
 
 #fontDiv {
+  margin-top: 20px;
+
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 }
 
 .fonts {
+  margin-bottom: 6px;
   margin-right: 0.5em;
   margin-left: 0.5em;
   border: 2px solid black;
   box-shadow: 3px 3px black;
   background-color: white;
   color: black;
+
   text-align: center;
-  justify-content: center;
+  line-height: 8px;
 }
 
 .fonts:active {
@@ -213,10 +235,6 @@ body {
    outline: none;
 }
 
-.fonts:hover {
-  cursor: pointer;
-}
-
 #vanillaFont {
   padding: 0.5em;
   padding-top: 0.9em;
@@ -225,7 +243,7 @@ body {
 
 #royalFont {
   padding: 0.5em;
-  padding-top: 0.9em;
+  padding-top: 0.5em;
   font-family: 'Optima nova LT';
   font-size: 12pt;
 }
