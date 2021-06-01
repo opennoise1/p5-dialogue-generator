@@ -1,7 +1,7 @@
 import React from 'react';
 import Menus from './Menus';
 
-const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, setPortrait, text, setText, font, setFont }) => {
+const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, setPortrait, text, setText, setFont }) => {
 
   const toolProps: { 
     char: string, 
@@ -28,12 +28,15 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
 
     const portraitCanvas: HTMLCanvasElement = 
       document.getElementById('portraitCanvas') as HTMLCanvasElement;
+    const boxCanvas: HTMLCanvasElement = 
+      document.getElementById('boxCanvas') as HTMLCanvasElement;
     const textCanvas: HTMLCanvasElement = 
       document.getElementById('textCanvas') as HTMLCanvasElement;
     
     const dCtx: CanvasRenderingContext2D = downloadCanvas.getContext('2d');
-    dCtx.drawImage(portraitCanvas, 0, 0, 1225, 500);
-    dCtx.drawImage(textCanvas, 0, 0, 1225, 500);
+    dCtx.drawImage(portraitCanvas, 0, 0, 1275, 500);
+    dCtx.drawImage(boxCanvas, 0, 0, 1275, 500);
+    dCtx.drawImage(textCanvas, 0, 0, 1275, 500);
     const link: HTMLAnchorElement = document.createElement('a');
     link.download = `${char}-${text}.png`;
     link.href = downloadCanvas.toDataURL('image/png');

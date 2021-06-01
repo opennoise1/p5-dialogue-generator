@@ -39,22 +39,6 @@ body {
   flex-direction: column;
 }
 
-#backAndDivs {
-  position: relative;
-}
-
-#background {
-  position: absolute;
-  z-index: 0;
-  right: 0;
-  bottom: 0;
-}
-
-#allDivs {
-  position: absolute;
-  z-index: 1;
-}
-
 /* Titles */
 
 #title {
@@ -127,11 +111,18 @@ body {
   z-index: 0;
 }
 
-#textCanvas {
+#boxCanvas {
   position: absolute;
   left: 0;
   top: 0;
   z-index: 1;
+}
+
+#textCanvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
   letter-spacing: 0.5px;
 }
 

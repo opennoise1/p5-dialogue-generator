@@ -3,22 +3,18 @@ import { simplePositions, findSpecialPosition } from '../utils/portraitPositions
 
 const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
   const portraitCanvas: React.MutableRefObject<any> = useRef(null);
+  const boxCanvas: React.MutableRefObject<any> = useRef(null);
   const textCanvas: React.MutableRefObject<any> = useRef(null);
   const character: React.MutableRefObject<any> = useRef(null);
   const box: React.MutableRefObject<any> = useRef(null);
   let pCtx: CanvasRenderingContext2D;
+  let bCtx: CanvasRenderingContext2D;
   let tCtx: CanvasRenderingContext2D;
 
-  // preps the canvases upon each render by creating a 2D "drawing context" for it
   useEffect(() => {
-    pCtx = portraitCanvas.current.getContext('2d');
     tCtx = textCanvas.current.getContext('2d');
     tCtx.fillStyle = '#FFFFFF';
     tCtx.font = `18pt ${font}`;
-    return;
-  });
-
-  useEffect(() => {
     tCtx.clearRect(0, 0, 1275, 500);
     const rows = text.split('\n');
     if (rows[1] === undefined) rows[1] = '';
@@ -35,14 +31,8 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
     return;
   }, [text, font]);
 
-  useEffect(() => {
-    const box = document.getElementById('box');
-    box.addEventListener('load', () => {
-      drawPortrait(character.current, simplePositions[char], 500, 500);
-    });
-  }, [font]);
-
   const drawPortrait = (charImage: CanvasImageSource, portraitXY: [number, number], w: number, h: number) => {
+    pCtx = portraitCanvas.current.getContext('2d');
     pCtx.clearRect(0, 0, 1275, 500);
     let x;
     let y;
@@ -59,7 +49,9 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
   };
 
   const drawBox = (boxImage: CanvasImageSource) => {
-    return pCtx.drawImage(boxImage, 320, 250, 950, 250);
+    bCtx = boxCanvas.current.getContext('2d');
+    bCtx.clearRect(0, 0, 1275, 500);
+    return bCtx.drawImage(boxImage, 320, 250, 950, 250);
   };
 
   return (
@@ -67,6 +59,14 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
       <canvas 
         ref={portraitCanvas} 
         id='portraitCanvas'
+        width='1275' 
+        height='500' 
+      >
+        Sorry! This generator requires a browser that supports HTML5!
+      </canvas>
+      <canvas 
+        ref={boxCanvas} 
+        id='boxCanvas'
         width='1275' 
         height='500' 
       >
@@ -94,6 +94,7 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
         id='box'
         src={`../images/boxes/db-${char}-${font}.png`}
         className='hidden'
+        onLoad={() => drawBox(box.current)}
       />
     </div>
   );
