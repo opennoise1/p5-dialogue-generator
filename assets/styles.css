@@ -39,7 +39,17 @@ body {
   flex-direction: column;
 }
 
+#allDivs {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Titles */
+
+#header {
+  display: flex;
+  justify-content: space-between;
+}
 
 #title {
   margin-bottom: 10px;
@@ -83,25 +93,30 @@ body {
 
 #subhead {
   display: flex;
-  justify-content: center;
-  align-items: space-between;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 #subhead p {
-  margin: 5px;
-  padding: 5px;
-
+  margin-block-start: 0;
+  margin-block-end: 0;
   background-color: white;
   border: 2px solid black;
   box-shadow: 3px 3px black;
   text-align: center;
 }
 
+#credits {
+  margin-bottom: 20px;
+}
+
 /* Image and text canvases */
 
 #canvasDiv {
   position: relative;
-  background-color: white;
+  background-image: url('../images/backgroundDot.png');
+  background-size: 1275px 500px;
   border: 2px solid black;
   line-height: 0; /* Eliminates small bit of padding at the bottom of canvas-containing div */
   box-shadow: 4px 4px black;
@@ -128,6 +143,11 @@ body {
 
 /* Text and Tools */
 
+#textAndTools {
+  display: flex;
+  justify-content: space-between;
+}
+
 #textField {
   margin: 10px;
   font-family: 'sans-serif';
@@ -150,9 +170,13 @@ body {
   display: none;
 }
 
-.menuDiv {
+.menus {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  margin: 10px;
 }
 
 .menuOptions {
@@ -165,9 +189,9 @@ body {
 
 /* Font Selection */
 
-#buttonDiv {
+#fontDiv {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
 }
 
 .fonts {

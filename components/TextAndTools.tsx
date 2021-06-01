@@ -45,20 +45,27 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
   };
 
   return (
-    <>
-      <textarea 
-        id='textField' 
-        placeholder='Enter dialogue here...'
-        autoFocus={true}
-        rows={3}
-        cols={40}
-        defaultValue={text}
-        onChange={(e) => setText(e.target.value)} 
-      />  
-      <div id='menuDiv'>
-        <Menus {...toolProps} />
+    <div id='textAndTools'>
+      <Menus {...toolProps} />
+      <div id='textAndDownload'>
+        <textarea 
+          id='textField' 
+          placeholder='Enter dialogue here...'
+          autoFocus={true}
+          rows={3}
+          cols={40}
+          defaultValue={text}
+          onChange={(e) => setText(e.target.value)} 
+        />
+        <div 
+          id='download' 
+          className='fonts' 
+          onClick={downloadImage}
+        >
+          Download Dialogue      
+        </div>
       </div>
-      <div id='buttonDiv'>
+      <div id='fontDiv'>
         <div 
           id='vanillaFont' 
           className='fonts KRSMDivs' 
@@ -81,8 +88,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
           Slump DB &#40;ペルソナ5 - 日本語&#41;
         </div>
       </div>
-      <div id='download' className='fonts' onClick={downloadImage}>Download Dialogue</div>
-    </>
+    </div>
   )
 };
 
