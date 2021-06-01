@@ -12,10 +12,13 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
   let tCtx: CanvasRenderingContext2D;
 
   useEffect(() => {
+    // Initialize text canvas and clear current text
     tCtx = textCanvas.current.getContext('2d');
     tCtx.fillStyle = '#FFFFFF';
     tCtx.font = `18pt ${font}`;
     tCtx.clearRect(0, 0, 1275, 500);
+
+    // Draw or redraw text
     const rows = text.split('\n');
     if (rows[1] === undefined) rows[1] = '';
     if (rows[2] === undefined) rows[2] = '';
@@ -32,8 +35,11 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
   }, [text, font]);
 
   const drawPortrait = (charImage: CanvasImageSource, portraitXY: [number, number], w: number, h: number) => {
+    // Initialize portrait canvas and clear current portrait
     pCtx = portraitCanvas.current.getContext('2d');
     pCtx.clearRect(0, 0, 1275, 500);
+
+    // Look up draw position for requested portrait and draw new portrait
     let x;
     let y;
     if (!simplePositions[char]) {
@@ -45,13 +51,15 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
       y = portraitXY[1];
     }
     pCtx.drawImage(charImage, x, y, w, h);
-    return drawBox(box.current); // Ensures box will always be painted over portrait
+    return;
   };
 
   const drawBox = (boxImage: CanvasImageSource) => {
+    // Initialize box canvas, clear current box and draw new box
     bCtx = boxCanvas.current.getContext('2d');
     bCtx.clearRect(0, 0, 1275, 500);
-    return bCtx.drawImage(boxImage, 320, 250, 950, 250);
+    bCtx.drawImage(boxImage, 320, 250, 950, 250);
+    return;
   };
 
   return (
