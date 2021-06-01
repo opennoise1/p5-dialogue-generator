@@ -2,7 +2,7 @@
 
 Inspired by [Foone](https://twitter.com/Foone)'s [Death Generator](https://deathgenerator.com/), 
 the Persona 5 Dialogue Generator allows you to create and download custom dialogue boxes 
-featuring the artwork of <b>over 1700 portraits</b> featured in both <em>Persona 5</em> and <em>Persona 5 Royal</em>.
+featuring <b>over 1700 portraits</b> featured in both <em>Persona 5</em> and <em>Persona 5 Royal</em>.
 
 Try it for yourself: www.p5generator.com
 
