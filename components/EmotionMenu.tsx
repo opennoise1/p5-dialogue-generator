@@ -40,12 +40,12 @@ if (emoteMenus.length) {
   }
 
   return (
-    <>
-    Emotion:
+    <div className='menuDivs'>
+      <div>Emotion: </div>
       <select id='emoteMenu' className='menuOptions knife' value={emote} name='emotions' onChange={switchEmote}>
         {charEmotes}
       </select>
-    </>
+    </div>
   )
 }
 

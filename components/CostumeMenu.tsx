@@ -19,12 +19,12 @@ const CostumeMenu = ({ char, costume, setCostume, costumeMenus }) => {
   }
 
   return (
-    <>
-    Costume:
-    <select id='costumeMenu' className='menuOptions knife' value={costume} name='costumes' onChange={switchCostume}>
-      {charCostumes}
-    </select>
-    </>
+    <div className='menuDivs'>
+      <div>Costume: </div>
+      <select id='costumeMenu' className='menuOptions knife' value={costume} name='costumes' onChange={switchCostume}>
+        {charCostumes}
+      </select>
+    </div>
   )
 }
 

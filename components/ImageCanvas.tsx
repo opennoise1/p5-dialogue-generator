@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { simplePositions, findSpecialPosition } from '../utils/portraitPositions';
 
-const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
+const ImageCanvas = ({ portrait, text, font, char, emote, costume, box }) => {
   const portraitCanvas: React.MutableRefObject<any> = useRef(null);
   const boxCanvas: React.MutableRefObject<any> = useRef(null);
   const textCanvas: React.MutableRefObject<any> = useRef(null);
   const character: React.MutableRefObject<any> = useRef(null);
-  const box: React.MutableRefObject<any> = useRef(null);
+  const dialogueBox: React.MutableRefObject<any> = useRef(null);
   let pCtx: CanvasRenderingContext2D;
   let bCtx: CanvasRenderingContext2D;
   let tCtx: CanvasRenderingContext2D;
@@ -98,11 +98,11 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume }) => {
         className='hidden'
       />
       <img 
-        ref={box}
+        ref={dialogueBox}
         id='box'
-        src={`../images/boxes/db-${char}-${font}.png`}
+        src={box}
         className='hidden'
-        onLoad={() => drawBox(box.current)}
+        onLoad={() => drawBox(dialogueBox.current)}
       />
     </div>
   );

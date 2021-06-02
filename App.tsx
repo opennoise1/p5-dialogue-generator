@@ -13,6 +13,7 @@ const App = () => {
   
   const [portrait, setPortrait] = 
     useState<string>(`../images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);
+  const [box, setBox] = useState<string>(`../images/boxes/db-${char}-${font}.png`);
   
   // by adding props to a separate object here, we can get around a TypeScript error
   // read more here: https://stackoverflow.com/questions/48240449/type-is-not-assignable-to-type-intrinsicattributes-intrinsicclassattribu
@@ -30,6 +31,8 @@ const App = () => {
     setPortrait: any,
     font: any,
     setFont: any,
+    box: any,
+    setBox: any,
   } = {
     char,
     setChar,
@@ -43,6 +46,8 @@ const App = () => {
     setPortrait,
     font,
     setFont,
+    box,
+    setBox,
   }
 
   return (
@@ -58,7 +63,6 @@ const App = () => {
             </div>
           </div>
           <div id='subhead'>
-            <p>HOLD IT! Portraits contain spoilers!</p>
             <p id='credits'>
               <a href='https://github.com/opennoise1/p5-dialogue-generator' target='_blank'>Code</a> by <a href='https://twitter.com/opennoise' target='_blank'>@opennoise</a>. 
               All artwork/content by <a href='https://twitter.com/Atlus_West' target='_blank'>Atlus</a>.

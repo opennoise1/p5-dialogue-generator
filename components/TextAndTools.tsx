@@ -1,7 +1,7 @@
 import React from 'react';
 import Menus from './Menus';
 
-const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, setPortrait, text, setText, setFont }) => {
+const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, setPortrait, text, setText, setFont, box, setBox }) => {
 
   const toolProps: { 
     char: string, 
@@ -10,7 +10,9 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
     setEmote: any, 
     costume: string, 
     setCostume: any, 
-    setPortrait: any 
+    setPortrait: any
+    box: any,
+    setBox: any,
   } = {
     char,
     setChar,
@@ -19,6 +21,8 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
     costume,
     setCostume,
     setPortrait,
+    box,
+    setBox,
   }
 
   const downloadImage = (): void => {
@@ -50,7 +54,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
       <div id='textAndDownload'>
         <textarea 
           id='textField' 
-          placeholder='Enter dialogue here...'
+          placeholder={'HOLD IT! Portraits contain spoilers'}
           autoFocus={true}
           rows={3}
           cols={40}
@@ -62,8 +66,8 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
           className='knife'
           onClick={downloadImage}
         >
-          <img src='../images/down-arrow.svg' />
-          Download Dialogue      
+          <img src='../images/down-arrow.png' alt='Download button' width='40' height='48' />
+          <div>Download</div>    
         </div>
       </div>
       <div id='fontDiv'>

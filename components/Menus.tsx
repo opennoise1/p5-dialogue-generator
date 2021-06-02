@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import CharacterMenu from './CharacterMenu';
 import EmotionMenu from './EmotionMenu';
 import CostumeMenu from './CostumeMenu';
+import BoxMenu from './BoxMenu';
 
-const Menus = ({ char, setChar, emote, setEmote, costume, setCostume, setPortrait }) => {
+const Menus = ({ char, setChar, emote, setEmote, costume, setCostume, setPortrait, box, setBox }) => {
   const [emoteMenus, setEmoteMenus] = useState<string[]>([]);
   const [costumeMenus, setCostumeMenus] = useState<string[]>([]);
 
@@ -41,6 +42,10 @@ const Menus = ({ char, setChar, emote, setEmote, costume, setCostume, setPortrai
         <CharacterMenu {...menuProps} />
         <EmotionMenu {...menuProps} />
         <CostumeMenu {...menuProps} />
+        {char === 'Sumire' 
+          ? <BoxMenu />
+          : null
+        }
       </div>
     </>
   )
