@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Menus from './Menus';
 
-const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, setPortrait, text, setText, setFont, box, setBox }) => {
+const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, 
+  setPortrait, text, setText, font, setFont, box, setBox, selection, setSelection }) => {
 
   const toolProps: { 
     char: string, 
@@ -13,6 +14,9 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
     setPortrait: any
     box: any,
     setBox: any,
+    font: any,
+    selection: any,
+    setSelection: any,
   } = {
     char,
     setChar,
@@ -23,7 +27,14 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
     setPortrait,
     box,
     setBox,
+    font,
+    selection,
+    setSelection,
   }
+
+  useEffect(() => {
+    setBox(`../images/boxes/db-${selection}-${font}.png`);
+  }, [font])
 
   const downloadImage = (): void => {
     const downloadCanvas: HTMLCanvasElement = document.createElement('canvas');

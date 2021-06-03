@@ -1,7 +1,8 @@
 import React, {useEffect} from "../_snowpack/pkg/react.js";
-const CharacterMenu = ({char, emote, setChar, setEmote, setEmoteMenus}) => {
+const CharacterMenu = ({char, emote, setBox, setChar, setEmote, setEmoteMenus, font}) => {
   const switchChar = (e) => {
     setChar(e.target.value);
+    setBox(`../images/boxes/db-${char}-${font}.png`);
   };
   useEffect(() => {
     fetch("http://localhost:3000/emotions", {
@@ -17,12 +18,14 @@ const CharacterMenu = ({char, emote, setChar, setEmote, setEmoteMenus}) => {
       }
     }).catch((err) => console.log(err));
   }, [char]);
-  return /* @__PURE__ */ React.createElement("select", {
+  return /* @__PURE__ */ React.createElement("div", {
+    className: "menuDivs"
+  }, /* @__PURE__ */ React.createElement("div", null, "Character: "), /* @__PURE__ */ React.createElement("select", {
     id: "charMenu",
+    className: "menuOptions knife",
     value: char,
     name: "characters",
-    onChange: switchChar,
-    className: "menus"
+    onChange: switchChar
   }, /* @__PURE__ */ React.createElement("option", {
     value: "Ann"
   }, "Ann Takamaki"), /* @__PURE__ */ React.createElement("option", {
@@ -111,6 +114,6 @@ const CharacterMenu = ({char, emote, setChar, setEmote, setEmoteMenus}) => {
     value: "Yusuke"
   }, "Yusuke Kitagawa"), /* @__PURE__ */ React.createElement("option", {
     value: "Mishima"
-  }, "Yuuki Mishima"));
+  }, "Yuuki Mishima")));
 };
 export default CharacterMenu;

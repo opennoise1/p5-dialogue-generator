@@ -159,6 +159,10 @@ body {
 
 /* Text and Tools */
 
+select {
+  width: 250px;
+}
+
 #textAndTools {
   display: flex;
   justify-content: space-around;

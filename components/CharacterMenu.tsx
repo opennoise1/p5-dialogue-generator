@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 
-const CharacterMenu = ({ char, emote, setChar, setEmote, setEmoteMenus }) => {
+const CharacterMenu = ({ char, emote, font, selection, setChar, setEmote, setEmoteMenus, setSelection, setBox }) => {
 
   const switchChar = (e: any) => {
     setChar(e.target.value);
+    setSelection(char);
+    setBox(`../images/boxes/db-${selection}-${font}.png`)
   };
 
   useEffect(() => {

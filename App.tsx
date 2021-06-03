@@ -10,10 +10,11 @@ const App = () => {
   const [costume, setCostume] = useState<string>('Gym Clothes');
   const [text, setText] = useState<string>('');
   const [font, setFont] = useState<string>('KoreanKRSM');
+  const [selection, setSelection] = useState<string>(char);
   
   const [portrait, setPortrait] = 
     useState<string>(`../images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);
-  const [box, setBox] = useState<string>(`../images/boxes/db-${char}-${font}.png`);
+  const [box, setBox] = useState<string>(`../images/boxes/db-${selection}-${font}.png`);
   
   // by adding props to a separate object here, we can get around a TypeScript error
   // read more here: https://stackoverflow.com/questions/48240449/type-is-not-assignable-to-type-intrinsicattributes-intrinsicclassattribu
@@ -33,6 +34,8 @@ const App = () => {
     setFont: any,
     box: any,
     setBox: any,
+    selection: any,
+    setSelection: any,
   } = {
     char,
     setChar,
@@ -48,6 +51,8 @@ const App = () => {
     setFont,
     box,
     setBox,
+    selection,
+    setSelection,
   }
 
   return (

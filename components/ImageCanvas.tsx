@@ -57,9 +57,10 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume, box }) => {
   const drawBox = (boxImage: CanvasImageSource) => {
     // Initialize box canvas, clear current box and draw new box
     bCtx = boxCanvas.current.getContext('2d');
-    const height = boxImage.height as number;
-    const width = boxImage.width as number;
-    const heightOffset = height - 250;
+    const width: number = boxImage.width as number;
+    const height: number = boxImage.height as number;
+    // For particularly tall boxes, determine the number of pixels to offset its Y coordinate
+    const heightOffset: number = height - 250;
     bCtx.clearRect(0, 0, 1275, 500);
     bCtx.drawImage(boxImage, 320, 250 - heightOffset, width, height);
     return;
@@ -96,15 +97,15 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume, box }) => {
       <img
         ref={character}
         id='portrait'
-        onLoad={() => drawPortrait(character.current, simplePositions[char], 500, 500)}
-        src={portrait}
         className='hidden'
+        src={portrait}
+        onLoad={() => drawPortrait(character.current, simplePositions[char], 500, 500)}
       />
       <img 
         ref={dialogueBox}
         id='box'
-        src={`../images/boxes/db-${char}-${font}.png`}
         className='hidden'
+        src={box}
         onLoad={() => drawBox(dialogueBox.current)}
       />
     </div>

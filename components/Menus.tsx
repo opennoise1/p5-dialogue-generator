@@ -4,7 +4,10 @@ import EmotionMenu from './EmotionMenu';
 import CostumeMenu from './CostumeMenu';
 import BoxMenu from './BoxMenu';
 
-const Menus = ({ char, setChar, emote, setEmote, costume, setCostume, setPortrait, box, setBox }) => {
+import { boxDirectory } from '../utils/boxFinder'
+
+const Menus = ({ char, setChar, emote, setEmote, costume, 
+  setCostume, setPortrait, font, box, setBox, selection, setSelection }) => {
   const [emoteMenus, setEmoteMenus] = useState<string[]>([]);
   const [costumeMenus, setCostumeMenus] = useState<string[]>([]);
 
@@ -19,6 +22,11 @@ const Menus = ({ char, setChar, emote, setEmote, costume, setCostume, setPortrai
     setEmoteMenus: any,
     costumeMenus: any,
     setCostumeMenus: any, 
+    font: any,
+    box: any,
+    setBox: any,
+    selection: any,
+    setSelection: any,
   } = {
     char,
     emote,
@@ -30,25 +38,35 @@ const Menus = ({ char, setChar, emote, setEmote, costume, setCostume, setPortrai
     setEmoteMenus,
     costumeMenus,
     setCostumeMenus,
-  }
+    font,
+    box,
+    setBox,
+    selection,
+    setSelection,
+  };
 
   useEffect(() => {
-    setPortrait(`../images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`)
-  }, [char, emote, costume])
-  
+    setBox(`../images/boxes/db-${selection}-${font}.png`);
+    setPortrait(`../images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);
+  }, [char, emote, costume, selection]);
+
+  useEffect(() => {
+    setSelection(char);
+  }, [char]);
+
   return (
     <>
       <div className='menus'>
         <CharacterMenu {...menuProps} />
         <EmotionMenu {...menuProps} />
         <CostumeMenu {...menuProps} />
-        {char === 'Sumire' 
-          ? <BoxMenu />
+        {boxDirectory[char]
+          ? <BoxMenu {...menuProps} />
           : null
         }
       </div>
     </>
-  )
+  );
 };
 
 export default Menus;

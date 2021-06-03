@@ -26,12 +26,14 @@ const EmotionMenu = ({char, emote, setEmote, setCostume, costume, emoteMenus, se
   const switchEmote = (e) => {
     return setEmote(e.target.value);
   };
-  return /* @__PURE__ */ React.createElement("select", {
+  return /* @__PURE__ */ React.createElement("div", {
+    className: "menuDivs"
+  }, /* @__PURE__ */ React.createElement("div", null, "Emotion: "), /* @__PURE__ */ React.createElement("select", {
     id: "emoteMenu",
-    className: "menus",
+    className: "menuOptions knife",
     value: emote,
     name: "emotions",
     onChange: switchEmote
-  }, charEmotes);
+  }, charEmotes));
 };
 export default EmotionMenu;

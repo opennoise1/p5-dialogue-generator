@@ -1,6 +1,6 @@
 import React, { SyntheticEvent } from 'react';
 
-const CostumeMenu = ({ char, costume, setCostume, costumeMenus }) => {
+const CostumeMenu = ({ char, setBox, font, costume, setCostume, costumeMenus }) => {
   let charCostumes = [];
 
   if (costumeMenus.length) {
@@ -15,7 +15,12 @@ const CostumeMenu = ({ char, costume, setCostume, costumeMenus }) => {
 
 
   const switchCostume = (e: SyntheticEvent<HTMLSelectElement>) => {
-    return setCostume((e.target as HTMLSelectElement).value);
+    setCostume((e.target as HTMLSelectElement).value);
+    // Since the Shujin teacher characters are determined by the costume selection,
+    // the box should be set when the costume is selected, rather than the character
+    if (char === 'Teachers') {
+      setBox(`../images/boxes/db-${costume}-${font}.png`)
+    }
   }
 
   return (

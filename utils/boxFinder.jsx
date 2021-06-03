@@ -17,7 +17,7 @@ const boxDirectory = {
   Tanaka: true,
 };
 
-const menuFinder = (char) => {
+const boxFinder = (char) => {
   switch (char) {
     case 'Akechi': {
       return (
@@ -134,4 +134,4 @@ const menuFinder = (char) => {
   }
 }
 
-export { boxDirectory, menuFinder };
+export { boxDirectory, boxFinder };
