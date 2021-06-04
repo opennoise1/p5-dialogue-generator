@@ -65,7 +65,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume,
       <div id='textAndDownload'>
         <textarea 
           id='textField' 
-          placeholder={'HOLD IT! Portraits contain spoilers'}
+          placeholder='HOLD IT! Portraits contain spoilers!'
           autoFocus={true}
           rows={3}
           cols={40}
