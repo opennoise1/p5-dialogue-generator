@@ -65,7 +65,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume,
       <div id='textAndDownload'>
         <textarea 
           id='textField' 
-          placeholder='HOLD IT! Portraits contain spoilers!'
+          placeholder='HOLD IT! Character portraits contain spoilers!'
           autoFocus={true}
           rows={3}
           cols={50}
@@ -77,11 +77,13 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume,
           className='knife'
           onClick={downloadImage}
         >
-          <img src='../images/down-arrow.png' alt='Download button' width='40' height='48' />
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 24l-8-9h6v-15h4v15h6z"/></svg>
+          {/* <img id='arrow' src='../images/down-arrow.png' alt='Download button' width='20' height='24' /> */}
           <div>Download</div>    
         </div>
       </div>
       <div id='fontDiv'>
+        <div id='fontSelect'>Font Select</div>
         <div 
           id='vanillaFont' 
           className='fonts KRSMDivs knife' 
