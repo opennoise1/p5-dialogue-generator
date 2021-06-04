@@ -64,15 +64,22 @@ const App = () => {
               <div id='titleKRSM' className='KRSMDivs'>DIALOGUE GENERATOR</div>
               <div id='titleOptima' className='optimaDivs'>DIALOGUE GENERATOR</div>
               <div id='titleSlump' className='slumpDivs'>対話ジェネレータ</div>
+              <div id='mobileMessage' className='hidden'>
+                <div>
+                  Because of the width of the dialogue boxes, this website isn't suited to mobile devices.
+                </div>
+                <br></br>
+                <div>
+                  Please use a desktop, laptop or tablet screen at least 800px in size. Thanks!
+                </div>
+          </div>
             </div>
           </div>
           <div id='subhead'>
             <p id='credits'>
               <a href='https://github.com/opennoise1/p5-dialogue-generator' target='_blank'>Code</a> by <a href='https://twitter.com/opennoise' target='_blank'>@opennoise</a>.
               <br></br>
-              All artwork/content by <a href='https://twitter.com/Atlus_West' target='_blank'>Atlus</a>.
-              <br></br>
-              Artwork is used under fair use.
+              All artwork by <a href='https://twitter.com/Atlus_West' target='_blank'>Atlus</a>, displayed here under fair use.
             </p>
           </div>
         </div>
