@@ -14,7 +14,7 @@ const BoxMenu = ({ char, setSelection, selection, setBox, font }) => {
   return (
     <div className='menuDivs'>
       <div>Box: </div>
-      <select id='boxMenu' className='menuOptions knife' onChange={switchBox}>
+      <select id='boxMenu' className='menuOptions knife' value={selection} onChange={switchBox}>
         {options}
       </select>
     </div>
