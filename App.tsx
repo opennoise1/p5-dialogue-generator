@@ -57,10 +57,9 @@ const App = () => {
 
   return (
     <>
-      <div id='allDivs'>
         <div id='header'>
           <div id='title'>
-            <img id='p5logo' src='./images/personalogo.png' width={250} height={151} />
+            <img id='p5logo' src='./images/personalogo.png' width='250' height='151' />
             <div className='generatorTitles'>
               <div id='titleKRSM' className='KRSMDivs'>DIALOGUE GENERATOR</div>
               <div id='titleOptima' className='optimaDivs'>DIALOGUE GENERATOR</div>
@@ -69,14 +68,16 @@ const App = () => {
           </div>
           <div id='subhead'>
             <p id='credits'>
-              <a href='https://github.com/opennoise1/p5-dialogue-generator' target='_blank'>Code</a> by <a href='https://twitter.com/opennoise' target='_blank'>@opennoise</a>. 
+              <a href='https://github.com/opennoise1/p5-dialogue-generator' target='_blank'>Code</a> by <a href='https://twitter.com/opennoise' target='_blank'>@opennoise</a>.
+              <br></br>
               All artwork/content by <a href='https://twitter.com/Atlus_West' target='_blank'>Atlus</a>.
+              <br></br>
+              Artwork is used under fair use.
             </p>
           </div>
         </div>
         <ImageCanvas {...appProps} />
         <TextAndTools {...appProps} />
-      </div>
     </>
   );
 }

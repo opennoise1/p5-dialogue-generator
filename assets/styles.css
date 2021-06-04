@@ -37,11 +37,6 @@ body {
   background-color: #FF0505;
   display: flex;
   flex-direction: column;
-}
-
-#allDivs {
-  display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
@@ -50,11 +45,10 @@ body {
 #header {
   display: flex;
   justify-content: space-between;
+  align-items: space-between;
 }
 
 #title {
-  margin-bottom: 10px;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,30 +87,32 @@ body {
 }
 
 #subhead {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
+  font-size: 14pt;
+  color: white;
+  text-shadow: 2px 2px black;
+  text-align: right;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 
-  margin-bottom: 20px;
 }
 
-#subhead p {
-  margin-block-start: 0;
-  margin-block-end: 0;
-
-  font-size: 16pt;
+#subhead a:visited {
   color: white;
   text-shadow: 2px 2px black;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
-  text-align: center;
 }
 
-#subhead a {
-  color: white;
+#subhead a:hover {
+  background-color: white;
+  color: black;
   text-decoration: none;
-  font-weight: normal;
+  text-shadow: none;
+  -webkit-text-stroke-width: none;
+  -webkit-text-stroke-color: none;
+  /* text-shadow: 2px 2px white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white; */
 }
 
 #credits {
