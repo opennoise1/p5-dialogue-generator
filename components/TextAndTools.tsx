@@ -68,7 +68,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume,
           placeholder='HOLD IT! Portraits contain spoilers!'
           autoFocus={true}
           rows={3}
-          cols={40}
+          cols={50}
           defaultValue={text}
           onChange={(e) => setText(e.target.value)} 
         />
