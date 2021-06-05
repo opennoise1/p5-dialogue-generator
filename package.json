@@ -17,9 +17,7 @@
     "snowpack": "^3.3.7"
   },
   "scripts": {
-    "start": "node server/server.js",
-    "dev": "snowpack dev",
-    "build": "snowpack build"
+    "start": "node server/server.js"
   },
   "keywords": [
     "Persona 5",
