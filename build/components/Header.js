@@ -22,10 +22,10 @@ const Header = () => {
     id: "titleSlump",
     className: "slumpDivs",
     lang: "ja"
-  }, "対話ジェネレータ"), /* @__PURE__ */ React.createElement("div", {
+  }, "対話ジェネレータ")), /* @__PURE__ */ React.createElement("div", {
     id: "mobileMessage",
     className: "hidden"
-  }, /* @__PURE__ */ React.createElement("div", null, "Because of the width of the dialogue boxes, this website isn't suited to mobile devices."), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("div", null, "Please use a desktop, laptop or tablet screen at least 800px in width. Thanks!")))), /* @__PURE__ */ React.createElement("div", {
+  }, /* @__PURE__ */ React.createElement("div", null, "Because of the width of the dialogue boxes, this website isn't suited to vertical-held mobile devices."), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("div", null, "Please turn your phone on its side, or use a desktop, laptop or tablet screen at least 550px in width, and ideally at least 1250px in width. Thanks!"))), /* @__PURE__ */ React.createElement("div", {
     id: "subhead"
   }, /* @__PURE__ */ React.createElement("p", {
     id: "credits"

@@ -68,7 +68,6 @@ const TextAndTools = ({
   }, "Dialogue"), /* @__PURE__ */ React.createElement("textarea", {
     id: "textField",
     placeholder: "Hey, Inmate! Character portraits contain spoilers!",
-    autoFocus: true,
     rows: 3,
     cols: 50,
     defaultValue: text,

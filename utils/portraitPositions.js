@@ -40,6 +40,7 @@ const simplePositions = {
 const findSpecialPosition = (char, emote, costume) => {
   switch (char) {
     case 'Akechi': {
+      if (emote.includes('Royal')) return [-30, 10]
       if (costume.includes('Defeated')) return [30, 10];
       if (emote === 'Furious' || emote === 'Smirking' || 
         emote === 'Staring' || emote === 'Upset') return [85, 0];
