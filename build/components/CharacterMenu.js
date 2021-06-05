@@ -1,8 +1,9 @@
 import React, {useEffect} from "../_snowpack/pkg/react.js";
-const CharacterMenu = ({char, emote, setBox, setChar, setEmote, setEmoteMenus, font}) => {
+const CharacterMenu = ({char, emote, font, boxFont, selection, setChar, setEmote, setEmoteMenus, setBox}) => {
   const switchChar = (e) => {
     setChar(e.target.value);
-    setBox(`../images/boxes/db-${char}-${font}.png`);
+    setBox(`../images/boxes/db-${selection}-${boxFont}.png`);
+    return;
   };
   useEffect(() => {
     fetch("http://localhost:3000/emotions", {
@@ -20,7 +21,9 @@ const CharacterMenu = ({char, emote, setBox, setChar, setEmote, setEmoteMenus, f
   }, [char]);
   return /* @__PURE__ */ React.createElement("div", {
     className: "menuDivs"
-  }, /* @__PURE__ */ React.createElement("div", null, "Character: "), /* @__PURE__ */ React.createElement("select", {
+  }, /* @__PURE__ */ React.createElement("div", {
+    className: "menuLabels"
+  }, "Character: "), /* @__PURE__ */ React.createElement("select", {
     id: "charMenu",
     className: "menuOptions knife",
     value: char,
@@ -67,6 +70,16 @@ const CharacterMenu = ({char, emote, setBox, setChar, setEmote, setEmoteMenus, f
   }, "Mika"), /* @__PURE__ */ React.createElement("option", {
     value: "Morgana"
   }, "Morgana"), /* @__PURE__ */ React.createElement("option", {
+    value: "Hiruta"
+  }, "Mr. Hiruta"), /* @__PURE__ */ React.createElement("option", {
+    value: "Inui"
+  }, "Mr. Inui"), /* @__PURE__ */ React.createElement("option", {
+    value: "Ushimaru"
+  }, "Mr. Ushimaru"), /* @__PURE__ */ React.createElement("option", {
+    value: "Chouno"
+  }, "Ms. Chouno"), /* @__PURE__ */ React.createElement("option", {
+    value: "Usami"
+  }, "Ms. Usami"), /* @__PURE__ */ React.createElement("option", {
     value: "Iwai"
   }, "Munehisa Iwai"), /* @__PURE__ */ React.createElement("option", {
     value: "Nakanohara"
@@ -89,8 +102,6 @@ const CharacterMenu = ({char, emote, setBox, setChar, setEmote, setEmoteMenus, f
   }, "Shinichi Yoshizawa"), /* @__PURE__ */ React.createElement("option", {
     value: "Shinya"
   }, "Shinya Oda"), /* @__PURE__ */ React.createElement("option", {
-    value: "Teachers"
-  }, "Shujin Teachers"), /* @__PURE__ */ React.createElement("option", {
     value: "Director"
   }, "SIU Director"), /* @__PURE__ */ React.createElement("option", {
     value: "Sojiro"

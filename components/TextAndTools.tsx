@@ -52,15 +52,18 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
     <div id='textAndTools'>
       <Menus {...toolProps} />
       <div id='textAndDownload'>
-        <textarea 
-          id='textField' 
-          placeholder='HOLD IT! Character portraits contain spoilers!'
-          autoFocus={true}
-          rows={3}
-          cols={50}
-          defaultValue={text}
-          onChange={(e) => setText(e.target.value)} 
-        />
+        <div id='enterDialogue'>
+          <div id='dialogueHeader'>Dialogue</div>
+          <textarea 
+            id='textField' 
+            placeholder='Hey, Inmate! Character portraits contain spoilers!'
+            autoFocus={true}
+            rows={3}
+            cols={50}
+            defaultValue={text}
+            onChange={(e) => setText(e.target.value)} 
+          />
+        </div>
         <div 
           id='download'
           className='knife'
@@ -78,7 +81,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
         </div>
       </div>
       <div id='fontDiv'>
-        <div id='fontSelect'>Font Select</div>
+        <div id='fontHeader'>Font Select</div>
         <div 
           id='vanillaFont' 
           className='fonts KRSMDivs knife' 

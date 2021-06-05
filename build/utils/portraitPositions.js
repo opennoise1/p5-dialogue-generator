@@ -1,10 +1,13 @@
 const simplePositions = {
   Caroline: [-35, 0],
   Chihaya: [0, 0],
+  Chouno: [40, 10],
   Director: [85, 10],
   Hifumi: [35, 10],
   Hiraguchi: [45, 10],
+  Hiruta: [0, 10],
   Igor: [35, 15],
+  Inui: [55, 10],
   Iwai: [60, 10],
   Jose: [45, 10],
   Justine: [0, 0],
@@ -27,6 +30,8 @@ const simplePositions = {
   Sumire: [45, 10],
   Takemi: [0, 0],
   Tanaka: [45, 10],
+  Usami: [50, 0],
+  Ushimaru: [0, 0],
   Wakaba: [35, 10],
   Yoshida: [50, 3],
   Yusuke: [0, 0],
@@ -87,14 +92,6 @@ const findSpecialPosition = (char, emote, costume) => {
     case 'Shiho': {
       if (costume.includes('Cognitive')) return [0, 0];
       return [55, 25];
-    }
-    case 'Teachers': {
-      if (costume === 'Mr. Hiruta') return [0, 10];
-      if (costume === 'Mr. Inui') return [55, 10];
-      if (costume === 'Mr. Ushimaru') return [0, 0];
-      if (costume === 'Ms. Chouno') return [40, 10];
-      if (costume === 'Ms. Usami') return [50, 0];
-      return [0, 0];
     }
     default: return [0, 0];
   }

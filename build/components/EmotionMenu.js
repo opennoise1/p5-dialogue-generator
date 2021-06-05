@@ -9,6 +9,7 @@ const EmotionMenu = ({char, emote, setEmote, setCostume, costume, emoteMenus, se
       }, emotion);
     });
   }
+  ;
   useEffect(() => {
     fetch("http://localhost:3000/costumes", {
       method: "POST",
@@ -28,7 +29,9 @@ const EmotionMenu = ({char, emote, setEmote, setCostume, costume, emoteMenus, se
   };
   return /* @__PURE__ */ React.createElement("div", {
     className: "menuDivs"
-  }, /* @__PURE__ */ React.createElement("div", null, "Emotion: "), /* @__PURE__ */ React.createElement("select", {
+  }, /* @__PURE__ */ React.createElement("div", {
+    className: "menuLabels"
+  }, "Emotion: "), /* @__PURE__ */ React.createElement("select", {
     id: "emoteMenu",
     className: "menuOptions knife",
     value: emote,

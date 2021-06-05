@@ -1,5 +1,5 @@
 import React from "../_snowpack/pkg/react.js";
-const CostumeMenu = ({char, setBox, font, costume, setCostume, costumeMenus}) => {
+const CostumeMenu = ({char, costume, setCostume, costumeMenus}) => {
   let charCostumes = [];
   if (costumeMenus.length) {
     charCostumes = costumeMenus.map((costume2) => {
@@ -9,15 +9,16 @@ const CostumeMenu = ({char, setBox, font, costume, setCostume, costumeMenus}) =>
       }, costume2);
     });
   }
+  ;
   const switchCostume = (e) => {
     setCostume(e.target.value);
-    if (char === "Teachers") {
-      setBox(`../images/boxes/db-${costume}-${font}.png`);
-    }
+    return;
   };
   return /* @__PURE__ */ React.createElement("div", {
     className: "menuDivs"
-  }, /* @__PURE__ */ React.createElement("div", null, "Costume: "), /* @__PURE__ */ React.createElement("select", {
+  }, /* @__PURE__ */ React.createElement("div", {
+    className: "menuLabels"
+  }, "Costume: "), /* @__PURE__ */ React.createElement("select", {
     id: "costumeMenu",
     className: "menuOptions knife",
     value: costume,

@@ -54,7 +54,7 @@ const ImageCanvas = ({portrait, text, font, char, emote, costume, box}) => {
     bCtx.drawImage(boxImage, 320, 250 - heightOffset, width, height);
     return;
   };
-  return /* @__PURE__ */ React.createElement("div", {
+  return /* @__PURE__ */ React.createElement("main", {
     id: "canvasDiv"
   }, /* @__PURE__ */ React.createElement("canvas", {
     ref: portraitCanvas,
@@ -72,16 +72,18 @@ const ImageCanvas = ({portrait, text, font, char, emote, costume, box}) => {
     width: "1275",
     height: "500"
   }, "Sorry! This generator requires a browser that supports HTML5!"), /* @__PURE__ */ React.createElement("img", {
+    alt: "Potrait",
     ref: character,
     id: "portrait",
-    onLoad: () => drawPortrait(character.current, simplePositions[char], 500, 500),
+    className: "hidden",
     src: portrait,
-    className: "hidden"
+    onLoad: () => drawPortrait(character.current, simplePositions[char], 500, 500)
   }), /* @__PURE__ */ React.createElement("img", {
+    alt: "Dialogue box",
     ref: dialogueBox,
     id: "box",
-    src: box,
     className: "hidden",
+    src: box,
     onLoad: () => drawBox(dialogueBox.current)
   }));
 };

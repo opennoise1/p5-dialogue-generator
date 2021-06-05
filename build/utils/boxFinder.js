@@ -15,7 +15,7 @@ const boxDirectory = {
   Sumire: true,
   Tanaka: true
 };
-const menuFinder = (char) => {
+const boxFinder = (char) => {
   switch (char) {
     case "Akechi": {
       return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("option", {
@@ -117,4 +117,4 @@ const menuFinder = (char) => {
     }
   }
 };
-export {boxDirectory, menuFinder};
+export {boxDirectory, boxFinder};

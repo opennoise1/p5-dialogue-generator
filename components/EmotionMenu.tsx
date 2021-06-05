@@ -12,7 +12,7 @@ if (emoteMenus.length) {
         {emotion}
       </option>
     );
-  })
+  });
 };
 
   useEffect(() => {

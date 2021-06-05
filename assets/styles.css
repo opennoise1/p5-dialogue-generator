@@ -32,7 +32,6 @@
   font-display: swap;
 }
 
-
 body {
   font-family: 'KoreanKRSM';
   background-color: #FF0505;
@@ -41,7 +40,11 @@ body {
   align-items: center;
 }
 
-/* Titles */
+.hidden {
+  display: none;
+}
+
+/* Header */
 
 #header {
   display: flex;
@@ -88,6 +91,8 @@ body {
 .slumpDivs {
   font-family: 'SlumpDB';
 }
+
+/* Subhead */
 
 #subhead {
   display: flex;
@@ -166,34 +171,43 @@ body {
   letter-spacing: 0.5px;
 }
 
-.hidden {
-  display: none;
-}
-
 /* Text and Tools */
 
 select {
-  width: 250px;
-}
-
-#textAndTools {
-  display: flex;
-  justify-content: space-around;
+  width: 200px;
 }
 
 .knife:hover {
   cursor: url('../images/knife.png') 0 44, pointer;
 }
 
+#textAndTools {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* Dialogue and Download */
+
 #textAndDownload {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
+#enterDialogue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#dialogueHeader {
+  margin-top: 30px;
+  font-size: 14pt;
+}
+
 #textField {
-  margin: 20px;
+  margin-top: 5px;
+  margin-bottom: 20px;
   font-family: 'sans-serif';
   font-size: 14pt;
   resize: none;
@@ -202,28 +216,6 @@ select {
   border: 2px solid black;
   background-color: white;
   box-shadow: 4px 4px black;
-}
-
-.menus {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-
-  margin: 10px;
-}
-
-.menuDivs {
-  display: flex;
-  align-items: center;
-}
-
-.menuOptions {
-  padding: 3px;
-  border: 2px solid black;
-  box-shadow: 3px 3px black;
-  font-family: 'KoreanKRSM';
-  background-color: white;
 }
 
 #download {
@@ -249,6 +241,42 @@ select {
   fill: white;
 }
 
+/* Menus */
+
+.menus {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin: 10px;
+  margin-top: 22px;
+}
+
+.menuDivs {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menuLabels {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+  font-size: 14pt;
+}
+
+.menuOptions {
+  margin-left: 40px;
+  padding: 3px;
+  width: 200px;
+
+  border: 2px solid black;
+  box-shadow: 3px 3px black;
+  font-family: 'KoreanKRSM';
+  background-color: white;
+}
+
 /* Font Selection */
 
 #fontDiv {
@@ -259,7 +287,7 @@ select {
   justify-content: space-around;
 }
 
-#fontSelect {
+#fontHeader {
   text-align: center;
   font-size: 14pt;
 }
@@ -310,6 +338,8 @@ select {
   font-family: 'SlumpDB';
   font-size: 12pt;
 }
+
+/* Mobile responsiveness */
 
 @media only screen and (max-width: 800px) {
   #canvasDiv, #textAndTools, #subhead {

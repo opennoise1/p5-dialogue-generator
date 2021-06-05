@@ -4,7 +4,21 @@ import EmotionMenu from "./EmotionMenu.js";
 import CostumeMenu from "./CostumeMenu.js";
 import BoxMenu from "./BoxMenu.js";
 import {boxDirectory} from "../utils/boxFinder.js";
-const Menus = ({char, setChar, emote, setEmote, costume, setCostume, setPortrait, font, box, setBox}) => {
+const Menus = ({
+  char,
+  setChar,
+  emote,
+  setEmote,
+  costume,
+  setCostume,
+  setPortrait,
+  font,
+  box,
+  boxFont,
+  setBox,
+  selection,
+  setSelection
+}) => {
   const [emoteMenus, setEmoteMenus] = useState([]);
   const [costumeMenus, setCostumeMenus] = useState([]);
   const menuProps = {
@@ -20,13 +34,17 @@ const Menus = ({char, setChar, emote, setEmote, costume, setCostume, setPortrait
     setCostumeMenus,
     font,
     box,
-    setBox
+    setBox,
+    selection,
+    setSelection
   };
   useEffect(() => {
+    setBox(`../images/boxes/db-${selection}-${boxFont}.png`);
     setPortrait(`../images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);
-  }, [char, emote, costume]);
+    return;
+  }, [char, emote, costume, selection]);
   useEffect(() => {
-    setBox(`../images/boxes/db-${char}-${font}.png`);
+    setSelection(char);
   }, [char]);
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", {
     className: "menus"
