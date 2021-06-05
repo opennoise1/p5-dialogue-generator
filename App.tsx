@@ -12,6 +12,8 @@ const App = () => {
   // Initial values of dialogue text, font and current box selection which will determine our dialogue box
   const [text, setText] = useState<string>('');
   const [font, setFont] = useState<string>('KoreanKRSM');
+  // Box font state can be removed once SlumpDB dialogue boxes are added
+  const [boxFont, setBoxFont] = useState<string>('KoreanKRSM');
   const [selection, setSelection] = useState<string>(char);
   
   // Initial portrait and box that will be rendered 
@@ -34,6 +36,8 @@ const App = () => {
     setPortrait,
     font,
     setFont,
+    boxFont,
+    setBoxFont,
     box,
     setBox,
     selection,

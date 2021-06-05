@@ -16,9 +16,9 @@ const Header = () => {
             </div>
             <br></br>
             <div>
-              Please use a desktop, laptop or tablet screen at least 800px in size. Thanks!
+              Please use a desktop, laptop or tablet screen at least 800px in width. Thanks!
             </div>
-      </div>
+          </div>
         </div>
       </div>
       <div id='subhead'>

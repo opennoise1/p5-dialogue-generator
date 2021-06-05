@@ -25,7 +25,7 @@
 }
 
 @font-face {
-  font-family: 'SlumpSTD';
+  font-family: 'SlumpDB';
   src: url('fonts/FOT-SlumpStd-DB.ttf');
   font-weight: normal;
   font-style: normal;
@@ -86,7 +86,7 @@ body {
   font-family: 'Optima nova LT';
 }
 .slumpDivs {
-  font-family: 'SlumpSTD';
+  font-family: 'SlumpDB';
 }
 
 #subhead {
@@ -307,7 +307,7 @@ select {
 
 #japaneseFont {
   padding: 0.5em;
-  font-family: 'SlumpSTD';
+  font-family: 'SlumpDB';
   font-size: 12pt;
 }
 

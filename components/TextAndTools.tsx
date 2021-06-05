@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import Menus from './Menus';
 
-const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, 
-  setPortrait, text, setText, font, setFont, box, setBox, selection, setSelection }) => {
+const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, setPortrait, text, setText, 
+  font, setFont, boxFont, setBoxFont, box, setBox, selection, setSelection }) => {
 
   const toolProps: any = {
     char,
@@ -14,14 +14,16 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume,
     setPortrait,
     box,
     setBox,
+    boxFont,
+    setBoxFont,
     font,
     selection,
     setSelection,
   }
 
   useEffect(() => {
-    setBox(`../images/boxes/db-${selection}-${font}.png`);
-  }, [font]);
+    setBox(`../images/boxes/db-${selection}-${boxFont}.png`);
+  }, [boxFont]);
 
   const downloadImage = (): void => {
     const downloadCanvas: HTMLCanvasElement = document.createElement('canvas');
@@ -80,21 +82,21 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume,
         <div 
           id='vanillaFont' 
           className='fonts KRSMDivs knife' 
-          onClick={() => setFont('KoreanKRSM')}
+          onClick={() => { setFont('KoreanKRSM'); setBoxFont('KoreanKRSM'); }}
         >
           KoreanKRSM &#40;Persona 5&#41;
         </div>
         <div 
           id='royalFont' 
           className='fonts optimaDivs knife' 
-          onClick={() => setFont('Optima nova LT')}
+          onClick={() => { setFont('Optima nova LT'); setBoxFont('Optima nova LT'); }}
         >
           Optima Nova Black &#40;Persona 5 Royal&#41;
         </div>
         <div 
           id='japaneseFont' 
           className='fonts slumpDivs knife' 
-          onClick={() => setFont('SlumpSTD')}
+          onClick={() => setFont('SlumpDB')}
           lang='ja'
         >
           Slump DB &#40;ペルソナ5 - 日本語&#41;

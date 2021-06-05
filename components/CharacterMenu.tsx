@@ -68,7 +68,6 @@ const CharacterMenu = ({ char, emote, font, selection, setChar, setEmote, setEmo
         <option value='Shiho'>Shiho Suzui</option>
         <option value='Shinichi'>Shinichi Yoshizawa</option>
         <option value='Shinya'>Shinya Oda</option>
-        <option value='Teachers'>Shujin Teachers</option>
         <option value='Director'>SIU Director</option>
         <option value='Sojiro'>Sojiro Sakura</option>
         <option value='Sugimura'>Sugimura</option>

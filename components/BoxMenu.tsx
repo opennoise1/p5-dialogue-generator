@@ -1,13 +1,13 @@
 import React, { SyntheticEvent } from 'react';
 import { boxFinder } from '../utils/boxFinder';
 
-const BoxMenu = ({ char, font, selection, setSelection, setBox }) => {
+const BoxMenu = ({ char, font, boxFont, selection, setSelection, setBox }) => {
 
   const options: JSX.Element = boxFinder(char);
 
   const switchBox = (e: SyntheticEvent<HTMLSelectElement>) => {
     setSelection((e.target as HTMLSelectElement).value);
-    setBox(`../images/boxes/db-${selection}-${font}.png`)
+    setBox(`../images/boxes/db-${selection}-${boxFont}.png`)
   };
 
   return (
