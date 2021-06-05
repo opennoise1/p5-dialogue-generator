@@ -10,16 +10,17 @@ const Header = () => {
           <div id='titleKRSM' className='KRSMDivs'>DIALOGUE GENERATOR</div>
           <div id='titleOptima' className='optimaDivs'>DIALOGUE GENERATOR</div>
           <div id='titleSlump' className='slumpDivs' lang='ja'>対話ジェネレータ</div>
-          <div id='mobileMessage' className='hidden'>
+        </div>
+        <div id='mobileMessage' className='hidden'>
             <div>
-              Because of the width of the dialogue boxes, this website isn't suited to mobile devices.
+              Because of the width of the dialogue boxes, this website isn't suited to vertical-held mobile devices.
             </div>
             <br></br>
             <div>
-              Please use a desktop, laptop or tablet screen at least 800px in width. Thanks!
+              Please turn your phone on its side, or use a desktop, laptop or tablet screen at least 550px in width, 
+              and ideally at least 1250px in width. Thanks!
             </div>
           </div>
-        </div>
       </div>
       <div id='subhead'>
         <p id='credits'>

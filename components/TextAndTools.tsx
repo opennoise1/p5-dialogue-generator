@@ -57,7 +57,6 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
           <textarea 
             id='textField' 
             placeholder='Hey, Inmate! Character portraits contain spoilers!'
-            autoFocus={true}
             rows={3}
             cols={50}
             defaultValue={text}
