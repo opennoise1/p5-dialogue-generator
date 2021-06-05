@@ -67,7 +67,7 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume, box }) => {
   };
 
   return (
-    <div id='canvasDiv'>
+    <main id='canvasDiv'>
       <canvas 
         ref={portraitCanvas} 
         id='portraitCanvas'
@@ -95,20 +95,22 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume, box }) => {
       {/* NOTE: We're rendering portrait and box img tags so they can be referenced for the canvas.
       They will be hidden via the stylesheet */}
       <img
+        alt='Potrait'
         ref={character}
         id='portrait'
         className='hidden'
         src={portrait}
         onLoad={() => drawPortrait(character.current, simplePositions[char], 500, 500)}
       />
-      <img 
+      <img
+        alt='Dialogue box'
         ref={dialogueBox}
         id='box'
         className='hidden'
         src={box}
         onLoad={() => drawBox(dialogueBox.current)}
       />
-    </div>
+    </main>
   );
 };
 

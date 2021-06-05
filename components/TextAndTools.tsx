@@ -78,7 +78,6 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume,
           onClick={downloadImage}
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 24l-8-9h6v-15h4v15h6z"/></svg>
-          {/* <img id='arrow' src='../images/down-arrow.png' alt='Download button' width='20' height='24' /> */}
           <div>Download</div>    
         </div>
       </div>

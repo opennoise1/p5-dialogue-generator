@@ -104,6 +104,13 @@ body {
   -webkit-text-stroke-color: black;
 }
 
+#subhead a {
+  color: white;
+  text-shadow: 2px 2px black;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
 #subhead a:visited {
   color: white;
   text-shadow: 2px 2px black;
