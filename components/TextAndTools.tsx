@@ -4,20 +4,7 @@ import Menus from './Menus';
 const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, 
   setPortrait, text, setText, font, setFont, box, setBox, selection, setSelection }) => {
 
-  const toolProps: { 
-    char: string, 
-    setChar: any, 
-    emote: string, 
-    setEmote: any, 
-    costume: string, 
-    setCostume: any, 
-    setPortrait: any
-    box: any,
-    setBox: any,
-    font: any,
-    selection: any,
-    setSelection: any,
-  } = {
+  const toolProps: any = {
     char,
     setChar,
     emote,
@@ -34,7 +21,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume,
 
   useEffect(() => {
     setBox(`../images/boxes/db-${selection}-${font}.png`);
-  }, [font])
+  }, [font]);
 
   const downloadImage = (): void => {
     const downloadCanvas: HTMLCanvasElement = document.createElement('canvas');
@@ -77,7 +64,14 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume,
           className='knife'
           onClick={downloadImage}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 24l-8-9h6v-15h4v15h6z"/></svg>
+          <svg 
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="M12 24l-8-9h6v-15h4v15h6z"/>
+          </svg>
           <div>Download</div>    
         </div>
       </div>
@@ -101,6 +95,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume,
           id='japaneseFont' 
           className='fonts slumpDivs knife' 
           onClick={() => setFont('SlumpSTD')}
+          lang='ja'
         >
           Slump DB &#40;ペルソナ5 - 日本語&#41;
         </div>

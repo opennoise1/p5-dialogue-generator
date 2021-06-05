@@ -34,7 +34,7 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume, box }) => {
     return;
   }, [text, font]);
 
-  const drawPortrait = (charImage: CanvasImageSource, portraitXY: [number, number], w: number, h: number) => {
+  const drawPortrait = (charImage: CanvasImageSource, portraitXY: number[], w: number, h: number) => {
     // Initialize portrait canvas and clear current portrait
     pCtx = portraitCanvas.current.getContext('2d');
     pCtx.clearRect(0, 0, 1275, 500);
@@ -59,7 +59,7 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume, box }) => {
     bCtx = boxCanvas.current.getContext('2d');
     const width: number = boxImage.width as number;
     const height: number = boxImage.height as number;
-    // For particularly tall boxes, determine the number of pixels to offset its Y coordinate
+    // For particularly tall boxes, determine the number of pixels to offset the Y coordinate where it's drawn
     const heightOffset: number = height - 250;
     bCtx.clearRect(0, 0, 1275, 500);
     bCtx.drawImage(boxImage, 320, 250 - heightOffset, width, height);

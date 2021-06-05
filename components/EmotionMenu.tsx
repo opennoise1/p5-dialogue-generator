@@ -1,18 +1,19 @@
 import React, { useEffect, SyntheticEvent } from 'react';
 
 const EmotionMenu = ({ char, emote, setEmote, setCostume, costume, emoteMenus, setCostumeMenus }) => {
-let charEmotes = [];
+let charEmotes: string[] = [];
 
+  // Check to see if the emotion menus have been generated from the fetch request
+  // before attempting to map over them
 if (emoteMenus.length) {
   charEmotes = emoteMenus.map(emotion => {
     return (
-      <option 
-        key={`${char}: ${emotion}`} 
-        value={emotion}>{emotion}
+      <option key={`${char}: ${emotion}`} value={emotion}>
+        {emotion}
       </option>
     );
   })
-}
+};
 
   useEffect(() => {
     fetch('http://localhost:3000/costumes', {
@@ -41,12 +42,12 @@ if (emoteMenus.length) {
 
   return (
     <div className='menuDivs'>
-      <div>Emotion: </div>
+      <div className='menuLabels'>Emotion: </div>
       <select id='emoteMenu' className='menuOptions knife' value={emote} name='emotions' onChange={switchEmote}>
         {charEmotes}
       </select>
     </div>
-  )
-}
+  );
+};
 
 export default EmotionMenu;

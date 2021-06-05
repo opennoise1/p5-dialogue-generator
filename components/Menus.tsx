@@ -11,23 +11,7 @@ const Menus = ({ char, setChar, emote, setEmote, costume,
   const [emoteMenus, setEmoteMenus] = useState<string[]>([]);
   const [costumeMenus, setCostumeMenus] = useState<string[]>([]);
 
-  const menuProps: { 
-    char: string, 
-    emote: string, 
-    costume: string,
-    setChar: any, 
-    setEmote: any, 
-    setCostume: any,
-    emoteMenus: any,
-    setEmoteMenus: any,
-    costumeMenus: any,
-    setCostumeMenus: any, 
-    font: any,
-    box: any,
-    setBox: any,
-    selection: any,
-    setSelection: any,
-  } = {
+  const menuProps: any = {
     char,
     emote,
     costume,
@@ -61,6 +45,7 @@ const Menus = ({ char, setChar, emote, setEmote, costume,
         <CharacterMenu {...menuProps} />
         <EmotionMenu {...menuProps} />
         <CostumeMenu {...menuProps} />
+        {/* Only display the box menu if the character has multiple box options */}
         {boxDirectory[char]
           ? <BoxMenu {...menuProps} />
           : null

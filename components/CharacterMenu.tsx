@@ -1,14 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, SyntheticEvent } from 'react';
 
-const CharacterMenu = ({ char, emote, font, costume, selection, setChar, setEmote, setEmoteMenus, setSelection, setBox }) => {
+const CharacterMenu = ({ char, emote, font, selection, setChar, setEmote, setEmoteMenus, setBox }) => {
 
-  const switchChar = (e: any) => {
-    setChar(e.target.value);
-    if (char === 'Teachers') {
-      setSelection(costume);
-    } else {
-      setSelection(char);
-    }
+  const switchChar = (e: SyntheticEvent<HTMLSelectElement>) => {
+    setChar((e.target as HTMLSelectElement).value);
     setBox(`../images/boxes/db-${selection}-${font}.png`);
     return;
   };
@@ -35,7 +30,7 @@ const CharacterMenu = ({ char, emote, font, costume, selection, setChar, setEmot
 
   return (
     <div className='menuDivs'>
-      <div>Character: </div>
+      <div className='menuLabels'>Character: </div>
       <select id='charMenu' className='menuOptions knife' value={char} name='characters' onChange={switchChar}>
         <option value='Ann'>Ann Takamaki</option>
         <option value='Caroline'>Caroline</option>
@@ -89,6 +84,6 @@ const CharacterMenu = ({ char, emote, font, costume, selection, setChar, setEmot
       </select>
     </div>
   );
-}
+};
 
 export default CharacterMenu;

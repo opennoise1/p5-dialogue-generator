@@ -29,7 +29,7 @@ const Header = () => {
         </p>
       </div>
     </header>
-  )
-}
+  );
+};
 
 export default Header;

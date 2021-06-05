@@ -1,8 +1,10 @@
 import React, { SyntheticEvent } from 'react';
 
-const CostumeMenu = ({ char, setBox, font, costume, setCostume, costumeMenus }) => {
-  let charCostumes = [];
+const CostumeMenu = ({ char, costume, setCostume, costumeMenus }) => {
+  let charCostumes: string[] = [];
 
+  // Check to see if the costume menus have been generated from the fetch request
+  // before attempting to map over them
   if (costumeMenus.length) {
     charCostumes = costumeMenus.map(costume => {
       return (
@@ -11,26 +13,21 @@ const CostumeMenu = ({ char, setBox, font, costume, setCostume, costumeMenus }) 
         </option>
       );
     });
-  }
-
+  };
 
   const switchCostume = (e: SyntheticEvent<HTMLSelectElement>) => {
     setCostume((e.target as HTMLSelectElement).value);
-    // Since the Shujin teacher characters are determined by the costume selection,
-    // the box should be set when the costume is selected, rather than the character
-    if (char === 'Teachers') {
-      setBox(`../images/boxes/db-${costume}-${font}.png`)
-    }
-  }
+    return;
+  };
 
   return (
     <div className='menuDivs'>
-      <div>Costume: </div>
+      <div className='menuLabels'>Costume: </div>
       <select id='costumeMenu' className='menuOptions knife' value={costume} name='costumes' onChange={switchCostume}>
         {charCostumes}
       </select>
     </div>
-  )
-}
+  );
+};
 
 export default CostumeMenu;
