@@ -1,10 +1,10 @@
 import React, { useEffect, SyntheticEvent } from 'react';
 
-const CharacterMenu = ({ char, emote, font, boxFont, selection, setChar, setEmote, setEmoteMenus, setBox }) => {
+const CharacterMenu = ({ char, emote, boxFont, selection, setChar, setEmote, setEmoteMenus, setBox }) => {
 
   const switchChar = (e: SyntheticEvent<HTMLSelectElement>) => {
     setChar((e.target as HTMLSelectElement).value);
-    setBox(`../images/boxes/db-${selection}-${boxFont}.png`);
+    setBox(`https://p5generator.s3.amazonaws.com/images/boxes/db-${selection}-${boxFont}.png`);
     return;
   };
 

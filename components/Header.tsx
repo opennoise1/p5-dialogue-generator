@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header id='header'>
       <div id='title'>
-        <img alt='Persona 5 logo' id='p5logo' src='./images/personalogo.png' width='250' height='151' />
+        <img alt='Persona 5 logo' id='p5logo' src='https://p5generator.s3.amazonaws.com/images/personalogo.png' width='250' height='151' />
         <div className='generatorTitles'>
           <div id='titleKRSM' className='KRSMDivs'>DIALOGUE GENERATOR</div>
           <div id='titleOptima' className='optimaDivs'>DIALOGUE GENERATOR</div>

@@ -22,7 +22,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
   }
 
   useEffect(() => {
-    setBox(`../images/boxes/db-${selection}-${boxFont}.png`);
+    setBox(`https://p5generator.s3.amazonaws.com/images/boxes/db-${selection}-${boxFont}.png`);
   }, [boxFont]);
 
   const downloadImage = (): void => {
