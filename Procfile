@@ -1,0 +1,1 @@
+web: node assets/index.tsx
