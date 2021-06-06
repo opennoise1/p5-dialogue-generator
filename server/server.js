@@ -25,6 +25,6 @@ app.use((err, req, res, next) => {
   return res.status(500).json(err);
 });
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log(`Alibaba here! The Phantom Thieves are listening in on localhost:${PORT}!`);
 });
