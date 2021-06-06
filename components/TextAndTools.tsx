@@ -37,7 +37,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
     const textCanvas: HTMLCanvasElement = 
       document.getElementById('textCanvas') as HTMLCanvasElement;
     
-    const dCtx: CanvasRenderingContext2D = downloadCanvas.getContext('2d');
+    const dCtx: CanvasRenderingContext2D = downloadCanvas.getContext('2d') as CanvasRenderingContext2D;
     dCtx.drawImage(portraitCanvas, 0, 0, 1275, 500);
     dCtx.drawImage(boxCanvas, 0, 0, 1275, 500);
     dCtx.drawImage(textCanvas, 0, 0, 1275, 500);
