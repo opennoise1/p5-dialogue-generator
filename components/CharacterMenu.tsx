@@ -1,4 +1,4 @@
-import React, { useEffect, SyntheticEvent } from 'react';
+import { useEffect, SyntheticEvent } from 'react';
 
 const CharacterMenu = ({ char, emote, boxFont, selection, setChar, setEmote, setEmoteMenus, setBox }) => {
 

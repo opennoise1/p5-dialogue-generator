@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from 'react';
+import { SyntheticEvent } from 'react';
 
 const CostumeMenu = ({ char, costume, setCostume, costumeMenus }) => {
   let charCostumes: string[] = [];

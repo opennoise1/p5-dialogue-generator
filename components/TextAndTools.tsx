@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Menus from './Menus';
 
 const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, setPortrait, text, setText, 

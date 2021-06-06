@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ImageCanvas from './components/ImageCanvas';
 import TextAndTools from './components/TextAndTools';
 import Header from './components/Header';
