@@ -4,7 +4,7 @@ const CharacterMenu = ({ char, emote, boxFont, selection, setChar, setEmote, set
 
   const switchChar = (e: SyntheticEvent<HTMLSelectElement>) => {
     setChar((e.target as HTMLSelectElement).value);
-    setBox(`https://p5generator.s3.amazonaws.com/images/boxes/db-${selection}-${boxFont}.png`);
+    setBox(`../images/boxes/db-${selection}-${boxFont}.png`);
     return;
   };
 
@@ -14,7 +14,7 @@ const CharacterMenu = ({ char, emote, boxFont, selection, setChar, setEmote, set
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ 'char': `https://p5generator.s3.amazonaws.com/images/portraits/${char}/` })
+      body: JSON.stringify({ 'char': `../images/portraits/${char}/` })
     })
     .then(data => data.json())
     .then(parsed => {
