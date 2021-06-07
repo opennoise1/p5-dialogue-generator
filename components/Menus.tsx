@@ -30,7 +30,7 @@ const Menus = ({ char, setChar, emote, setEmote, costume,
   };
 
   useEffect(() => {
-    setBox(`../images/boxes/db-${selection}-${boxFont}.png`);
+    setBox(`https://p5generator.s3.amazonaws.com/images/boxes/db-${selection}-${boxFont}.png`);
     setPortrait(`https://p5generator.s3.amazonaws.com/images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);
     return;
   }, [char, emote, costume, selection]);

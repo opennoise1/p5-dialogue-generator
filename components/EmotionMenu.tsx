@@ -21,7 +21,7 @@ if (emoteMenus.length) {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ 'emotion': `../images/portraits/${char}/${emote}/` })
+      body: JSON.stringify({ 'emotion': `https://p5generator.s3.amazonaws.com/images/portraits/${char}/${emote}/` })
     })
     .then(data => data.json())
     .then(parsed => {

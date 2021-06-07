@@ -14,7 +14,7 @@ const CharacterMenu = ({ char, emote, boxFont, selection, setChar, setEmote, set
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ 'char': `../images/portraits/${char}/` })
+      body: JSON.stringify({ 'char': `https://p5generator.s3.amazonaws.com/images/portraits/${char}/` })
     })
     .then(data => data.json())
     .then(parsed => {

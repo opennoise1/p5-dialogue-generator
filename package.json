@@ -2,29 +2,42 @@
   "name": "p5-generator",
   "version": "1.0.0",
   "description": "P5 Dialogue Generator",
-  "main": "./assets/index.js",
+  "private": true,
   "engines": {
     "node": "14.16.0"
   },
   "dependencies": {
+    "@babel/preset-react": "^7.13.13",
     "@types/css-font-loading-module": "0.0.4",
-    "@types/react": "^17.0.9",
-    "@types/react-dom": "^17.0.6",
+    "babel-loader": "^8.2.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "heroku": "^7.54.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "typescript": "^4.3.2"
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.3",
     "@snowpack/plugin-webpack": "^2.3.1",
-    "snowpack": "^3.3.7"
+    "@types/react": "^17.0.9",
+    "@types/react-dom": "^17.0.6",
+    "awesome-typescript-loader": "^5.2.1",
+    "css-loader": "^5.2.6",
+    "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.6.0",
+    "snowpack": "^3.3.7",
+    "source-map-loader": "^3.0.0",
+    "typescript": "^4.3.2",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-serve": "^4.0.0"
   },
   "scripts": {
     "start": "node server/server.js",
-    "postinstall": "tsc",
-    "dev": "snowpack dev"
+    "dev": "webpack-serve --open",
+    "build": "webpack"
   },
   "keywords": [
     "Persona 5",
