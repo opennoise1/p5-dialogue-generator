@@ -16,7 +16,15 @@ module.exports = {
     inline: true, 
     contentBase: './build', 
     port: 8080, 
-    proxy: { "/": { target: 'http://localhost:3000', secure: false }  }
+    proxy: {
+        "*": "http://localhost:3000",
+        "secure": false,
+    },
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+    }
  },
   module: {
     rules: [
