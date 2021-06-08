@@ -100,6 +100,7 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume, box }) => {
         id='portrait'
         className='hidden'
         src={portrait}
+        crossOrigin="anonymous"
         onLoad={() => drawPortrait(character.current, simplePositions[char], 500, 500)}
       />
       <img
@@ -108,6 +109,7 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume, box }) => {
         id='box'
         className='hidden'
         src={box}
+        crossOrigin="anonymous"
         onLoad={() => drawBox(dialogueBox.current)}
       />
     </main>

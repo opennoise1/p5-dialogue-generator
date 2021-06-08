@@ -5,13 +5,14 @@ const cors = require('cors');
 const portraitController = require('./portraitController.js');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, '../')));
-app.use(express.static(path.join(__dirname, 'assets')));
+app.use(express.static(path.join(__dirname, '../assets')));
+app.use(express.static(path.join(__dirname, '../build')));
 
 app.post('/emotions', portraitController.emotionParser, (req, res) => {
   return res.status(200).json(res.locals.emotions);

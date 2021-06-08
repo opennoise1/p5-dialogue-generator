@@ -1,11 +1,9 @@
-import React from 'react';
-
 const Header = () => {
 
   return (
     <header id='header'>
       <div id='title'>
-        <img alt='Persona 5 logo' id='p5logo' src='./images/personalogo.png' width='250' height='151' />
+        <img alt='Persona 5 logo' id='p5logo' src='../images/personalogo.png' width='250' height='151' />
         <div className='generatorTitles'>
           <div id='titleKRSM' className='KRSMDivs'>DIALOGUE GENERATOR</div>
           <div id='titleOptima' className='optimaDivs'>DIALOGUE GENERATOR</div>
@@ -13,12 +11,11 @@ const Header = () => {
         </div>
         <div id='mobileMessage' className='hidden'>
             <div>
-              Because of the width of the dialogue boxes, this website isn't suited to vertical-held mobile devices.
+              Because of the width of the dialogue boxes, this website isn't meant to be viewed vertically on mobile devices. 
             </div>
             <br></br>
             <div>
-              Please turn your phone on its side, or use a desktop, laptop or tablet screen at least 550px in width, 
-              and ideally at least 1250px in width. Thanks!
+              Please turn your phone on its side, or use another screen at least 550px in width. Thanks!
             </div>
           </div>
       </div>

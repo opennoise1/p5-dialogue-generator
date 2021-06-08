@@ -338,6 +338,11 @@ select {
   font-size: 12pt;
 }
 
+#nameNote {
+  font-size: 10pt;
+  color: #6b6261;
+}
+
 /* Mobile responsiveness */
 
 @media only screen and (max-width: 550px) {
@@ -372,12 +377,12 @@ select {
   #mobileMessage {
     display: block;
     margin-top: 30px;
+    padding: 10px;
 
     width: 75%;
-    height: 80%;
 
-    font-size: 12pt;
-    line-height: 1.5em;
+    font-size: 14pt;
+    line-height: 1.25em;
     text-align: center;
     border: 2px solid black;
     text-shadow: none;

@@ -1,6 +1,6 @@
-import React, { useEffect, SyntheticEvent } from 'react';
+import { useEffect, SyntheticEvent } from 'react';
 
-const CharacterMenu = ({ char, emote, font, boxFont, selection, setChar, setEmote, setEmoteMenus, setBox }) => {
+const CharacterMenu = ({ char, emote, boxFont, selection, setChar, setEmote, setEmoteMenus, setBox }) => {
 
   const switchChar = (e: SyntheticEvent<HTMLSelectElement>) => {
     setChar((e.target as HTMLSelectElement).value);
@@ -9,7 +9,7 @@ const CharacterMenu = ({ char, emote, font, boxFont, selection, setChar, setEmot
   };
 
   useEffect(() => {
-    fetch('http://localhost:3000/emotions', {
+    fetch('/emotions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

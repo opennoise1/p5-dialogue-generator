@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import CharacterMenu from './CharacterMenu';
 import EmotionMenu from './EmotionMenu';
 import CostumeMenu from './CostumeMenu';

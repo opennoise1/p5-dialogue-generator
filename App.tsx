@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ImageCanvas from './components/ImageCanvas';
 import TextAndTools from './components/TextAndTools';
 import Header from './components/Header';
@@ -18,8 +18,8 @@ const App = () => {
   
   // Initial portrait and box that will be rendered 
   const [portrait, setPortrait] = 
-    useState<string>(`../images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);
-  const [box, setBox] = useState<string>(`../images/boxes/db-${selection}-${font}.png`);
+    useState<string>(`./images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);
+  const [box, setBox] = useState<string>(`./images/boxes/db-${selection}-${font}.png`);
   
   // By adding props to a separate object here, we can get around a TypeScript quirk
   // Read more here: https://stackoverflow.com/questions/48240449/type-is-not-assignable-to-type-intrinsicattributes-intrinsicclassattribu
