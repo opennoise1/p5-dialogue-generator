@@ -11,12 +11,11 @@ const Header = () => {
         </div>
         <div id='mobileMessage' className='hidden'>
             <div>
-              Because of the width of the dialogue boxes, this website isn't suited to vertical-held mobile devices.
+              Because of the width of the dialogue boxes, this website isn't meant to be viewed vertically on mobile devices. 
             </div>
             <br></br>
             <div>
-              Please turn your phone on its side, or use a desktop, laptop or tablet screen at least 550px in width, 
-              and ideally at least 1250px in width. Thanks!
+              Please turn your phone on its side, or use another screen at least 550px in width. Thanks!
             </div>
           </div>
       </div>

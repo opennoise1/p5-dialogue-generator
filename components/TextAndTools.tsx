@@ -102,6 +102,8 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
           lang='ja'
         >
           Slump DB &#40;ペルソナ5 - 日本語&#41;
+          <br></br>
+          <span id='nameNote'>&#40;Japanese Character Name - Coming Soon!&#41;</span>
         </div>
       </div>
     </div>
