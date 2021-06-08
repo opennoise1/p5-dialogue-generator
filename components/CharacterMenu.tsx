@@ -9,7 +9,7 @@ const CharacterMenu = ({ char, emote, boxFont, selection, setChar, setEmote, set
   };
 
   useEffect(() => {
-    fetch('http://localhost:3000/emotions', {
+    fetch('/emotions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
