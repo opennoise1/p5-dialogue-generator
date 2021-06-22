@@ -20,6 +20,7 @@ const simplePositions = {
   Nakanohara: [0, 0],
   Ohya: [35, 10],
   Principal: [-10, 20],
+  Protagonist: [65, 30],
   Rumi: [40, 10],
   Shibusawa: [0, 0],
   Shido: [0, 0],

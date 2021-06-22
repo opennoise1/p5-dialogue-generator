@@ -91,6 +91,15 @@ const boxFinder = (char) => {
         </>
       );
     }
+    case 'Protagonist': {
+      return (
+        <>
+          <option value='Joker'>Joker</option>
+          <option value='Ren'>Ren</option>
+          <option value='Akira'>Akira</option>
+        </>
+      );
+    }
     case 'Sae': {
       return (
         <>
