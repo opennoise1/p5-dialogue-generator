@@ -9,6 +9,7 @@ const simplePositions = {
   Igor: [35, 15],
   Inui: [55, 10],
   Iwai: [60, 10],
+  Joker: [65, 30],
   Jose: [45, 10],
   Justine: [0, 0],
   Kaneshiro: [45, 10],

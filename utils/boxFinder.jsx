@@ -4,6 +4,7 @@ const boxDirectory = {
   Akechi: true,
   Ann: true,
   Futaba: true,
+  Joker: true,
   Kamoshida: true,
   Kaneshiro: true,
   Madarame: true,
@@ -40,6 +41,15 @@ const boxFinder = (char) => {
         <>
           <option value='Futaba'>Futaba</option>
           <option value='Shadow Futaba'>Shadow Futaba</option>
+        </>
+      );
+    }
+    case 'Joker': {
+      return (
+        <>
+          <option value='Joker'>Joker</option>
+          <option value='Ren'>Ren</option>
+          <option value='Akira'>Akira</option>
         </>
       );
     }
