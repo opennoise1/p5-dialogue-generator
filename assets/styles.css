@@ -182,7 +182,15 @@ select {
 
 #textAndTools {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start
+}
+
+#menusAndFonts {
+  padding-left: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 /* Dialogue and Download */
@@ -190,25 +198,27 @@ select {
 #textAndDownload {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  margin-right: 20px;
 }
 
 #enterDialogue {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 #dialogueHeader {
-  margin-top: 30px;
-  font-size: 14pt;
+  margin-top: 25px;
+  font-size: 12pt;
+  text-align: left;
 }
 
 #textField {
-  margin-top: 5px;
-  margin-bottom: 20px;
+  margin-top: 2px;
+  margin-bottom: 21px;
   font-family: 'sans-serif';
-  font-size: 14pt;
+  font-size: 12pt;
   resize: none;
   white-space: nowrap;
 
@@ -218,11 +228,12 @@ select {
 }
 
 #download {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 99.5%;
+
   display: flex;
   align-items: center;
-  padding: 5px;
-  padding-left: 75px;
-  padding-right: 75px;
 
   border: 2px solid black;
   box-shadow: 3px 3px black;
@@ -240,19 +251,24 @@ select {
   fill: white;
 }
 
+svg {
+  padding-left: 115px;
+}
+
 /* Menus */
 
 .menus {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
 
-  margin: 10px;
   margin-top: 22px;
+  margin-bottom: 10px;
 }
 
 .menuDivs {
-  margin: 5px;
+  margin-top: 5px;
+  margin-right: 8px;
   display: flex;
   flex-direction: column;
 }
@@ -260,14 +276,16 @@ select {
 .menuLabels {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  
+  font-size: 12pt;
   text-align: left;
-
-  font-size: 14pt;
 }
 
 .menuOptions {
-  margin-left: 40px;
   padding: 3px;
+  padding-bottom: 8px;
+  padding-top: 8px;
   width: 200px;
 
   border: 2px solid black;
@@ -279,22 +297,25 @@ select {
 /* Font Selection */
 
 #fontDiv {
-  margin-top: 20px;
+  margin-top: 10px;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  align-items: flex-start;
 }
 
 #fontHeader {
-  text-align: center;
-  font-size: 14pt;
+  text-align: left;
+  font-size: 12pt;
+}
+
+#fontChoices {
+  display: flex;
+  align-items: space-between;
 }
 
 .fonts {
   margin-bottom: 6px;
-  margin-right: 0.5em;
-  margin-left: 0.5em;
   border: 2px solid black;
   box-shadow: 3px 3px black;
   background-color: white;
@@ -320,26 +341,30 @@ select {
 }
 
 #vanillaFont {
+  margin-right: 0.5em;
   padding: 0.5em;
-  padding-top: 0.6em;
-  font-size: 12pt;
+  padding-top: 1.1em;
+  font-size: 10pt;
 }
 
 #royalFont {
+  margin-right: 0.5em;
+  margin-left: 0.5em;
   padding: 0.5em;
-  padding-top: 0.5em;
+  padding-top: 1.1em;
   font-family: 'Optima nova LT';
-  font-size: 12pt;
+  font-size: 10pt;
 }
 
 #japaneseFont {
+  margin-left: 0.5em;
   padding: 0.5em;
   font-family: 'SlumpDB';
-  font-size: 12pt;
+  font-size: 10pt;
 }
 
 #nameNote {
-  font-size: 10pt;
+  font-size: 8pt;
   color: #6b6261;
 }
 
