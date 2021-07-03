@@ -22,7 +22,7 @@ const CostumeMenu = ({ char, costume, setCostume, costumeMenus }) => {
 
   return (
     <div className='menuDivs'>
-      <div className='menuLabels'>Costume: </div>
+      <div className='menuLabels'>Costume</div>
       <select id='costumeMenu' className='menuOptions knife' value={costume} name='costumes' onChange={switchCostume}>
         {charCostumes}
       </select>

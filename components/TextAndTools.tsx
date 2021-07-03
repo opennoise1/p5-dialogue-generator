@@ -50,7 +50,6 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
 
   return (
     <div id='textAndTools'>
-      <Menus {...toolProps} />
       <div id='textAndDownload'>
         <div id='enterDialogue'>
           <div id='dialogueHeader'>Dialogue</div>
@@ -58,7 +57,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
             id='textField' 
             placeholder='Hey, Inmate! Character portraits contain spoilers!'
             rows={3}
-            cols={50}
+            cols={45}
             defaultValue={text}
             onChange={(e) => setText(e.target.value)} 
           />
@@ -79,31 +78,36 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
           <div>Download</div>    
         </div>
       </div>
-      <div id='fontDiv'>
-        <div id='fontHeader'>Font Select</div>
-        <div 
-          id='vanillaFont' 
-          className='fonts KRSMDivs knife' 
-          onClick={() => { setFont('KoreanKRSM'); setBoxFont('KoreanKRSM'); }}
-        >
-          KoreanKRSM &#40;Persona 5&#41;
-        </div>
-        <div 
-          id='royalFont' 
-          className='fonts optimaDivs knife' 
-          onClick={() => { setFont('Optima nova LT'); setBoxFont('Optima nova LT'); }}
-        >
-          Optima Nova Black &#40;Persona 5 Royal&#41;
-        </div>
-        <div 
-          id='japaneseFont' 
-          className='fonts slumpDivs knife' 
-          onClick={() => setFont('SlumpDB')}
-          lang='ja'
-        >
-          Slump DB &#40;ペルソナ5 - 日本語&#41;
-          <br></br>
-          <span id='nameNote'>&#40;Japanese Character Name - Coming Soon!&#41;</span>
+      <div id='menusAndFonts'>
+        <Menus {...toolProps} />
+        <div id='fontDiv'>
+          <div id='fontHeader'>Font Select</div>
+          <div id='fontChoices'>
+            <div 
+              id='vanillaFont' 
+              className='fonts KRSMDivs knife' 
+              onClick={() => { setFont('KoreanKRSM'); setBoxFont('KoreanKRSM'); }}
+            >
+              KoreanKRSM &#40;Persona 5&#41;
+            </div>
+            <div 
+              id='royalFont' 
+              className='fonts optimaDivs knife' 
+              onClick={() => { setFont('Optima nova LT'); setBoxFont('Optima nova LT'); }}
+            >
+              Optima Nova Black &#40;Persona 5 Royal&#41;
+            </div>
+            <div 
+              id='japaneseFont' 
+              className='fonts slumpDivs knife' 
+              onClick={() => setFont('SlumpDB')}
+              lang='ja'
+            >
+              Slump DB &#40;ペルソナ5 - 日本語&#41;
+              <br></br>
+              <span id='nameNote'>&#40;Japanese Character Name Coming Soon!&#41;</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
