@@ -51,31 +51,39 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
   return (
     <div id='textAndTools'>
       <div id='textAndDownload'>
-        <div id='enterDialogue'>
-          <div id='dialogueHeader'>Dialogue</div>
-          <textarea 
-            id='textField' 
-            placeholder='Hey, Inmate! Character portraits contain spoilers!'
-            rows={3}
-            cols={45}
-            defaultValue={text}
-            onChange={(e) => setText(e.target.value)} 
-          />
-        </div>
-        <div 
-          id='download'
-          className='knife'
-          onClick={downloadImage}
-        >
-          <svg 
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
+        <div id='allButLinks'>
+          <div id='enterDialogue'>
+            <div id='dialogueHeader'>Dialogue</div>
+            <textarea 
+              id='textField' 
+              placeholder='Hey, Inmate! Character portraits contain spoilers!'
+              rows={3}
+              cols={45}
+              defaultValue={text}
+              onChange={(e) => setText(e.target.value)} 
+            />
+          </div>
+          <div 
+            id='download'
+            className='knife'
+            onClick={downloadImage}
           >
-            <path d="M12 24l-8-9h6v-15h4v15h6z"/>
-          </svg>
-          <div>Download</div>    
+            <svg 
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 24l-8-9h6v-15h4v15h6z"/>
+            </svg>
+            <div>Download</div>    
+          </div>
+        </div>
+        <div id='genLinks'>
+          <div>Other generators:</div>
+          <a href='http://www.p4generator.com' target='_blank'>
+            <img id='p4logo' alt='Persona 4 logo' src='../images/persona4logo.png' width={85} height='auto'></img>
+          </a>
         </div>
       </div>
       <div id='menusAndFonts'>
