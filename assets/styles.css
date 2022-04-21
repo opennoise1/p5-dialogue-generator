@@ -202,6 +202,14 @@ select {
   margin-right: 20px;
 }
 
+#allButLinks {
+  display: flex;
+  flex-direction: column;
+
+  border-bottom: solid black 2px;
+  padding-bottom: 20px;
+}
+
 #enterDialogue {
   display: flex;
   flex-direction: column;
@@ -217,8 +225,8 @@ select {
 #textField {
   margin-top: 2px;
   margin-bottom: 21px;
-  font-family: 'sans-serif';
-  font-size: 12pt;
+  font-family: 'KoreanKRSM';
+  font-size: 11pt;
   resize: none;
   white-space: nowrap;
 
@@ -253,6 +261,15 @@ select {
 
 svg {
   padding-left: 115px;
+}
+
+#genLinks {
+  margin-top: 5px;
+  font-size: 15pt;
+}
+
+#p4logo {
+  margin-top: 5px;
 }
 
 /* Menus */
