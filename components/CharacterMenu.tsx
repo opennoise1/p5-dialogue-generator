@@ -55,8 +55,10 @@ const CharacterMenu = ({ char, emote, boxFont, selection, setChar, setEmote, set
         <option value='Ichinose'>Kuon Ichinose</option>
         <option value='Lavenza'>Lavenza</option>
         <option value='Makoto'>Makoto Niijima</option>
+        <option value='Mariko'>Mariko Hyodo</option>
         <option value='Shido'>Masayoshi Shido</option>
         <option value='Mika'>Mika</option>
+        <option value='Kaburagi'>Miyako Kaburagi</option>
         <option value='Morgana'>Morgana</option>
         <option value='Hiruta'>Mr. Hiruta</option>
         <option value='Inui'>Mr. Inui</option>
@@ -77,6 +79,7 @@ const CharacterMenu = ({ char, emote, boxFont, selection, setChar, setEmote, set
         <option value='Shinya'>Shinya Oda</option>
         <option value='Director'>SIU Director</option>
         <option value='Sojiro'>Sojiro Sakura</option>
+        <option value='Sophia'>Sophia</option>
         <option value='Sugimura'>Sugimura</option>
         <option value='Kamoshida'>Suguru Kamoshida</option>
         <option value='Sumire'>Sumire Yoshizawa</option>
@@ -87,6 +90,7 @@ const CharacterMenu = ({ char, emote, boxFont, selection, setChar, setEmote, set
         <option value='Wakaba'>Wakaba Isshiki</option>
         <option value='Yusuke'>Yusuke Kitagawa</option>
         <option value='Mishima'>Yuuki Mishima</option>
+        <option value='Zenkichi'>Zenkichi Hasegawa</option>
       </select>
     </div>
   );

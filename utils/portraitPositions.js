@@ -12,6 +12,7 @@ const simplePositions = {
   Joker: [65, 30],
   Jose: [45, 10],
   Justine: [0, 0],
+  Kaburagi: [30, 0],
   Kaneshiro: [45, 10],
   Kawakami: [0, 0],
   Lavenza: [35, 10],
@@ -94,6 +95,9 @@ const findSpecialPosition = (char, emote, costume) => {
     case 'Shiho': {
       if (costume.includes('Cognitive')) return [0, 0];
       return [55, 25];
+    }
+    case 'Zenkichi': {
+      if (costume === 'Wolf' || emote === 'Miscellaneous') return [50, 0];
     }
     default: return [0, 0];
   }
