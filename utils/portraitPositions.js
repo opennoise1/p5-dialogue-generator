@@ -60,6 +60,7 @@ const findSpecialPosition = (char, emote, costume) => {
     }
     case 'Haru': {
       if (costume.includes('Noir')) return [0, 0];
+      if (costume === 'Swimsuit (Okinawa)' || costume == 'Road Trip (Hat)') return [0, 10];
       return [35, 10];
     }
     case 'Kamoshida': {
