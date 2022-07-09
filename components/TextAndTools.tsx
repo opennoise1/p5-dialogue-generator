@@ -113,7 +113,17 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
             >
               Slump DB &#40;ペルソナ5 - 日本語&#41;
               <br></br>
-              <span id='nameNote'>&#40;Japanese Character Name Coming Soon!&#41;</span>
+              <span id='nameNote'>&#40;Names Coming Soon!&#41;</span>
+            </div>
+            <div 
+              id='koreanFont' 
+              className='fonts cinemaDivs knife' 
+              onClick={() => setFont('aCinema')}
+              lang='ko'
+            >
+              aCinema &#40;페르소나 5 - 한글어&#41;
+              <br></br>
+              <span id='nameNote'>&#40;Names Coming Soon!&#41;</span>
             </div>
           </div>
         </div>
