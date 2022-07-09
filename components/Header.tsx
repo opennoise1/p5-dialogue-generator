@@ -1,15 +1,5 @@
 const Header = () => {
 
-  const kofi =
-    `<script>
-      kofiWidgetOverlay.draw('opennoise', {
-        'type': 'floating-chat',
-        'floating-chat.donateButton.text': 'Support Me',
-        'floating-chat.donateButton.background-color': '#323842',
-        'floating-chat.donateButton.text-color': '#fff'
-        });
-    </script>`;
-
   return (
     <header id='header'>
       <div id='title'>
@@ -30,12 +20,14 @@ const Header = () => {
           </div>
       </div>
       <div id='subhead'>
-        <div id='kofi' dangerouslySetInnerHTML={{ __html: kofi }}>
+        <div id='kofi'>
+          <a href='https://ko-fi.com/opennoise' target='_blank'>Support me on Kofi</a>
         </div>
         <p id='credits'>
           <a href='https://github.com/opennoise1/p5-dialogue-generator' target='_blank'>Code</a> by <a href='https://twitter.com/opennoise' target='_blank'>@opennoise</a>.
           <br></br>
           All artwork by <a href='https://twitter.com/Atlus_West' target='_blank'>Atlus</a>, displayed here under fair use.
+          <br></br>
         </p>
       </div>
     </header>
