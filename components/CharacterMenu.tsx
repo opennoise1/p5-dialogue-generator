@@ -32,6 +32,10 @@ const CharacterMenu = ({ char, emote, boxFont, selection, setChar, setEmote, set
     <div className='menuDivs'>
       <div className='menuLabels'>Character</div>
       <select id='charMenu' className='menuOptions knife' value={char} name='characters' onChange={switchChar}>
+        <option value='Akane'>Akane Hasegawa</option>
+        <option value='Konoe'>Akira Konoe</option>
+        <option value='Alice'>Alice Hiiragi</option>
+        <option value='Natsume'>Ango Natsume</option>
         <option value='Ann'>Ann Takamaki</option>
         <option value='Caroline'>Caroline</option>
         <option value='Chihaya'>Chihaya Mifune</option>
@@ -45,12 +49,16 @@ const CharacterMenu = ({ char, emote, boxFont, selection, setChar, setEmote, set
         <option value='Igor'>Igor</option>
         <option value='Jose'>Jose</option>
         <option value='Kaneshiro'>Junya Kaneshiro</option>
+        <option value='Owada'>Jyun Owada</option>
         <option value='Justine'>Justine</option>
         <option value='Okumura'>Kunikazu Okumura</option>
+        <option value='Ichinose'>Kuon Ichinose</option>
         <option value='Lavenza'>Lavenza</option>
         <option value='Makoto'>Makoto Niijima</option>
+        <option value='Mariko'>Mariko Hyodo</option>
         <option value='Shido'>Masayoshi Shido</option>
         <option value='Mika'>Mika</option>
+        <option value='Kaburagi'>Miyako Kaburagi</option>
         <option value='Morgana'>Morgana</option>
         <option value='Hiruta'>Mr. Hiruta</option>
         <option value='Inui'>Mr. Inui</option>
@@ -71,6 +79,7 @@ const CharacterMenu = ({ char, emote, boxFont, selection, setChar, setEmote, set
         <option value='Shinya'>Shinya Oda</option>
         <option value='Director'>SIU Director</option>
         <option value='Sojiro'>Sojiro Sakura</option>
+        <option value='Sophia'>Sophia</option>
         <option value='Sugimura'>Sugimura</option>
         <option value='Kamoshida'>Suguru Kamoshida</option>
         <option value='Sumire'>Sumire Yoshizawa</option>
@@ -81,6 +90,7 @@ const CharacterMenu = ({ char, emote, boxFont, selection, setChar, setEmote, set
         <option value='Wakaba'>Wakaba Isshiki</option>
         <option value='Yusuke'>Yusuke Kitagawa</option>
         <option value='Mishima'>Yuuki Mishima</option>
+        <option value='Zenkichi'>Zenkichi Hasegawa</option>
       </select>
     </div>
   );

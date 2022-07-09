@@ -32,6 +32,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'aCinema';
+  src: url('fonts/aCinema.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   font-family: 'KoreanKRSM';
   background-color: #FF0505;
@@ -89,6 +97,9 @@ body {
 }
 .slumpDivs {
   font-family: 'SlumpDB';
+}
+.cinemaDivs {
+  font-family: 'aCinema';
 }
 
 /* Subhead */
@@ -377,6 +388,13 @@ svg {
   margin-left: 0.5em;
   padding: 0.5em;
   font-family: 'SlumpDB';
+  font-size: 10pt;
+}
+
+#koreanFont {
+  margin-left: 1em;
+  padding: 0.5em;
+  font-family: 'aCinema';
   font-size: 10pt;
 }
 

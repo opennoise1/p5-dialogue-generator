@@ -1,4 +1,5 @@
 const simplePositions = {
+  Alice: [20, 0],
   Caroline: [-35, 0],
   Chihaya: [0, 0],
   Chouno: [40, 10],
@@ -12,7 +13,9 @@ const simplePositions = {
   Joker: [65, 30],
   Jose: [45, 10],
   Justine: [0, 0],
+  Kaburagi: [30, 0],
   Kaneshiro: [45, 10],
+  Konoe: [50, 0],
   Kawakami: [0, 0],
   Lavenza: [35, 10],
   Makoto: [35, 10],
@@ -20,6 +23,7 @@ const simplePositions = {
   Mishima: [35, 5],
   Nakanohara: [0, 0],
   Ohya: [35, 10],
+  Owada: [50, 0],
   Principal: [-10, 20],
   Rumi: [40, 10],
   Shibusawa: [0, 0],
@@ -48,6 +52,10 @@ const findSpecialPosition = (char, emote, costume) => {
       if (costume.includes('Cognitive')) return [85, 0];
       return [-30, 0];
     }
+    case 'Natsume': {
+      if (emote === 'Miscellaneous') return [30, 0];
+      return [0, 0];
+    }
     case 'Ann': {
       if (emote === 'Excited (Royal)' || emote === 'Shocked (Royal)') return [0, 35];
       if (emote.includes('Royal')) return [50, 35];
@@ -59,6 +67,7 @@ const findSpecialPosition = (char, emote, costume) => {
     }
     case 'Haru': {
       if (costume.includes('Noir')) return [0, 0];
+      if (costume === 'Swimsuit (Okinawa)' || costume == 'Road Trip (Hat)') return [0, 10];
       return [35, 10];
     }
     case 'Kamoshida': {
@@ -68,6 +77,10 @@ const findSpecialPosition = (char, emote, costume) => {
     case 'Madarame': {
       if (costume.includes('Shadow')) return [-75, 10];
       return [55, 10];
+    }
+    case 'Mariko': {
+      if (emote !== 'Miscellaneous') return [20, 0];
+      return [0, 0];
     }
     case 'Maruki': {
       if (costume.includes('Metaverse')) return [80, 5];
@@ -94,6 +107,9 @@ const findSpecialPosition = (char, emote, costume) => {
     case 'Shiho': {
       if (costume.includes('Cognitive')) return [0, 0];
       return [55, 25];
+    }
+    case 'Zenkichi': {
+      if (costume === 'Wolf' || emote === 'Miscellaneous') return [50, 0];
     }
     default: return [0, 0];
   }

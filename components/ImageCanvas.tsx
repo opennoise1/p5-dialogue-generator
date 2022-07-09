@@ -50,6 +50,13 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume, box }) => {
       x = portraitXY[0];
       y = portraitXY[1];
     }
+    // Edge cases: A few Haru and Sophia P5S portraits need to be drawn wider
+    if (costume === 'Humanity\'s Companion') w = 580;
+    if (char === 'Haru') {
+      if (costume === 'Swimsuit (Okinawa)' || costume === 'Road Trip (Hat)') {
+        w = 570;
+      }
+    }
     pCtx.drawImage(charImage, x, y, w, h);
     return;
   };

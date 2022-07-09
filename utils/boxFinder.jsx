@@ -1,16 +1,21 @@
 import React from 'react';
 
 const boxDirectory = {
+  Akane: true,
   Akechi: true,
+  Alice: true,
   Ann: true,
   Futaba: true,
   Haru: true,
   Joker: true,
   Kamoshida: true,
   Kaneshiro: true,
+  Konoe: true,
   Madarame: true,
+  Mariko: true,
   Mishima: true,
   Nakanohara: true,
+  Natsume: true,
   Okumura: true,
   Sae: true,
   Shido: true,
@@ -21,11 +26,27 @@ const boxDirectory = {
 
 const boxFinder = (char) => {
   switch (char) {
+    case 'Akane': {
+      return (
+        <>
+          <option value='Akane'>Akane</option>
+          <option value='Shadow Akane'>Shadow Akane</option>
+        </>
+      );
+    }
     case 'Akechi': {
       return (
         <>
           <option value='Akechi'>Akechi</option>
           <option value='Cognitive Akechi'>Cognitive Akechi</option>
+        </>
+      );
+    }
+    case 'Alice': {
+      return (
+        <>
+          <option value='Alice'>Alice</option>
+          <option value='Shadow Alice'>Shadow Alice</option>
         </>
       );
     }
@@ -78,11 +99,27 @@ const boxFinder = (char) => {
         </>
       );
     }
+    case 'Konoe': {
+      return (
+        <>
+          <option value='Konoe'>Konoe</option>
+          <option value='Shadow Konoe'>Shadow Konoe</option>
+        </>
+      );
+    }
     case 'Madarame': {
       return (
         <>
           <option value='Madarame'>Madarame</option>
           <option value='Shadow Madarame'>Shadow Madarame</option>
+        </>
+      );
+    }
+    case 'Mariko': {
+      return (
+        <>
+          <option value='Mariko'>Mariko</option>
+          <option value='Shadow Mariko'>Shadow Mariko</option>
         </>
       );
     }
@@ -99,6 +136,14 @@ const boxFinder = (char) => {
         <>
           <option value='Nakanohara'>Nakanohara</option>
           <option value='Shadow Nakanohara'>Shadow Nakanohara</option>
+        </>
+      );
+    }
+    case 'Natsume': {
+      return (
+        <>
+          <option value='Natsume'>Natsume</option>
+          <option value='Shadow Natsume'>Shadow Natsume</option>
         </>
       );
     }
