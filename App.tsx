@@ -9,7 +9,8 @@ const App = () => {
   const [emote, setEmote]= useState<string>('Happy');
   const [costume, setCostume] = useState<string>('Gym Clothes');
 
-  // Initial values of dialogue text, font and current box selection which will determine our dialogue box
+  // Initial values of name, dialogue text, and font, which will determine our dialogue box
+  const [name, setName] = useState<string>('Ann');
   const [text, setText] = useState<string>('');
   const [font, setFont] = useState<string>('KoreanKRSM');
   // Box font state can be removed once SlumpDB dialogue boxes are added
@@ -30,6 +31,8 @@ const App = () => {
     setEmote,
     costume,
     setCostume,
+    name,
+    setName,
     text,
     setText,
     portrait,

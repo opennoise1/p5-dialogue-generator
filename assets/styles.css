@@ -245,7 +245,7 @@ select {
   padding-bottom: 20px;
 }
 
-#enterDialogue {
+#enterDialogue, #enterName {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -257,7 +257,7 @@ select {
   text-align: left;
 }
 
-#textField {
+#textField, #nameField {
   margin-top: 2px;
   margin-bottom: 21px;
   font-family: 'KoreanKRSM';

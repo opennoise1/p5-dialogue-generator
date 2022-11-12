@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { simplePositions, findSpecialPosition } from '../utils/portraitPositions';
 import FontFaceObserver from 'fontfaceobserver';
 
-const ImageCanvas = ({ portrait, text, font, char, emote, costume, box }) => {
+const ImageCanvas = ({ portrait, name, text, font, char, emote, costume, box }) => {
   const portraitCanvas: React.MutableRefObject<any> = useRef(null);
   const boxCanvas: React.MutableRefObject<any> = useRef(null);
   const nameCanvas: React.MutableRefObject<any> = useRef(null);
@@ -17,17 +17,22 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume, box }) => {
   const loadedFont = new FontFaceObserver(`${font}`);
 
   useEffect(() => {
-    // Initialize name canvas and clear current rectangles
+    // Initialize name canvas
     nCtx = nameCanvas.current.getContext('2d');
     nCtx.font = `18.2pt ${font}`;
-    nCtx.clearRect(0, 0, 1275, 500);
     nCtx.rotate(-14.75 * Math.PI / 180);
 
     loadedFont.load().then(() => {
-      nCtx.fillStyle = '#00FF00';
-      nCtx.fillText('Ann', 393, 438);
+      nCtx.fillStyle = '#000000';
+      nCtx.fillText(name, 393, 438);
     });
   }, []) // Empty dependency means it only runs on first render
+
+  useEffect(() => {
+    nCtx = nameCanvas.current.getContext('2d');
+    nCtx.clearRect(0, 0, 1275, 500);
+    nCtx.fillText(name, 393, 438); 
+  }, [name])
 
   useEffect(() => {
     // Initialize text canvas and clear current text

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Menus from './Menus';
 
 const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, setPortrait, text, setText, 
-  font, setFont, boxFont, setBoxFont, box, setBox, selection, setSelection }) => {
+  name, setName, font, setFont, boxFont, setBoxFont, box, setBox, selection, setSelection }) => {
 
   const toolProps: any = {
     char,
@@ -52,6 +52,16 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
     <div id='textAndTools'>
       <div id='textAndDownload'>
         <div id='allButLinks'>
+          <div id='enterName'>
+            <div id='nameHeader'>Name</div>
+            <textarea
+              id='nameField'
+              rows={1}
+              cols={45}
+              defaultValue={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
           <div id='enterDialogue'>
             <div id='dialogueHeader'>Dialogue</div>
             <textarea 
