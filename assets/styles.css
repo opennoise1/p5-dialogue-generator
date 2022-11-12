@@ -190,11 +190,18 @@ body {
   z-index: 1;
 }
 
-#textCanvas {
+#nameCanvas {
   position: absolute;
   left: 0;
   top: 0;
   z-index: 2;
+}
+
+#textCanvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
   letter-spacing: 0.5px;
 }
 

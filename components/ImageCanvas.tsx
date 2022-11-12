@@ -1,15 +1,33 @@
 import React, { useEffect, useRef } from 'react';
 import { simplePositions, findSpecialPosition } from '../utils/portraitPositions';
+import FontFaceObserver from 'fontfaceobserver';
 
 const ImageCanvas = ({ portrait, text, font, char, emote, costume, box }) => {
   const portraitCanvas: React.MutableRefObject<any> = useRef(null);
   const boxCanvas: React.MutableRefObject<any> = useRef(null);
+  const nameCanvas: React.MutableRefObject<any> = useRef(null);
   const textCanvas: React.MutableRefObject<any> = useRef(null);
   const character: React.MutableRefObject<any> = useRef(null);
   const dialogueBox: React.MutableRefObject<any> = useRef(null);
   let pCtx: CanvasRenderingContext2D;
   let bCtx: CanvasRenderingContext2D;
+  let nCtx: CanvasRenderingContext2D;
   let tCtx: CanvasRenderingContext2D;
+  let textObj: TextMetrics;
+  const loadedFont = new FontFaceObserver(`${font}`);
+
+  useEffect(() => {
+    // Initialize name canvas and clear current rectangles
+    nCtx = nameCanvas.current.getContext('2d');
+    nCtx.font = `18.2pt ${font}`;
+    nCtx.clearRect(0, 0, 1275, 500);
+    nCtx.rotate(-14.75 * Math.PI / 180);
+
+    loadedFont.load().then(() => {
+      nCtx.fillStyle = '#00FF00';
+      nCtx.fillText('Ann', 393, 438);
+    });
+  }, []) // Empty dependency means it only runs on first render
 
   useEffect(() => {
     // Initialize text canvas and clear current text
@@ -17,7 +35,13 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume, box }) => {
     tCtx.fillStyle = '#FFFFFF';
     tCtx.font = `18pt ${font}`;
     tCtx.clearRect(0, 0, 1275, 500);
-
+    
+    // Draw box behind letters
+    const lastChar: string = text[text.length - 1];
+    textObj = tCtx.measureText(lastChar);
+    const height = textObj.actualBoundingBoxAscent + textObj.actualBoundingBoxDescent;
+    const width = textObj.actualBoundingBoxLeft + textObj.actualBoundingBoxRight;
+    
     // Draw or redraw text
     const rows = text.split('\n');
     if (rows[1] === undefined) rows[1] = '';
@@ -31,6 +55,7 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume, box }) => {
     tCtx.fillText(rows[0], 500, 373);
     tCtx.fillText(rows[1], 500, 403);
     tCtx.fillText(rows[2], 500, 433);
+
     return;
   }, [text, font]);
 
@@ -86,6 +111,14 @@ const ImageCanvas = ({ portrait, text, font, char, emote, costume, box }) => {
       <canvas 
         ref={boxCanvas} 
         id='boxCanvas'
+        width='1275' 
+        height='500' 
+      >
+        Sorry! This generator requires a browser that supports HTML5!
+      </canvas>
+      <canvas 
+        ref={nameCanvas} 
+        id='nameCanvas'
         width='1275' 
         height='500' 
       >
