@@ -4,7 +4,7 @@ const CharacterMenu = ({ char, emote, boxFont, selection, setChar, setEmote, set
 
   const switchChar = (e: SyntheticEvent<HTMLSelectElement>) => {
     setChar((e.target as HTMLSelectElement).value);
-    setBox(`../images/boxes/db-${selection}-${boxFont}.png`);
+    // setBox(`../images/boxes/db-${selection}-${boxFont}.png`);
     return;
   };
 

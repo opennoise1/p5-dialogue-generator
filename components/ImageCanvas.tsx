@@ -1,38 +1,62 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { simplePositions, findSpecialPosition } from '../utils/portraitPositions';
 import FontFaceObserver from 'fontfaceobserver';
 
 const ImageCanvas = ({ portrait, name, text, font, char, emote, costume, box }) => {
+  const loadedFont = new FontFaceObserver(`${font}`);
+  
   const portraitCanvas: React.MutableRefObject<any> = useRef(null);
   const boxCanvas: React.MutableRefObject<any> = useRef(null);
+  const tileCanvas: React.MutableRefObject<any> = useRef(null);
   const nameCanvas: React.MutableRefObject<any> = useRef(null);
   const textCanvas: React.MutableRefObject<any> = useRef(null);
   const character: React.MutableRefObject<any> = useRef(null);
   const dialogueBox: React.MutableRefObject<any> = useRef(null);
   let pCtx: CanvasRenderingContext2D;
   let bCtx: CanvasRenderingContext2D;
+  let tileCtx: CanvasRenderingContext2D;
   let nCtx: CanvasRenderingContext2D;
   let tCtx: CanvasRenderingContext2D;
-  let textObj: TextMetrics;
-  const loadedFont = new FontFaceObserver(`${font}`);
+  let textObj: any; // "any" gets around a TS bug that says a fontBoundingBoxAscent property doesn't exist for a TextMetrics obj
+
+  useEffect(() => {
+    // Initialize tile canvas
+    tileCtx = tileCanvas.current.getContext('2d');
+    tileCtx.rotate(-14.75 * Math.PI / 180);
+
+    // Initialize name canvas
+    nCtx = nameCanvas.current.getContext('2d');
+    nCtx.textAlign = 'center';
+    nCtx.rotate(-14.75 * Math.PI / 180);
+  }, []) // Empty dependency means it only runs on first render
 
   useEffect(() => {
     // Initialize name canvas
     nCtx = nameCanvas.current.getContext('2d');
-    nCtx.font = `18.2pt ${font}`;
-    nCtx.rotate(-14.75 * Math.PI / 180);
+    nCtx.font = `18pt ${font}`;
+    nCtx.fillStyle = '#000000';
+
+    // Initialize tile canvas
+    tileCtx = tileCanvas.current.getContext('2d');
+    tileCtx.clearRect(0, 0, 1275, 500);
+    //Draw tile behind second to last character in name
+    // Use font ascent/descent for top/bottom
+    // Use actual left/right for left/right
 
     loadedFont.load().then(() => {
-      nCtx.fillStyle = '#000000';
-      nCtx.fillText(name, 393, 438);
+      if (name.length > 2) {
+        const wholeObj = nCtx.measureText(name);
+        const leftSide = wholeObj.actualBoundingBoxLeft;
+        textObj = nCtx.measureText(name[0]);
+        tileCtx.fillRect(418 - leftSide, 438 - textObj.fontBoundingBoxDescent, 
+          textObj.actualBoundingBoxLeft + textObj.actualBoundingBoxRight, 
+          textObj.fontBoundingBoxAscent + textObj.fontBoundingBoxDescent);
+      }
+      nCtx.clearRect(0, 0, 1275, 500);
+      nCtx.fillText(name, 418, 438); // Y coordinate is hardcoded because it isn't changing for P5/P5R box
     });
-  }, []) // Empty dependency means it only runs on first render
 
-  useEffect(() => {
-    nCtx = nameCanvas.current.getContext('2d');
-    nCtx.clearRect(0, 0, 1275, 500);
-    nCtx.fillText(name, 393, 438); 
-  }, [name])
+  }, [name, font])
 
   useEffect(() => {
     // Initialize text canvas and clear current text
@@ -40,12 +64,6 @@ const ImageCanvas = ({ portrait, name, text, font, char, emote, costume, box }) 
     tCtx.fillStyle = '#FFFFFF';
     tCtx.font = `18pt ${font}`;
     tCtx.clearRect(0, 0, 1275, 500);
-    
-    // Draw box behind letters
-    const lastChar: string = text[text.length - 1];
-    textObj = tCtx.measureText(lastChar);
-    const height = textObj.actualBoundingBoxAscent + textObj.actualBoundingBoxDescent;
-    const width = textObj.actualBoundingBoxLeft + textObj.actualBoundingBoxRight;
     
     // Draw or redraw text
     const rows = text.split('\n');
@@ -100,6 +118,11 @@ const ImageCanvas = ({ portrait, name, text, font, char, emote, costume, box }) 
     const heightOffset: number = height - 250;
     bCtx.clearRect(0, 0, 1275, 500);
     bCtx.drawImage(boxImage, 320, 250 - heightOffset, width, height);
+    /*
+    TODO: When name equals something actually in game, load in existing dialogue box?
+    (i.e. when user types "Ann," the existing Ann box appears so that way we aren't randomly
+    generating black boxes for that name and it appears how it does within the game)
+    */
     return;
   };
 
@@ -116,6 +139,14 @@ const ImageCanvas = ({ portrait, name, text, font, char, emote, costume, box }) 
       <canvas 
         ref={boxCanvas} 
         id='boxCanvas'
+        width='1275' 
+        height='500' 
+      >
+        Sorry! This generator requires a browser that supports HTML5!
+      </canvas>
+      <canvas 
+        ref={tileCanvas} 
+        id='tileCanvas'
         width='1275' 
         height='500' 
       >

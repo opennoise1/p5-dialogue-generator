@@ -22,7 +22,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
   }
 
   useEffect(() => {
-    setBox(`../images/boxes/db-${selection}-${boxFont}.png`);
+    // setBox(`../images/boxes/db-${selection}-${boxFont}.png`);
   }, [boxFont]);
 
   const downloadImage = (): void => {

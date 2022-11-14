@@ -7,7 +7,7 @@ const BoxMenu = ({ char, boxFont, selection, setSelection, setBox }) => {
 
   const switchBox = (e: SyntheticEvent<HTMLSelectElement>) => {
     setSelection((e.target as HTMLSelectElement).value);
-    setBox(`../images/boxes/db-${selection}-${boxFont}.png`)
+    // setBox(`../images/boxes/db-${selection}-${boxFont}.png`)
   };
 
   return (

@@ -190,18 +190,25 @@ body {
   z-index: 1;
 }
 
-#nameCanvas {
+#tileCanvas {
   position: absolute;
   left: 0;
   top: 0;
   z-index: 2;
 }
 
-#textCanvas {
+#nameCanvas {
   position: absolute;
   left: 0;
   top: 0;
   z-index: 3;
+}
+
+#textCanvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 4;
   letter-spacing: 0.5px;
 }
 

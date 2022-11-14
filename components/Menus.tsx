@@ -30,7 +30,7 @@ const Menus = ({ char, setChar, emote, setEmote, costume,
   };
 
   useEffect(() => {
-    setBox(`../images/boxes/db-${selection}-${boxFont}.png`);
+    // setBox(`../images/boxes/db-${selection}-${boxFont}.png`);
     setPortrait(`../images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);
     return;
   }, [char, emote, costume, selection]);
