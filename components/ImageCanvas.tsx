@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { simplePositions, findSpecialPosition } from '../utils/portraitPositions';
+import { findNameBox } from '../utils/findNameBox';
 import FontFaceObserver from 'fontfaceobserver';
 
-const ImageCanvas = ({ portrait, name, text, font, char, emote, costume, box }) => {
+const ImageCanvas = ({ portrait, name, text, font, char, emote, costume, box, setBox }) => {
   const loadedFont = new FontFaceObserver(`${font}`);
   
   const portraitCanvas: React.MutableRefObject<any> = useRef(null);
@@ -12,6 +13,7 @@ const ImageCanvas = ({ portrait, name, text, font, char, emote, costume, box }) 
   const textCanvas: React.MutableRefObject<any> = useRef(null);
   const character: React.MutableRefObject<any> = useRef(null);
   const dialogueBox: React.MutableRefObject<any> = useRef(null);
+  let random: number;
   let pCtx: CanvasRenderingContext2D;
   let bCtx: CanvasRenderingContext2D;
   let tileCtx: CanvasRenderingContext2D;
@@ -26,34 +28,90 @@ const ImageCanvas = ({ portrait, name, text, font, char, emote, costume, box }) 
 
     // Initialize name canvas
     nCtx = nameCanvas.current.getContext('2d');
-    nCtx.textAlign = 'center';
+    nCtx.textAlign = 'left';
     nCtx.rotate(-14.75 * Math.PI / 180);
   }, []) // Empty dependency means it only runs on first render
 
   useEffect(() => {
-    // Initialize name canvas
+    // Initialize name and tile canvases
     nCtx = nameCanvas.current.getContext('2d');
     nCtx.font = `18pt ${font}`;
-    nCtx.fillStyle = '#000000';
-
+    nCtx.clearRect(0, 0, 1275, 500);
+    
     // Initialize tile canvas
     tileCtx = tileCanvas.current.getContext('2d');
     tileCtx.clearRect(0, 0, 1275, 500);
-    //Draw tile behind second to last character in name
-    // Use font ascent/descent for top/bottom
-    // Use actual left/right for left/right
 
+    // Measure entire name
+    const nameObj = nCtx.measureText(name);
+
+    // Check to see if current name has a pre-exisiting box
+    let hasBox: string | null = findNameBox(name);
+    if (hasBox && (font === 'KoreanKRSM' || font === 'Optima nova LT')) {
+      // If so, use the box and return.
+      setBox(`./images/boxes/db-${hasBox}-${font}.png`)
+      return;
+    } else {
+      // Otherwise use the blank box and draw the name
+      // TODO: Check the size of name and adjust size of box if necessary
+      setBox('./images/db@2x.png');
+    }
+    
+    // Edge case: If name is just whitespace, we won't enter the loop so it doesn't run infinitely
+    if (name.trim()) {
+      // Choose a random character from the name.
+      // If the character chosen is a blank space, choose again
+      do {
+        random = Math.floor(Math.random() * name.length);
+      } while (name[random] === ' ');
+    } else { 
+      random = null; 
+    }
+
+    // Split name into multiple substrings so we can change
+    // the color of the character over the black tile
+      let beforeBox: string = name.substring(0, random);
+      let behindBox: string = name.substring(random, random + 1);
+      let afterBox: string = name.substring(random + 1);
+    
     loadedFont.load().then(() => {
-      if (name.length > 2) {
-        const wholeObj = nCtx.measureText(name);
-        const leftSide = wholeObj.actualBoundingBoxLeft;
-        textObj = nCtx.measureText(name[0]);
-        tileCtx.fillRect(418 - leftSide, 438 - textObj.fontBoundingBoxDescent, 
-          textObj.actualBoundingBoxLeft + textObj.actualBoundingBoxRight, 
-          textObj.fontBoundingBoxAscent + textObj.fontBoundingBoxDescent);
+
+      // Find the leftmost coordinate of the name on the canvas 
+      let boxDrawX = 418 - nameObj.width / 2; // TODO: change 418 to a variable that represents the center of each dialogue box name area
+
+      // Edge case: No black boxes for single character names or whitespace-only names
+      if (name.length > 1 && name.trim()) {
+        // Loop through name to find where we should
+        // start drawing the box behind the randomly chosen character
+        for (let i = 0; i < random; i++) {
+          textObj = nCtx.measureText(name[i]);
+          boxDrawX += textObj.width;
+        };
+
+        textObj = nCtx.measureText(name[random]);
+        tileCtx.fillRect(
+          boxDrawX,
+          438 - textObj.fontBoundingBoxAscent,
+          textObj.width,
+          textObj.fontBoundingBoxAscent + textObj.fontBoundingBoxDescent
+        );
+      // Edge case: Draw entire name, if one character
+      } else if (name.length === 1) { 
+        nCtx.fillStyle = '#000000';
+        nCtx.fillText(name, 418, 438);
+        return;
       }
-      nCtx.clearRect(0, 0, 1275, 500);
-      nCtx.fillText(name, 418, 438); // Y coordinate is hardcoded because it isn't changing for P5/P5R box
+      
+      nCtx.fillStyle = '#000000';
+      nCtx.fillText(beforeBox, 418 - nameObj.width / 2, 438); // TODO: change 438 to a variable that represents the Y coordinate of each dialogue box name area
+      nCtx.fillStyle = '#FFFFFF'; // White text appears on black tile
+      textObj = nCtx.measureText(beforeBox);
+      nCtx.fillText(behindBox, 418 - (nameObj.width / 2) + textObj.width, 438);
+      nCtx.fillStyle = '#000000';
+      textObj = nCtx.measureText(name[random]); 
+      nCtx.fillText(afterBox, boxDrawX + textObj.width, 438);
+
+      return;
     });
 
   }, [name, font])
