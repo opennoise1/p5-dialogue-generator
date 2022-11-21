@@ -61,7 +61,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
   }
 
   const changeName = (e: SyntheticEvent<HTMLTextAreaElement>): void => {
-    let currName = ((e.target as HTMLTextAreaElement).value);
+    let currName = (e.target as HTMLTextAreaElement).value;
     let newName = '';
     // Edge case: Prevents multiple whitespaces in a row so that
     // random number selectors don't get caught in infinite loops
@@ -69,6 +69,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
       if (currName[i] === ' ' && currName[i + 1] === ' ') continue;
       newName += currName[i];
     }
+    (e.target as HTMLTextAreaElement).value = newName;
     setName(newName);
   }
 
