@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { simplePositions, findSpecialPosition } from '../utils/portraitPositions';
-import { findNameBox } from '../utils/findNameBox';
+import { findNameBox } from '../utils/findName';
+import { findRandomNumbers } from '../utils/drawNameAndBox';
 import FontFaceObserver from 'fontfaceobserver';
 
-const ImageCanvas = ({ portrait, name, text, font, char, emote, costume, box, setBox }) => {
+const ImageCanvas = ({ portrait, name, text, font, char, custom, emote, costume, box, setBox }) => {
   const loadedFont = new FontFaceObserver(`${font}`);
   
   const portraitCanvas: React.MutableRefObject<any> = useRef(null);
@@ -12,6 +13,7 @@ const ImageCanvas = ({ portrait, name, text, font, char, emote, costume, box, se
   const nameCanvas: React.MutableRefObject<any> = useRef(null);
   const textCanvas: React.MutableRefObject<any> = useRef(null);
   const character: React.MutableRefObject<any> = useRef(null);
+  const customChar: React.MutableRefObject<any> = useRef(null);
   const dialogueBox: React.MutableRefObject<any> = useRef(null);
   let random: number;
   let secondRandom: number;
@@ -51,10 +53,10 @@ const ImageCanvas = ({ portrait, name, text, font, char, emote, costume, box, se
     nameObj = nCtx.measureText(name);
 
     // Check to see if current name has a pre-exisiting box
-    let hasBox: string | null = findNameBox(name);
-    if (hasBox && (font === 'KoreanKRSM' || font === 'Optima nova LT')) {
+    let charWithBox: string | null = findNameBox(name);
+    if (charWithBox && (font === 'KoreanKRSM' || font === 'Optima nova LT')) {
       // If so, use the box and return.
-      setBox(`./images/boxes/db-${hasBox}-${font}.png`)
+      setBox(`./images/boxes/db-${charWithBox}-${font}.png`)
       return;
     } else {
       // If not, draw a blank box depending on the size of the name.
@@ -62,53 +64,11 @@ const ImageCanvas = ({ portrait, name, text, font, char, emote, costume, box, se
       else if (nameObj.width > 195 && nameObj.width <= 275) { setBox('./images/db-medium.png'); textX = 456; }
       else { setBox('./images/db-large.png'); textX = 495; }
     }
-    
-    // Edge case: If name is just whitespace, we won't enter the loop so it doesn't run infinitely
-    if (name.trim()) {
-      // Choose a random character from the name.
-      // If the character chosen is a blank space, choose again
-      do {
-        random = Math.floor(Math.random() * name.length);
-      } while (name[random] === ' ');
 
-
-      if (name.length >= 8) {
-        // Pick a new random number to make sure it's on the left side of the name
-        // That way we can ensure there's a nice balance to where the boxes are
-        // and make sure the first random number comes before the second random number
-        if (random > ((name.length / 2) - 1)) {
-          while (name[random] === ' ' || random > ((name.length /2) - 1)) {
-            random = Math.floor(Math.random() * name.length);
-          }
-        }
-
-        // Likewise, ensure the second random number is on the right half of the name
-        // and at least a few numbers away from the first random number
-        do {
-          secondRandom = Math.floor(Math.random() * name.length);
-        } while (name[secondRandom] === ' ' || secondRandom < ((name.length / 2) - 1) || Math.abs(secondRandom - random) <= 2);
-      }
-
-      if (name.length >= 16) {
-        if (random > (Math.floor((name.length / 3) - 1))) {
-          while (name[random] === ' ' || random > (Math.floor((name.length / 3) - 1))) {
-            random = Math.floor(Math.random() * name.length);
-          }
-        }
-        
-        if (secondRandom > (2 * (Math.floor((name.length / 3) - 1)))) {
-          while (name[secondRandom] === ' ' || secondRandom < (Math.floor((name.length / 3) - 1)) || secondRandom > (2 * (Math.floor((name.length / 3) - 1))) || Math.abs(secondRandom - random) <= 2) {
-            secondRandom = Math.floor(Math.random() * name.length);
-          }
-        }
-
-        do {
-          thirdRandom = Math.floor(Math.random() * name.length);
-        } while (name[thirdRandom] === ' ' || thirdRandom < (2 * (Math.floor((name.length / 3) - 1))) || Math.abs(thirdRandom - secondRandom) <= 2);
-      }
-    } else { 
-      random = null; 
-    }
+    const randomNumbers = findRandomNumbers(name);
+    random = randomNumbers[0];
+    secondRandom = randomNumbers[1];
+    thirdRandom = randomNumbers[2];
 
     // Split name into multiple substrings so we can change
     // the color of the character over the black tile
@@ -139,7 +99,7 @@ const ImageCanvas = ({ portrait, name, text, font, char, emote, costume, box, se
     loadedFont.load().then(() => {
 
       // Find the leftmost coordinate of the name on the canvas 
-      let boxX: number = textX - nameObj.width / 2; // TODO: change 418 to a variable that represents the center of each dialogue box name area
+      let boxX: number = textX - nameObj.width / 2;
       let secondBoxX: number;
       let thirdBoxX: number;
 
@@ -173,7 +133,7 @@ const ImageCanvas = ({ portrait, name, text, font, char, emote, costume, box, se
 
           tileCtx.fillRect(
             secondBoxX,
-            438 - textObj.fontBoundingBoxAscent - 3,
+            438 - textObj.fontBoundingBoxAscent - 3, // Slight change in size to make the look more dynamic
             textObj.width,
             textObj.fontBoundingBoxAscent + textObj.fontBoundingBoxDescent + 7
           );
@@ -193,7 +153,7 @@ const ImageCanvas = ({ portrait, name, text, font, char, emote, costume, box, se
             thirdBoxX,
             438 - textObj.fontBoundingBoxAscent - 3,
             textObj.width,
-            textObj.fontBoundingBoxAscent + textObj.fontBoundingBoxDescent + 6
+            textObj.fontBoundingBoxAscent + textObj.fontBoundingBoxDescent + 6 // Slight change in size to make the look more dynamic
           );
         }
 
@@ -205,7 +165,7 @@ const ImageCanvas = ({ portrait, name, text, font, char, emote, costume, box, se
       }
       
       nCtx.fillStyle = '#000000';
-      nCtx.fillText(beforeBox, textX - nameObj.width / 2, textY); // TODO: change 438 to a variable that represents the Y coordinate of each dialogue box name area
+      nCtx.fillText(beforeBox, textX - nameObj.width / 2, textY);
       nCtx.fillStyle = '#FFFFFF'; // White text appears on black tile
       textObj = nCtx.measureText(beforeBox);
       nCtx.fillText(behindBox, boxX, textY);
@@ -258,6 +218,15 @@ const ImageCanvas = ({ portrait, name, text, font, char, emote, costume, box, se
     return;
   }, [text, font]);
 
+  useEffect(() => {
+    // Force portrait canvas to clear if "No Portrait" is selected
+    if (char === 'None') {
+      pCtx = portraitCanvas.current.getContext('2d');
+      pCtx.clearRect(0, 0, 1275, 500);
+    }
+    return;
+  }, [char]);
+
   const drawPortrait = (charImage: CanvasImageSource, portraitXY: number[], w: number, h: number) => {
     // Initialize portrait canvas and clear current portrait
     pCtx = portraitCanvas.current.getContext('2d');
@@ -284,6 +253,18 @@ const ImageCanvas = ({ portrait, name, text, font, char, emote, costume, box, se
     pCtx.drawImage(charImage, x, y, w, h);
     return;
   };
+
+  const drawCustomPortrait = (customImage: CanvasImageSource) => {
+    // Initialize portrait canvas and clear current portrait
+    pCtx = portraitCanvas.current.getContext('2d');
+    pCtx.clearRect(0, 0, 1275, 800);
+
+    const width = customImage.width as number;
+    const height = customImage.height as number;
+
+    pCtx.drawImage(customImage, 0, 0, width, height);
+    return;
+  }
 
   const drawBox = (boxImage: CanvasImageSource) => {
     // Initialize box canvas, clear current box and draw new box
@@ -354,6 +335,15 @@ const ImageCanvas = ({ portrait, name, text, font, char, emote, costume, box, se
         src={portrait}
         crossOrigin="anonymous"
         onLoad={() => drawPortrait(character.current, simplePositions[char], 500, 500)}
+      />
+      <img
+        alt='Custom Portrait'
+        ref={customChar}
+        id='custom'
+        className='hidden'
+        src={custom}
+        crossOrigin="anonymous"
+        onLoad={() => drawCustomPortrait(customChar.current)}
       />
       <img
         alt='Dialogue box'

@@ -13,14 +13,12 @@ const App = () => {
   const [name, setName] = useState<string>('Ann');
   const [text, setText] = useState<string>('');
   const [font, setFont] = useState<string>('KoreanKRSM');
-  // Box font state can be removed once SlumpDB dialogue boxes are added
-  const [boxFont, setBoxFont] = useState<string>('KoreanKRSM');
-  const [selection, setSelection] = useState<string>(char);
   
   // Initial portrait and box that will be rendered 
   const [portrait, setPortrait] = 
     useState<string>(`./images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);
-  const [box, setBox] = useState<string>('./images/db@2x.png');
+  const [custom, setCustom] = useState<string>('');
+  const [box, setBox] = useState<string>('./images/boxes/db-Ann-KoreanKRSM.png');
   
   // By adding props to a separate object here, we can get around a TypeScript quirk
   // Read more here: https://stackoverflow.com/questions/48240449/type-is-not-assignable-to-type-intrinsicattributes-intrinsicclassattribu
@@ -37,14 +35,12 @@ const App = () => {
     setText,
     portrait,
     setPortrait,
+    custom,
+    setCustom,
     font,
     setFont,
-    boxFont,
-    setBoxFont,
     box,
     setBox,
-    selection,
-    setSelection,
   };
 
   return (
