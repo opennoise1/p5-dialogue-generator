@@ -1,11 +1,20 @@
 import { useEffect, SyntheticEvent } from 'react';
+import { findNameAfterCharSelect } from '../utils/findName';
 
-const CharacterMenu = ({ char, emote, boxFont, selection, setChar, setEmote, setEmoteMenus, setBox }) => {
+const CharacterMenu = ({ char, emote, setName, setChar, setEmote, setEmoteMenus }) => {
 
   const switchChar = (e: SyntheticEvent<HTMLSelectElement>) => {
     setChar((e.target as HTMLSelectElement).value);
-    setBox(`../images/boxes/db-${selection}-${boxFont}.png`);
-    return;
+      // Erase name if "No Portrait" is selected, switch to selected character's name otherwise
+      if ((e.target as HTMLSelectElement).value !== 'None') {
+        const newName = findNameAfterCharSelect((e.target as HTMLSelectElement).value)
+        setName(newName);
+        (document.getElementById('nameField') as HTMLTextAreaElement).value = newName;
+      } else {
+        setName('');
+        (document.getElementById('nameField') as HTMLTextAreaElement).value = '';
+      return;
+    }
   };
 
   useEffect(() => {
@@ -67,6 +76,7 @@ const CharacterMenu = ({ char, emote, boxFont, selection, setChar, setEmote, set
         <option value='Usami'>Ms. Usami</option>
         <option value='Iwai'>Munehisa Iwai</option>
         <option value='Nakanohara'>Natsuhiko Nakanohara</option>
+        <option value='None'>No Portrait</option>
         <option value='Principal'>Principal Kobayakawa</option>
         <option value='Joker'>Protagonist</option>
         <option value='Rumi'>Rumi</option>
