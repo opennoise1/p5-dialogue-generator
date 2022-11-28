@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { simplePositions, findSpecialPosition } from '../utils/portraitPositions';
 import { findNameBox } from '../utils/findName';
-import { findRandomNumbers, findTextCoords } from '../utils/drawNameAndTile';
+import { findRandomNumbers, findTextCoords } from '../utils/nameAndTextTools';
 import FontFaceObserver from 'fontfaceobserver';
 
 const ImageCanvas = ({ portrait, name, text, font, char, custom, emote, costume, 
