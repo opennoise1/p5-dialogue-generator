@@ -12,13 +12,16 @@ const App = () => {
   // Initial values of name, dialogue text, and font, which will determine our dialogue box
   const [name, setName] = useState<string>('Ann');
   const [text, setText] = useState<string>('');
-  const [font, setFont] = useState<string>('KoreanKRSM');
+  const [font, setFont] = useState<string>('Optima nova LT');
   
   // Initial portrait and box that will be rendered 
   const [portrait, setPortrait] = 
     useState<string>(`./images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);
   const [custom, setCustom] = useState<string>('');
-  const [box, setBox] = useState<string>('./images/boxes/db-Ann-KoreanKRSM.png');
+  const [box, setBox] = useState<string>('./images/boxes/db-Ann-Optima nova LT.png');
+  const [boxType, setBoxType] = useState<string>('main');
+  const [lastBoxType, setLastBoxType] = useState<string>(boxType);
+  const [boxSize, setBoxSize] = useState<string>('small');
   
   // By adding props to a separate object here, we can get around a TypeScript quirk
   // Read more here: https://stackoverflow.com/questions/48240449/type-is-not-assignable-to-type-intrinsicattributes-intrinsicclassattribu
@@ -41,6 +44,12 @@ const App = () => {
     setFont,
     box,
     setBox,
+    boxType,
+    setBoxType,
+    boxSize,
+    setBoxSize,
+    lastBoxType,
+    setLastBoxType,
   };
 
   return (

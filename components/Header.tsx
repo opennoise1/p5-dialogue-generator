@@ -28,6 +28,8 @@ const Header = () => {
           <br></br>
           All artwork by <a href='https://twitter.com/Atlus_West' target='_blank'>Atlus</a>, displayed here under fair use.
           <br></br>
+          For best results, use Google Chrome.
+          <br></br>
         </p>
       </div>
     </header>
