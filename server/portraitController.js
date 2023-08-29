@@ -1,7 +1,37 @@
-const { readdirSync } = require('fs');
+const { readdirSync, statSync, mkdirSync } = require('fs');
 const path = require('path');
 
 const portraitController = {};
+
+let directory = path.join(__dirname, '../images/portraits/Usami/');
+
+const newFolder = (directory) => {
+  const files = readdirSync(directory);
+
+  for (const file of files) {
+    const absolute = path.join(directory, file);
+    console.log(statSync(absolute).isDirectory());
+    if (statSync(absolute).isDirectory()) {
+      return newFolder(absolute); 
+    } else {
+        const lengthMinusPNG = file.length - 4;
+        let folderName;
+        for (let i = lengthMinusPNG; i > 0; i -= 1) {
+          if (files[0][i] === '-') {
+            folderName = file.slice(i + 1, lengthMinusPNG);
+            break;
+          }
+        }
+        mkdirSync(path.join(directory, `${folderName}`));
+    }
+  }
+  return;
+}
+
+portraitController.folderCreator = (req, res, next) => {
+  newFolder(directory);
+  return;
+}
 
 portraitController.emotionParser = (req, res, next) => {
   let emotions = readdirSync(path.join(__dirname, req.body.char));
