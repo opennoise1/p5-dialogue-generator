@@ -3,25 +3,29 @@ const path = require('path');
 
 const portraitController = {};
 
-let directory = path.join(__dirname, '../images/portraits/Usami/');
+let directory = path.join(__dirname, '../images/portraits/therest');
 
 const newFolder = (directory) => {
-  const files = readdirSync(directory);
+  let files = readdirSync(directory);
+  if (files[0] === '.DS_Store') {
+    files = files.slice(1);
+  }
 
   for (const file of files) {
     const absolute = path.join(directory, file);
     console.log(statSync(absolute).isDirectory());
     if (statSync(absolute).isDirectory()) {
-      return newFolder(absolute); 
+      newFolder(absolute); 
     } else {
         const lengthMinusPNG = file.length - 4;
         let folderName;
         for (let i = lengthMinusPNG; i > 0; i -= 1) {
-          if (files[0][i] === '-') {
+          if (file[i] === '-') {
             folderName = file.slice(i + 1, lengthMinusPNG);
             break;
           }
         }
+        
         mkdirSync(path.join(directory, `${folderName}`));
     }
   }
