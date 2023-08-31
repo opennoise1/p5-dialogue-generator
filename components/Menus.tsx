@@ -32,7 +32,7 @@ const Menus = ({ char, setChar, emote, setEmote, costume,
   };
 
   useEffect(() => {
-    setPortrait(`https://testing-s3-p5.s3.amazonaws.com/${char}/${emote}/${char}-${emote}-${costume}.png`);
+    setPortrait(`https://testing-s3-p5.s3.amazonaws.com/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);
     return;
   }, [char, emote, costume]);
 

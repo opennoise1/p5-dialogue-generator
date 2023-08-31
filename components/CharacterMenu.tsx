@@ -19,20 +19,6 @@ const CharacterMenu = ({ char, emote, setName, setChar, setEmote, setEmoteMenus 
   };
 
   useEffect(() => {
-    fetch('/folder', {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-    })
-
-    console.log("fetch /folder");
-  }, [])
-  
-
-  useEffect(() => {
-    // console.log(getFolderName("testing-s3-p5", "Ann/"));
-
     fetch('/emotions', {
       method: 'POST',
       headers: {
