@@ -20,6 +20,9 @@ app.put('/folder', portraitController.folderCreator, (req, res) => {
 
 
 ///////PORTRAIT CONTROLLER///////
+
+---FOR CREATING FOLDERS---
+
 let directory = path.join(__dirname, '../images/portraits/');
 
 const newFolder = (directory) => {
@@ -54,6 +57,10 @@ portraitController.folderCreator = (req, res, next) => {
   return;
 }
 
+---FOR DELETING PORTRAITS---
+
+let directory = path.join(__dirname, '../images/portraits/');
+
 const deleteFiles = (directory) => {
   let files = readdirSync(directory);
   if (files[0] === '.DS_Store') {
@@ -64,9 +71,9 @@ const deleteFiles = (directory) => {
     const absolute = path.join(directory, file);
     console.log(statSync(absolute).isDirectory());
     if (statSync(absolute).isDirectory()) {
-      newFolder(absolute); 
+      deleteFiles(absolute); 
     } else {
-        unlink(path.join(directory, `${folderName}`));
+        unlinkSync(absolute);
     }
   }
   return;

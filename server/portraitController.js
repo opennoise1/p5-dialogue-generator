@@ -1,33 +1,7 @@
-const { readdirSync, statSync, unlinkSync } = require('fs');
+const { readdirSync } = require('fs');
 const path = require('path');
 
 const portraitController = {};
-
-let directory = path.join(__dirname, '../images/portraits/');
-
-const deleteFiles = (directory) => {
-  let files = readdirSync(directory);
-  if (files[0] === '.DS_Store') {
-    files = files.slice(1);
-  }
-
-  for (const file of files) {
-    const absolute = path.join(directory, file);
-    console.log(statSync(absolute).isDirectory());
-    if (statSync(absolute).isDirectory()) {
-      deleteFiles(absolute); 
-    } else {
-        unlinkSync(absolute);
-    }
-  }
-  return;
-}
-
-portraitController.fileDeleter = (req, res, next) => {
-  deleteFiles(directory);
-  return;
-}
-
 
 portraitController.emotionParser = (req, res, next) => {
   let emotions = readdirSync(path.join(__dirname, req.body.char));

@@ -14,10 +14,6 @@ app.use(express.static(path.join(__dirname, '../')));
 app.use(express.static(path.join(__dirname, '../assets')));
 app.use(express.static(path.join(__dirname, '../build')));
 
-app.put('/folder', portraitController.fileDeleter, (req, res) => {
-  return res.status(200);
-})
-
 app.post('/emotions', portraitController.emotionParser, (req, res) => {
   return res.status(200).json(res.locals.emotions);
 });
