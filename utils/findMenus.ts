@@ -11,8 +11,6 @@ for each character emotion, along with the files they need to be put in.
         'Content-Type': 'application/json'
       },
     })
-
-    console.log("fetch /folder");
   }, [])
 
 /////////SERVER////////
@@ -22,7 +20,7 @@ app.put('/folder', portraitController.folderCreator, (req, res) => {
 
 
 ///////PORTRAIT CONTROLLER///////
-let directory = path.join(__dirname, '../images/portraits/therest');
+let directory = path.join(__dirname, '../images/portraits/');
 
 const newFolder = (directory) => {
   let files = readdirSync(directory);
@@ -53,6 +51,29 @@ const newFolder = (directory) => {
 
 portraitController.folderCreator = (req, res, next) => {
   newFolder(directory);
+  return;
+}
+
+const deleteFiles = (directory) => {
+  let files = readdirSync(directory);
+  if (files[0] === '.DS_Store') {
+    files = files.slice(1);
+  }
+
+  for (const file of files) {
+    const absolute = path.join(directory, file);
+    console.log(statSync(absolute).isDirectory());
+    if (statSync(absolute).isDirectory()) {
+      newFolder(absolute); 
+    } else {
+        unlink(path.join(directory, `${folderName}`));
+    }
+  }
+  return;
+}
+
+portraitController.fileDeleter = (req, res, next) => {
+  deleteFiles(directory);
   return;
 }
 
