@@ -16,7 +16,6 @@ const CharacterMenu = ({ char, emote, setChar, setEmote, setEmoteMenus, setName,
   };
 
   useEffect(() => {
-    console.log("in useEffect");
     fetch('/emotions', {
       method: 'POST',
       headers: {
