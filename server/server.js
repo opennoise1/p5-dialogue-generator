@@ -23,13 +23,7 @@ app.post('/costumes', portraitController.costumeParser, (req, res) => {
 });
 
 app.use('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../index.html'), (err) => {
-    if (err) {
-      res.status(500).send(err)
-    } else {
-      res.status(200);
-    }  
-  });
+  return res.status(200).sendFile(path.join(__dirname, '../index.html'));
 });
 
 app.use((err, req, res, next) => {
