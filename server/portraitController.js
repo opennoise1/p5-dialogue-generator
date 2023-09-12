@@ -4,6 +4,7 @@ const path = require('path');
 const portraitController = {};
 
 portraitController.emotionParser = (req, res, next) => {
+  console.log(path.join(__dirname, req.body.char));
   let emotions = readdirSync(path.join(__dirname, req.body.char));
   // Eliminates hidden DS Store file from array of folders
   if (emotions[0] === '.DS_Store') {
@@ -14,6 +15,7 @@ portraitController.emotionParser = (req, res, next) => {
 };
 
 portraitController.costumeParser = (req, res, next) => {
+  console.log(path.join(__dirname, req.body.emotion));
   let costumes = readdirSync(path.join(__dirname, req.body.emotion));
   if (costumes[0] === '.DS_Store') {
     costumes = costumes.slice(1);
