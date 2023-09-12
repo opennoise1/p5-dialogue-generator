@@ -21,7 +21,8 @@ module.exports = {
     proxy: { 
       // NOTE: Proxy just includes what paths we're excluding because otherwise
       // it interferes with how React Router routes
-
+        "*": "http://localhost:3000",
+        "secure": false,
       // Exclude /persona4 from proxy
       '!/persona4': {
         target: 'http://localhost:3000',
