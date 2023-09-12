@@ -14,21 +14,9 @@ portraitController.emotionParser = (req, res, next) => {
 };
 
 portraitController.costumeParser = (req, res, next) => {
-  const portraits = readdirSync(path.join(__dirname, req.body.emotion));
-  if (portraits[0] === '.DS_Store') {
-    portraits = portraits.slice(1);
-  }
-  
-  const costumes = [];
-
-  for (const file of portraits) {
-    const lengthMinusPNG = file.length - 4;
-    for (let i = lengthMinusPNG; i > 0; i -= 1) {
-      if (file[i] === '-') {
-        costumes.push(file.slice(i + 1, lengthMinusPNG));
-        break;
-      }
-    }
+  let costumes = readdirSync(path.join(__dirname, req.body.emotion));
+  if (costumes[0] === '.DS_Store') {
+    costumes = costumes.slice(1);
   }
   res.locals.costumes = costumes;
   return next();
