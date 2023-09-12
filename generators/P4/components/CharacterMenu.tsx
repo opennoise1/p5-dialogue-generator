@@ -21,7 +21,7 @@ const CharacterMenu = ({ char, emote, setChar, setEmote, setEmoteMenus, setName,
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ 'char': `../images/portraits/${char}/` })
+      body: JSON.stringify({ 'char': `../generators/P4/images/portraits/${char}/` })
     })
     .then(data => data.json())
     .then(parsed => {
