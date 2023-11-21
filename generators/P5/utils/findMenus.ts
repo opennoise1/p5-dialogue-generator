@@ -2,7 +2,6 @@
 This file contains the code needed to algorithmically create the costume folders
 for each character emotion, along with the files they need to be put in.
 
-
 ////////CHARACTER MENU/////
   useEffect(() => {
     fetch('/folder', {
@@ -83,5 +82,17 @@ portraitController.fileDeleter = (req, res, next) => {
   deleteFiles(directory);
   return;
 }
+
+
+//// IN TERMINAL /////
+
+After all images are deleted and folders are created, this command needs to be run in the terminal
+
+find . -type d -empty -not -path "./.git/*" -exec touch {}/.gitkeep \;
+
+(This bash script is taken from: http://cavaliercoder.com/blog/recursively-create-gitkeep-files.html)
+
+This will create .gitkeep files in each empty folder, so that Git will upload the empty folders into GitHub.
+This is needed for the server to create the menus.
 
 */
