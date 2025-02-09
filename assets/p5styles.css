@@ -287,6 +287,10 @@ select {
 
 /* Dialogue and Download */
 
+#textAndTools {
+  margin-top: 25px;
+}
+
 #textAndDownload {
   display: flex;
   flex-direction: column;
@@ -301,6 +305,69 @@ select {
   padding-bottom: 5px;
 }
 
+#tacticaToggle {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#toggleHeader {
+  margin-right: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 18px;
+}
+
+/* (Hide default HTML checkbox) */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  outline: 2px solid black;
+  box-shadow: 4px 4px black;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  top: 3px;
+  left: 4px;
+  bottom: 4px;
+  background-color: rgb(163, 160, 160);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+  transform: translateX(15px);
+  animation-name: toggle;
+  animation-duration: .4s;
+  background-color: black;
+}
+
+@keyframes toggle {
+  from {background-color: gray;}
+  to {background-color: black;}
+}
+
 #enterDialogue, #enterName {
   display: flex;
   flex-direction: column;
@@ -313,7 +380,7 @@ select {
 }
 
 #nameHeader {
-  margin-top: 25px;
+  margin-top: 13px;
 }
 
 #textField, #nameField {
@@ -403,7 +470,6 @@ select {
   flex-direction: row;
   justify-content: space-between;
 
-  margin-top: 22px;
   margin-bottom: 10px;
 }
 

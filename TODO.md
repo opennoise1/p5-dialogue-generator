@@ -1,0 +1,6 @@
+- Create separate Tactica mode
+- Sliders for portrait and bubble positioning 
+- Tactica portraits are much taller than the others. Canvas needs to be bigger to accomodate it.
+- Find Tactica font
+- Create Tactica box
+- Box behind letter in name

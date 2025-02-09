@@ -1,9 +1,16 @@
-import { SyntheticEvent } from 'react';
+import { SyntheticEvent, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Menus from './Menus';
+import Tools from './Tools';
+import TacticaTools from './TacticaTools';
 
-const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, setPortrait, setCustom, text, setText, 
-  name, setName, font, setFont, box, setBox, boxSize, setBoxSize, boxType, setBoxType }) => {
+const TextAndTools = ({ char, setChar, charOne, setCharOne, charTwo, setCharTwo, charThree, 
+  setCharThree, charFour, setCharFour, emote, setEmote, emoteOne, setEmoteOne, emoteTwo, 
+  setEmoteTwo, emoteThree, setEmoteThree, emoteFour, setEmoteFour, costume, setCostume, 
+  costumeOne, setCostumeOne, costumeTwo, setCostumeTwo, costumeThree, setCostumeThree, 
+  costumeFour, setCostumeFour, setPortrait, setTacticaOne, setTacticaTwo, setTacticaThree, 
+  setTacticaFour, setCustom, text, setText, name, setName, font, setFont, box, setBox }) => {
+
+  const [tactica, setTactica] = useState<boolean>(false);
 
   const toolProps: any = {
     char,
@@ -12,16 +19,45 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
     setEmote,
     costume,
     setCostume,
+    charOne,
+    setCharOne,
+    charTwo,
+    setCharTwo,
+    charThree,
+    setCharThree,
+    charFour,
+    setCharFour,
+    emoteOne,
+    setEmoteOne,
+    emoteTwo,
+    setEmoteTwo,
+    emoteThree,
+    setEmoteThree,
+    emoteFour,
+    setEmoteFour,
+    costumeOne,
+    setCostumeOne,
+    costumeTwo,
+    setCostumeTwo,
+    costumeThree,
+    setCostumeThree,
+    costumeFour,
+    setCostumeFour,
     setPortrait,
+    setTacticaOne,
+    setTacticaTwo,
+    setTacticaThree,
+    setTacticaFour,
     box,
     setBox,
-    boxSize,
-    setBoxSize,
-    boxType,
-    setBoxType,
     font,
+    setFont,
     name,
     setName,
+  }
+
+  const switchMode = (e: SyntheticEvent<HTMLInputElement>): void => {
+    tactica ? setTactica(false) : setTactica(true);
   }
 
   const downloadImage = (): void => {
@@ -82,6 +118,17 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
     <div id='textAndTools'>
       <div id='textAndDownload'>
         <div id='allButLinks'>
+          <div id='tacticaToggle'>
+            <div id='toggleHeader'>Tactica Mode:</div>
+            <label className='switch'>
+              <input 
+                id='modeToggle' 
+                type='checkbox'
+                onChange={(e) => switchMode(e)} 
+              />
+              <span className='slider knife'></span>
+            </label>
+          </div>
           <div id='enterName'>
             <div id='nameHeader'>Name</div>
             <textarea
@@ -131,68 +178,10 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
           </Link>
         </div>
       </div>
-      <div id='menusAndFonts'>
-        <Menus {...toolProps} />
-        <div id='fontDiv'>
-          <div id='fontHeader'>Font Select</div>
-          <div id='fontChoices'>
-            <div 
-              id='vanillaFont' 
-              className='fonts KRSMDivs knife' 
-              onClick={() => { setFont('KoreanKRSM') }}
-            >
-              KoreanKRSM &#40;Persona 5&#41;
-            </div>
-            <div 
-              id='royalFont' 
-              className='fonts optimaDivs knife' 
-              onClick={() => { setFont('Optima nova LT') }}
-            >
-              Optima Nova Black &#40;Persona 5 Royal&#41;
-            </div>
-            <div 
-              id='japaneseFont' 
-              className='fonts slumpDivs knife' 
-              onClick={() => { setFont('SlumpDB') }}
-              lang='ja'
-            >
-              Slump DB &#40;ペルソナ5 - 日本語&#41;
-            </div>
-            <div 
-              id='koreanFont' 
-              className='fonts cinemaDivs knife' 
-              onClick={() => { setFont('aCinema') }}
-              lang='ko'
-            >
-              aCinema &#40;페르소나 5 - 한글어&#41;
-            </div>
-            <div 
-              id='chineseFont' 
-              className='fonts liDivs knife' 
-              onClick={() => { setFont('DF Li Yuan') }}
-              lang='zh'
-            >
-              DF Li Yuan &#40;女神異聞錄5 - 中文&#41;
-            </div>
-            <div 
-              id='koreanStrikersFont' 
-              className='fonts koreanStrikersDivs knife' 
-              onClick={() => { setFont('a굴림헤드B') }}
-              lang='ko'
-            >
-              a굴림헤드B &#40;페르소나 5 스크램블 - 한글어&#41;
-            </div>
-            <div 
-              id='chineseStrikersFont' 
-              className='fonts pingDivs knife' 
-              onClick={() => { setFont('DF Ping Ju') }}
-              lang='zh'
-            >
-              DF Ping Ju &#40;女神異聞錄5 亂戰 - 中文&#41;
-            </div>
-          </div>
-        </div>
-      </div>
+      {tactica
+        ? <TacticaTools {...toolProps} />
+        : <Tools {...toolProps} />
+      }
     </div>
   )
 };

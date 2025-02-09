@@ -4,8 +4,10 @@ import { findNameBox } from '../utils/findName';
 import { findRandomNumbers, findTextCoords } from '../utils/nameAndTextTools';
 import FontFaceObserver from 'fontfaceobserver';
 
-const ImageCanvas = ({ portrait, name, text, font, char, custom, emote, costume, 
-  box, setBox, setBoxSize, boxType, lastBoxType, setLastBoxType }) => {
+const ImageCanvas = ({ portrait, name, text, font, char, charOne, charTwo, charThree, 
+  charFour, custom, emote, emoteOne, emoteTwo, emoteThree, emoteFour, costume, 
+  costumeOne, costumeTwo, costumeThree, costumeFour, box, setBox, setBoxSize, 
+  boxType, lastBoxType, setLastBoxType }) => {
   const loadedFont = new FontFaceObserver(`${font}`);
   
   const portraitCanvas: React.MutableRefObject<any> = useRef(null);
@@ -288,7 +290,7 @@ const ImageCanvas = ({ portrait, name, text, font, char, custom, emote, costume,
     return;
   }, [char, boxType]);
 
-  const drawPortrait = (charImage: CanvasImageSource, portraitXY: number[], w: number, h: number) => {
+  const drawPortrait = (charImage: HTMLImageElement, portraitXY: number[], w: number, h: number) => {
     // Initialize portrait canvas and clear current portrait
     pCtx = portraitCanvas.current.getContext('2d');
     pCtx.clearRect(0, 0, 1275, 500);
@@ -315,7 +317,7 @@ const ImageCanvas = ({ portrait, name, text, font, char, custom, emote, costume,
     return;
   };
 
-  const drawCustomPortrait = (customImage: CanvasImageSource) => {
+  const drawCustomPortrait = (customImage: HTMLImageElement) => {
     // Initialize portrait canvas and clear current portrait
     pCtx = portraitCanvas.current.getContext('2d');
     pCtx.clearRect(0, 0, 1275, 800);
@@ -327,7 +329,7 @@ const ImageCanvas = ({ portrait, name, text, font, char, custom, emote, costume,
     return;
   }
 
-  const drawBox = (boxImage: CanvasImageSource) => {
+  const drawBox = (boxImage: HTMLImageElement) => {
     // Initialize box canvas, clear current box and draw new box
     bCtx = boxCanvas.current.getContext('2d');
     bCtx.clearRect(0, 0, 1275, 500);

@@ -83,7 +83,7 @@ const ImageCanvas = ({ portrait, custom, setCustom, name, text, char, boxBack, b
     return;
   }, [char]);
 
-  const drawPortrait = (charImage: CanvasImageSource, width: number) => {
+  const drawPortrait = (charImage: HTMLImageElement, width: number) => {
     // Clear existing custom portrait URL, if it exists
     if (custom) setCustom('');
     // Initialize portrait canvas and clear current portrait
@@ -107,7 +107,7 @@ const ImageCanvas = ({ portrait, custom, setCustom, name, text, char, boxBack, b
     return;
   };
 
-  const drawCustomPortrait = (customImage: CanvasImageSource) => {
+  const drawCustomPortrait = (customImage: HTMLImageElement) => {
     // Initialize portrait canvas and clear current portrait
     pCtx = portraitCanvas.current.getContext('2d');
     pCtx.clearRect(0, 0, 1275, 800);
@@ -124,7 +124,7 @@ const ImageCanvas = ({ portrait, custom, setCustom, name, text, char, boxBack, b
     return;
   }
 
-  const drawBoxBack = (boxImage: CanvasImageSource) => {
+  const drawBoxBack = (boxImage: HTMLImageElement) => {
     // Initialize box canvas, clear current box and draw new box
     bCtx = boxBackCanvas.current.getContext('2d');
     bCtx.clearRect(0, 0, 1275, 800);
@@ -138,7 +138,7 @@ const ImageCanvas = ({ portrait, custom, setCustom, name, text, char, boxBack, b
     return;
   };
 
-  const drawBoxFront = (boxImage: CanvasImageSource) => {
+  const drawBoxFront = (boxImage: HTMLImageElement) => {
     // Initialize box canvas, clear current box and draw new box
     bCtx = boxFrontCanvas.current.getContext('2d');
     bCtx.clearRect(0, 0, 1275, 800);
