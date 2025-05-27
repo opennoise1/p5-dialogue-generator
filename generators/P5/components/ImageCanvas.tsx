@@ -7,16 +7,24 @@ import FontFaceObserver from 'fontfaceobserver';
 const ImageCanvas = ({ portrait, name, text, font, char, charOne, charTwo, charThree, 
   charFour, custom, emote, emoteOne, emoteTwo, emoteThree, emoteFour, costume, 
   costumeOne, costumeTwo, costumeThree, costumeFour, box, setBox, setBoxSize, 
-  boxType, lastBoxType, setLastBoxType }) => {
+  boxType, lastBoxType, setLastBoxType, tactica, }) => {
   const loadedFont = new FontFaceObserver(`${font}`);
   
   const portraitCanvas: React.MutableRefObject<any> = useRef(null);
+  const tacticaCharOneCanvas: React.MutableRefObject<any> = useRef(null);
+  const tacticaCharTwoCanvas: React.MutableRefObject<any> = useRef(null);
+  const tacticaCharThreeCanvas: React.MutableRefObject<any> = useRef(null);
+  const tacticaCharFourCanvas: React.MutableRefObject<any> = useRef(null);
   const boxCanvas: React.MutableRefObject<any> = useRef(null);
   const tileCanvas: React.MutableRefObject<any> = useRef(null);
   const nameCanvas: React.MutableRefObject<any> = useRef(null);
   const textCanvas: React.MutableRefObject<any> = useRef(null);
   const character: React.MutableRefObject<any> = useRef(null);
   const customChar: React.MutableRefObject<any> = useRef(null);
+  const tacticaCharOne: React.MutableRefObject<any> = useRef(null);
+  const tacticaCharTwo: React.MutableRefObject<any> = useRef(null);
+  const tacticaCharThree: React.MutableRefObject<any> = useRef(null);
+  const tacticaCharFour: React.MutableRefObject<any> = useRef(null);
   const dialogueBox: React.MutableRefObject<any> = useRef(null);
   let random: number;
   let secondRandom: number;
@@ -24,6 +32,10 @@ const ImageCanvas = ({ portrait, name, text, font, char, charOne, charTwo, charT
   let textX: number;
   let textY: number;
   let pCtx: CanvasRenderingContext2D;
+  let tOneCtx: CanvasRenderingContext2D;
+  let tTwoCtx: CanvasRenderingContext2D;
+  let tThreeCtx: CanvasRenderingContext2D;
+  let tFourCtx: CanvasRenderingContext2D;
   let bCtx: CanvasRenderingContext2D;
   let tileCtx: CanvasRenderingContext2D;
   let nCtx: CanvasRenderingContext2D;
@@ -277,24 +289,37 @@ const ImageCanvas = ({ portrait, name, text, font, char, charOne, charTwo, charT
     tCtx.fillText(rows[0], coords[0], coords[1]);
     tCtx.fillText(rows[1], coords[0], coords[2]);
     tCtx.fillText(rows[2], coords[0], coords[3]);
-
+    
     return;
   }, [text, font, boxType]);
-
+  
   useEffect(() => {
     // Force portrait canvas to clear if "No Portrait" is selected
     if (char === 'None') {
       pCtx = portraitCanvas.current.getContext('2d');
       pCtx.clearRect(0, 0, 1275, 500);
     }
+
+    if (tactica) {
+      tOneCtx = tacticaCharOneCanvas.current.getContext('2d');
+      tTwoCtx = tacticaCharTwoCanvas.current.getContext('2d');
+      tThreeCtx = tacticaCharThreeCanvas.current.getContext('2d');
+      tFourCtx = tacticaCharFourCanvas.current.getContext('2d');
+  
+      tOneCtx.clearRect(0, 0, 1275, 1000);
+      tTwoCtx.clearRect(0, 0, 1275, 1000);
+      tThreeCtx.clearRect(0, 0, 1275, 1000);
+      tFourCtx.clearRect(0, 0, 1275, 1000);
+    }
+
     return;
-  }, [char, boxType]);
+  }, [char, boxType, tactica]);
 
   const drawPortrait = (charImage: HTMLImageElement, portraitXY: number[], w: number, h: number) => {
     // Initialize portrait canvas and clear current portrait
     pCtx = portraitCanvas.current.getContext('2d');
     pCtx.clearRect(0, 0, 1275, 500);
-
+    
     // Look up draw position for requested portrait and draw new portrait
     let x;
     let y;
@@ -316,6 +341,18 @@ const ImageCanvas = ({ portrait, name, text, font, char, charOne, charTwo, charT
     pCtx.drawImage(charImage, x, y, w, h);
     return;
   };
+
+  const drawTacticaPortrait = () => {
+    tOneCtx = tacticaCharOneCanvas.current.getContext('2d');
+    tTwoCtx = tacticaCharTwoCanvas.current.getContext('2d');
+    tThreeCtx = tacticaCharThreeCanvas.current.getContext('2d');
+    tFourCtx = tacticaCharFourCanvas.current.getContext('2d');
+
+    tOneCtx.clearRect(0, 0, 1275, 1000);
+    tTwoCtx.clearRect(0, 0, 1275, 1000);
+    tThreeCtx.clearRect(0, 0, 1275, 1000);
+    tFourCtx.clearRect(0, 0, 1275, 1000);
+  }
 
   const drawCustomPortrait = (customImage: HTMLImageElement) => {
     // Initialize portrait canvas and clear current portrait
@@ -361,14 +398,54 @@ const ImageCanvas = ({ portrait, name, text, font, char, charOne, charTwo, charT
 
   return (
     <main id='canvasDiv'>
-      <canvas 
-        ref={portraitCanvas} 
-        id='portraitCanvas'
-        width='1275' 
-        height='500' 
-      >
-        Sorry! This generator requires a browser that supports HTML5!
-      </canvas>
+      {tactica 
+        ? 
+        <>
+          <canvas 
+            ref={tacticaCharOneCanvas} 
+            id='tacticaCharOneCanvas'
+            width='1275' 
+            height='1000' 
+          >
+            Sorry! This generator requires a browser that supports HTML5!
+          </canvas>
+          <canvas 
+            ref={tacticaCharTwoCanvas} 
+            id='tacticaCharTwoCanvas'
+            width='1275' 
+            height='1000' 
+          >
+            Sorry! This generator requires a browser that supports HTML5!
+          </canvas>
+          <canvas 
+            ref={tacticaCharThreeCanvas} 
+            id='tacticaCharThreeCanvas'
+            width='1275' 
+            height='1000' 
+          >
+            Sorry! This generator requires a browser that supports HTML5!
+          </canvas>
+          <canvas 
+            ref={tacticaCharFourCanvas} 
+            id='tacticaCharFourCanvas'
+            width='1275' 
+            height='1000' 
+          >
+            Sorry! This generator requires a browser that supports HTML5!
+          </canvas>
+        </>
+        :
+        <>
+          <canvas 
+            ref={portraitCanvas} 
+            id='portraitCanvas'
+            width='1275' 
+            height='500' 
+          >
+            Sorry! This generator requires a browser that supports HTML5!
+          </canvas>
+        </>
+      }
       <canvas 
         ref={boxCanvas} 
         id='boxCanvas'
@@ -420,6 +497,42 @@ const ImageCanvas = ({ portrait, name, text, font, char, charOne, charTwo, charT
         src={custom}
         crossOrigin="anonymous"
         onLoad={() => drawCustomPortrait(customChar.current)}
+      />
+      <img
+        alt='Tactica Portrait 1'
+        ref={tacticaCharOne}
+        id='tacticaPortraitOne'
+        className='hidden'
+        src={charOne}
+        crossOrigin="anonymous"
+        onLoad={() => {}/*=> drawTacticaPortrait(tacticaCharOne.current) */}
+      />
+      <img
+        alt='Tactica Portrait 2'
+        ref={tacticaCharTwo}
+        id='tacticaPortraitTwo'
+        className='hidden'
+        src={charTwo}
+        crossOrigin="anonymous"
+        onLoad={() => {}/*=> drawTacticaPortrait(tacticaCharOne.current) */}
+      />
+      <img
+        alt='Tactica Portrait 3'
+        ref={tacticaCharThree}
+        id='tacticaPortraitThree'
+        className='hidden'
+        src={charThree}
+        crossOrigin="anonymous"
+        onLoad={() => {}/*=> drawTacticaPortrait(tacticaCharOne.current) */}
+      />
+      <img
+        alt='Tactica Portrait 4'
+        ref={tacticaCharFour}
+        id='tacticaPortraitFour'
+        className='hidden'
+        src={charFour}
+        crossOrigin="anonymous"
+        onLoad={() => {}/*=> drawTacticaPortrait(tacticaCharOne.current) */}
       />
       <img
         alt='Dialogue box'

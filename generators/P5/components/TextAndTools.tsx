@@ -8,9 +8,7 @@ const TextAndTools = ({ char, setChar, charOne, setCharOne, charTwo, setCharTwo,
   setEmoteTwo, emoteThree, setEmoteThree, emoteFour, setEmoteFour, costume, setCostume, 
   costumeOne, setCostumeOne, costumeTwo, setCostumeTwo, costumeThree, setCostumeThree, 
   costumeFour, setCostumeFour, setPortrait, setTacticaOne, setTacticaTwo, setTacticaThree, 
-  setTacticaFour, setCustom, text, setText, name, setName, font, setFont, box, setBox }) => {
-
-  const [tactica, setTactica] = useState<boolean>(false);
+  setTacticaFour, setCustom, text, setText, name, setName, font, setFont, box, setBox, tactica, setTactica }) => {
 
   const toolProps: any = {
     char,
@@ -56,25 +54,47 @@ const TextAndTools = ({ char, setChar, charOne, setCharOne, charTwo, setCharTwo,
     setName,
   }
 
+  const portraitCanvas: HTMLCanvasElement = 
+    document.getElementById('portraitCanvas') as HTMLCanvasElement;
+  const boxCanvas: HTMLCanvasElement = 
+    document.getElementById('boxCanvas') as HTMLCanvasElement;
+  const tileCanvas: HTMLCanvasElement = 
+    document.getElementById('tileCanvas') as HTMLCanvasElement;
+  const nameCanvas: HTMLCanvasElement = 
+    document.getElementById('nameCanvas') as HTMLCanvasElement;
+  const textCanvas: HTMLCanvasElement = 
+    document.getElementById('textCanvas') as HTMLCanvasElement;
+  const tacticaCharOneCanvas: HTMLCanvasElement = 
+    document.getElementById('tacticaCharOneCanvas') as HTMLCanvasElement;
+  const tacticaCharTwoCanvas: HTMLCanvasElement = 
+    document.getElementById('tacticaCharTwoCanvas') as HTMLCanvasElement;
+  const tacticaCharThreeCanvas: HTMLCanvasElement = 
+    document.getElementById('tacticaCharThreeCanvas') as HTMLCanvasElement;
+  const tacticaCharFourCanvas: HTMLCanvasElement = 
+    document.getElementById('tacticaCharFourCanvas') as HTMLCanvasElement;
+
+
   const switchMode = (e: SyntheticEvent<HTMLInputElement>): void => {
     tactica ? setTactica(false) : setTactica(true);
+
+    if (tactica) {
+      portraitCanvas.getContext('2d').clearRect(0, 0, 1275, 500);
+      boxCanvas.getContext('2d').clearRect(0, 0, 1275, 500);
+      tileCanvas.getContext('2d').clearRect(0, 0, 1275, 500);
+      nameCanvas.getContext('2d').clearRect(0, 0, 1275, 500);
+      textCanvas.getContext('2d').clearRect(0, 0, 1275, 500);
+    } else {
+      tacticaCharOneCanvas.getContext('2d').clearRect(0, 0, 1275, 1000);
+      tacticaCharTwoCanvas.getContext('2d').clearRect(0, 0, 1275, 1000);
+      tacticaCharThreeCanvas.getContext('2d').clearRect(0, 0, 1275, 1000);
+      tacticaCharFourCanvas.getContext('2d').clearRect(0, 0, 1275, 1000);
+    }
   }
 
   const downloadImage = (): void => {
     const downloadCanvas: HTMLCanvasElement = document.createElement('canvas');
     downloadCanvas.width = 1275;
     downloadCanvas.height = 500;
-
-    const portraitCanvas: HTMLCanvasElement = 
-      document.getElementById('portraitCanvas') as HTMLCanvasElement;
-    const boxCanvas: HTMLCanvasElement = 
-      document.getElementById('boxCanvas') as HTMLCanvasElement;
-    const tileCanvas: HTMLCanvasElement = 
-      document.getElementById('tileCanvas') as HTMLCanvasElement;
-    const nameCanvas: HTMLCanvasElement = 
-      document.getElementById('nameCanvas') as HTMLCanvasElement;
-    const textCanvas: HTMLCanvasElement = 
-      document.getElementById('textCanvas') as HTMLCanvasElement;
 
     const nameField: HTMLTextAreaElement =
       document.getElementById('nameField') as HTMLTextAreaElement;

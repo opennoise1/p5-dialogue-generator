@@ -222,7 +222,7 @@ body {
 
 #canvasDiv {
   position: relative;
-  background-image: url('../generators/P5/images/backgroundDot.png');
+  background-image: url(../generators/P5/images/backgroundDot.png);
   background-size: 1275px 500px;
   border: 2px solid black;
   line-height: 0; /* Eliminates small bit of padding at the bottom of canvas-containing div */
@@ -233,32 +233,60 @@ body {
   z-index: 0;
 }
 
-#boxCanvas {
+#tacticaCharOneCanvas {
   position: absolute;
   left: 0;
   top: 0;
   z-index: 1;
 }
 
-#tileCanvas {
+#tacticaCharTwoCanvas {
   position: absolute;
   left: 0;
   top: 0;
   z-index: 2;
 }
 
-#nameCanvas {
+#tacticaCharThreeCanvas {
   position: absolute;
   left: 0;
   top: 0;
   z-index: 3;
 }
 
-#textCanvas {
+#tacticaCharFourCanvas {
   position: absolute;
   left: 0;
   top: 0;
   z-index: 4;
+}
+
+#boxCanvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+}
+
+#tileCanvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 6;
+}
+
+#nameCanvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 7;
+}
+
+#textCanvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 8;
   letter-spacing: 0.5px;
 }
 
@@ -618,6 +646,18 @@ input:checked + .slider:before {
 #nameNote {
   font-size: 8pt;
   color: #6b6261;
+}
+
+#tacticaTools {
+  display: flex;
+}
+
+#tacticaTools fieldset {
+  margin: 20px;
+}
+
+#tacticaMenus {
+  margin: 20px;
 }
 
 /* Mobile responsiveness */

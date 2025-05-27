@@ -80,16 +80,20 @@ const TacticaMenus = ({ name, setName, char, setChar, emote, setEmote, costume, 
   useEffect(() => {
     switch (selectedPortrait) {
       case 'tacticaBoxOne': {
-        setTacticaOne(`https://testing-s3-p5.s3.amazonaws.com/portraits/${charOne}/${emoteOne}/${charOne}-${emoteOne}-${costumeOne}.png`);
+        // setTacticaOne(`https://testing-s3-p5.s3.amazonaws.com/portraits/${charOne}/${emoteOne}/${charOne}-${emoteOne}-${costumeOne}.png`);
+        setTacticaOne(`../images/tactica portraits/${charOne}/${emoteOne}/${charOne}-${emoteOne}-${costumeOne}.png`)
       }
       case 'tacticaBoxTwo': {
-        setTacticaTwo(`https://testing-s3-p5.s3.amazonaws.com/portraits/${charTwo}/${emoteTwo}/${charTwo}-${emoteTwo}-${costumeTwo}.png`);
+        // setTacticaTwo(`https://testing-s3-p5.s3.amazonaws.com/portraits/${charTwo}/${emoteTwo}/${charTwo}-${emoteTwo}-${costumeTwo}.png`);
+        setTacticaTwo(`../images/tactica portraits/${charTwo}/${emoteTwo}/${charTwo}-${emoteTwo}-${costumeTwo}.png`)
       }
       case 'tacticaBoxThree': {
-        setTacticaThree(`https://testing-s3-p5.s3.amazonaws.com/portraits/${charThree}/${emoteThree}/${charThree}-${emoteThree}-${costumeThree}.png`);
+        // setTacticaThree(`https://testing-s3-p5.s3.amazonaws.com/portraits/${charThree}/${emoteThree}/${charThree}-${emoteThree}-${costumeThree}.png`);
+        setTacticaThree(`../images/tactica portraits/${charThree}/${emoteThree}/${charThree}-${emoteThree}-${costumeThree}.png`)
       }
       case 'tacticaBoxFour': {
-        setTacticaFour(`https://testing-s3-p5.s3.amazonaws.com/portraits/${charFour}/${emoteFour}/${charFour}-${emoteFour}-${costumeFour}.png`);
+        // setTacticaFour(`https://testing-s3-p5.s3.amazonaws.com/portraits/${charFour}/${emoteFour}/${charFour}-${emoteFour}-${costumeFour}.png`);
+        setTacticaFour(`../images/tactica portraits/${charFour}/${emoteFour}/${charFour}-${emoteFour}-${costumeFour}.png`)
       }
     }
     return;

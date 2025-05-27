@@ -9,7 +9,8 @@ const Persona5 = () => {
   const [char, setChar] = useState<string>('Ann');
   const [emote, setEmote]= useState<string>('Happy');
   const [costume, setCostume] = useState<string>('Gym Clothes');
-
+ 
+  // Tactica portraits, emotions, and costumes
   const [charOne, setCharOne] = useState<string>('Ann');
   const [charTwo, setCharTwo] = useState<string>('Ryuji');
   const [charThree, setCharThree] = useState<string>('Makoto');
@@ -32,7 +33,7 @@ const Persona5 = () => {
   
   // Initial portrait and box that will be rendered 
   const [portrait, setPortrait] = 
-    useState<string>(`../generators/P5/images/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);
+    useState<string>(`https://testing-s3-p5.s3.amazonaws.com/portraits/${char}/${emote}/${char}-${emote}-${costume}.png`);
   const [custom, setCustom] = useState<string>('');
    
   // Tactica Mode portraits
@@ -45,6 +46,8 @@ const Persona5 = () => {
   const [boxType, setBoxType] = useState<string>('main');
   const [lastBoxType, setLastBoxType] = useState<string>(boxType);
   const [boxSize, setBoxSize] = useState<string>('small');
+
+  const [tactica, setTactica] = useState<boolean>(false);
   
   // By adding props to a separate object here, we can get around a TypeScript quirk
   // Read more here: https://stackoverflow.com/questions/48240449/type-is-not-assignable-to-type-intrinsicattributes-intrinsicclassattribu
@@ -105,6 +108,8 @@ const Persona5 = () => {
     setBoxSize,
     lastBoxType,
     setLastBoxType,
+    tactica,
+    setTactica,
   };
 
   return (
