@@ -94,7 +94,7 @@ const ImageCanvas = ({ portrait, name, text, font, char, custom, emote, costume,
 
         // Display the correct P5/P5R box
         if (boxType === 'main') {
-          // Check to see if current name has a pre-exisiting box
+          // Check to see if current name has a pre-existing box
           let charWithBox: string | null = findNameBox(name);
           if (charWithBox && (font === 'KoreanKRSM' || font === 'Optima nova LT')) {
             // If so, use the box and return.
@@ -315,7 +315,7 @@ const ImageCanvas = ({ portrait, name, text, font, char, custom, emote, costume,
     return;
   };
 
-  const drawCustomPortrait = (customImage: CanvasImageSource) => {
+  const drawCustomPortrait = (customImage: HTMLImageElement) => {
     // Initialize portrait canvas and clear current portrait
     pCtx = portraitCanvas.current.getContext('2d');
     pCtx.clearRect(0, 0, 1275, 800);
@@ -327,7 +327,7 @@ const ImageCanvas = ({ portrait, name, text, font, char, custom, emote, costume,
     return;
   }
 
-  const drawBox = (boxImage: CanvasImageSource) => {
+  const drawBox = (boxImage: HTMLImageElement) => {
     // Initialize box canvas, clear current box and draw new box
     bCtx = boxCanvas.current.getContext('2d');
     bCtx.clearRect(0, 0, 1275, 500);

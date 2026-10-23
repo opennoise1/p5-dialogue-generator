@@ -1,15 +1,12 @@
 import { StrictMode } from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 import ScrollToTop from '../utils/ScrollToTop';
-import App from '../App';
+import App from '../generators/P4/Persona4';
 
 render(
   <StrictMode>
-    <BrowserRouter >
       <ScrollToTop />
       <App />
-    </BrowserRouter>
   </StrictMode>,
     document.getElementById('root')
 );

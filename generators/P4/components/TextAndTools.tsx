@@ -1,5 +1,4 @@
 import { useEffect, SyntheticEvent } from 'react';
-import { Link } from 'react-router-dom';
 import Menus from './Menus';
 
 const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, setPortrait, setCustom, name, setName,
@@ -107,9 +106,7 @@ const TextAndTools = ({ char, setChar, emote, setEmote, costume, setCostume, set
         </div>
         <div id='genLinks'>
           <div>Other generators:</div>
-          <Link to='/'>
             <img id='p5logo' alt='Persona 5 logo' src='../images/logos/persona5logo.png' width={100} height='auto'></img>
-          </Link>
         </div>
       </div>
       <div id='menusAndBoxes'>
