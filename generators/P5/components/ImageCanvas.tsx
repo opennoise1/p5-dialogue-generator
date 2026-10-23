@@ -94,7 +94,7 @@ const ImageCanvas = ({ portrait, name, text, font, char, custom, emote, costume,
 
         // Display the correct P5/P5R box
         if (boxType === 'main') {
-          // Check to see if current name has a pre-exisiting box
+          // Check to see if current name has a pre-existing box
           let charWithBox: string | null = findNameBox(name);
           if (charWithBox && (font === 'KoreanKRSM' || font === 'Optima nova LT')) {
             // If so, use the box and return.
