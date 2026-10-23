@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import ImageCanvas from './components/ImageCanvas';
 import TextAndTools from './components/TextAndTools';
 import Header from './components/Header';
@@ -52,11 +51,6 @@ const Persona4 = () => {
 
   return (
     <>
-      <Helmet>
-        <meta name="description" content="Persona 4 Dialogue Generator" />
-        <link rel="stylesheet" href="/p4styles.css" />
-        <link rel="shortcut icon" type="image/png" href="./images/persona4logo.png" />
-      </Helmet>
       <Header />
       <ImageCanvas {...appProps} />
       <TextAndTools {...appProps} />

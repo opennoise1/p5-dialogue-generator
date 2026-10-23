@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import ImageCanvas from './components/ImageCanvas';
 import TextAndTools from './components/TextAndTools';
 import Header from './components/Header';
@@ -55,12 +54,6 @@ const Persona5 = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Persona 5 Dialogue Generator</title>
-        <meta name="description" content="Persona 5 Dialogue Generator" />
-        <link rel="stylesheet" href="/p5styles.css" />
-        <link rel="shortcut icon" type="image/png" href="./generators/P5/images/personalogo.png" />
-      </Helmet>
       <Header />
       <ImageCanvas {...appProps} />
       <TextAndTools {...appProps} />
