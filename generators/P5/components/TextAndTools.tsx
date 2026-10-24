@@ -193,9 +193,7 @@ const TextAndTools = ({ char, setChar, charOne, setCharOne, charTwo, setCharTwo,
         </div>
         <div id='genLinks'>
           <div>Other generators:</div>
-          <Link to='/persona4'>
             <img id='p4logo' alt='Persona 4 logo' src='../images/logos/persona4logo.png' width={85} height='auto'></img>
-          </Link>
         </div>
       </div>
       {tactica

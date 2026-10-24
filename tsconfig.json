@@ -10,6 +10,8 @@
     "target": "es5"
   },
   "include": [
-    "assets/index.tsx"
+    "assets/p3index.tsx",
+    "assets/p4index.tsx",
+    "assets/p5index.tsx",
   ]
 }

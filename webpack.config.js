@@ -1,13 +1,14 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 module.exports = {
-  entry: "./assets/index.tsx",
+  entry: "./assets/p5index.tsx",
   target: "web",
   mode: "production",
   output: {
     path: path.resolve(__dirname, "build"),
-    filename: "bundle.js",
+    filename: "[name].bundle.js",
     publicPath: '/'
   },
   resolve: {
@@ -68,4 +69,9 @@ module.exports = {
       filename: "./assets/p4styles.css",
     }),
   ],
+  // Prevents there from being multiple instances of React and ReactDOM. Instead, Webpack will bundle from one source.
+  externals: {
+    'react': 'React', 
+    'react-dom': 'ReactDOM' 
+  },
 };
