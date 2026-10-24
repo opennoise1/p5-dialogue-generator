@@ -7,7 +7,6 @@ import FontFaceObserver from 'fontfaceobserver';
 const ImageCanvas = ({ portrait, name, text, font, char, custom, emote, costume, 
   box, setBox, setBoxSize, boxType, lastBoxType, setLastBoxType }) => {
   const loadedFont = new FontFaceObserver(`${font}`);
-  
   const portraitCanvas: React.MutableRefObject<any> = useRef(null);
   const boxCanvas: React.MutableRefObject<any> = useRef(null);
   const tileCanvas: React.MutableRefObject<any> = useRef(null);
